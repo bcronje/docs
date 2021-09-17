@@ -4,9 +4,9 @@ hide: navigation
 
 <small>[Documentation](/) / [Tutorials](/tutorials)</small>
 
-# How to securely access your Synology NAS drive with Enclave
+> **Note:** If you already have Enclave running on your Synology NAS drive and need to update to the latest version, please visit [How to update Enclave on your Synology NAS drive](/tutorials/how-to-update-enclave-on-your-synology-nas-drive)
 
-Last Updated: January 20, 2021
+# How to securely access your Synology NAS drive with Enclave
 
 Synology are market leaders in network attached storage devices, perfect for home or small business use. Enclave helps you easily build safe, secure and private network connectivity without the hassle of configuring firewalls and VPNs, or needing to manage IP addresses, subnets, ACLs, NAT, routing tables, certificates and secret keys.
 
@@ -233,4 +233,4 @@ This tutorial requires Docker to be installed on your Synology NAS drive which, 
 
 Having problems? Contact us at [support@enclave.io](mailto:support@enclave.io) or ask for help in our [community support](/community-support/) channels.
 
-<small>Last updated Aug 19, 2021</small>
+<small>Last updated September 17, 2021</small>
