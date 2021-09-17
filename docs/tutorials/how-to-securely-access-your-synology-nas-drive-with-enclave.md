@@ -4,9 +4,9 @@ hide: navigation
 
 <small>[Documentation](/) / [Tutorials](/tutorials)</small>
 
-> **Note:** If you already have Enclave running on your Synology NAS drive and need to update to the latest version, please visit [How to update Enclave on your Synology NAS drive](/tutorials/how-to-update-enclave-on-your-synology-nas-drive)
-
 # How to securely access your Synology NAS drive with Enclave
+
+> **Note:** If you already have Enclave running on your Synology NAS drive and need to update Enclave to the latest version, please visit our [how to update Enclave on your Synology NAS drive](/tutorials/how-to-update-enclave-on-your-synology-nas-drive) tutorial.
 
 Synology are market leaders in network attached storage devices, perfect for home or small business use. Enclave helps you easily build safe, secure and private network connectivity without the hassle of configuring firewalls and VPNs, or needing to manage IP addresses, subnets, ACLs, NAT, routing tables, certificates and secret keys.
 
