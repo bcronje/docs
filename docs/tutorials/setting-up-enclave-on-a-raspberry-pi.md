@@ -39,7 +39,7 @@ In this example I will connect the Raspberry Pi to my office workstation so I ca
 My workstation's certificate name is `72LVG` and on the Raspberry Pi I will authorise Enclave to allow connections with my workstation using the `add` command. The `-d` argument is a description (or friendly name) of this connection for future reference.
 
 ```bash
-$ enclave add 72LVG -d "connection to office workstation"
+$ enclave add 72LVG
 ```
 
 The workstation will need to mutually authorise the Raspberry Pi connection aswell, and so the workstation needs to know the certificate name of the Raspberry Pi. Run `enclave status` on the Raspberry Pi to find its local certificate name.

@@ -53,7 +53,7 @@ Now Enclave is running in the background, detached from the terminal you can che
 
 ```
 # enclave status
-# enclave add ABC -d "another host running enclave"
+# enclave add ABC
 ```
 
 > **Tip:** To detach Docker from the tty of an interactive container without exiting the shell, use the escape sequence `Ctrl-p` + `Ctrl-q`. This will switch a container running in interactive mode into daemon mode and release the terminal back to the host operating system.
