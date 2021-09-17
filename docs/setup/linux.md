@@ -116,9 +116,9 @@ The supervisor service responds to the Enclave CLI verbs `start` and `stop` to c
 
 === "Ubuntu / Debian / Raspbian"
 
-    Enclave is updated using the standard apt package manager.
+    Enclave is updated using the standard apt package manager. We suggest wrapping the `apt-get install` command with `nohup` (as shown) so that if the update is performed using via a connection established using Enclave, the upgrade operation is not aborted when the Enclave process is terminated and instead allowed to continue in the background. 
 
-        sudo apt-get update && sudo apt-get install --only-upgrade enclave
+        sudo apt-get update && sudo nohup apt-get install --only-upgrade enclave
 
 === "Other OS"
 
