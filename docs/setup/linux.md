@@ -118,7 +118,7 @@ The supervisor service responds to the Enclave CLI verbs `start` and `stop` to c
 
     Enclave is updated using the standard apt package manager.
 
-        sudo apt-get update && sudo apt-get upgrade
+        sudo apt-get update && sudo apt-get install --only-upgrade enclave
 
 === "Other OS"
 
