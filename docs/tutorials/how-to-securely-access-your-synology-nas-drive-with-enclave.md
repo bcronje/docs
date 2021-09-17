@@ -32,9 +32,9 @@ Okay, lets get started.
 
 
 
-## 1. Enable SSH access to your Synology NAS drive
+## 1. Enable SSH access
 
-For Enclave to create a virtual network interface, we'll need to ensure that the `tun` kernel module is installed and enabled on the device. We do this by enabling and connecting into the device via SSH. Open the `Control Panel`, navigate to `Terminal & SNMP` and enable the SSH service. 
+First, you'll need to enable SSH access to your Synology NAS drive. For Enclave to create a virtual network interface, we'll need to ensure that the `tun` kernel module is installed and enabled on the device. We do this by enabling and connecting into the device via SSH. Open the `Control Panel`, navigate to `Terminal & SNMP` and enable the SSH service. 
 
 ![Enable SSH access to your Synology NAS drive](/images/guides/synology-nas/synology-enable-ssh.png)
 
@@ -115,7 +115,7 @@ The easiest way to install Docker on your Synology NAS drive is via the DSM pack
 
 
 
-## 4. Download Enclave from the Docker Registry
+## 4. Download Enclave
 
 Using the search box on the `Registry` tab of the Docker package, search for `enclave` and download the `enclavenetworks/enclave` image from the container registry. The Enclave Docker image hosted on [Docker hub](https://hub.docker.com/r/enclavenetworks/enclave). If you're prompted to choose a tag, select `latest`.
 
@@ -173,7 +173,7 @@ Congratulations! You've finished configuring your container, click `Done` to Lau
 
 
 
-## 6. Connect to the NAS with Enclave
+## 6. Connect with Enclave
 
 Your Enclave container is starting up and will enrol to your account, within 1 or 2 seconds your Enclave container will be happily humming away in the background. Let's create a connection to another system running Enclave.
 
@@ -189,19 +189,11 @@ First, use the `status` verb to check on the Enclave process and view your conta
 # enclave status
 ```
 
-Now you know the Local Identity of your container, you can authorise other systems to talk to your container by adding their identities, and visa versa.
+Now you know the Local Identity of your container, you can [authorise other systems to talk to your container](/management/tags/).
 
-```
-# enclave add 4Y68W -d "Build server"
-# enclave add R89XQ -d "Windows 10 laptop"
-# enclave add K5W2Q -d "Jane's macbook"
-```
+Now you've added some connections, be sure to check the [DNS forwarding](/kb/how-to-configure-dns-forwarding-on-linux) is enabled on any peers which you're connected to so they can access your Synology NAS drive using a friendly DNS hostname like `diskstation.enclave`.
 
-For more information about how to use the CLI, or to learn more about Identities and how Enclave builds connections, please see our [documentation](https://docs.enclave.io/).
-
-Now you've added some connections, be sure to check the [DNS forwarding](https://docs.enclave.io/kb/how-to-configure-dns-forwarding-on-linux.html) is enabled on any peers which you're connected to so they can access your Synology NAS drive using a friendly DNS hostname like `diskstation.enclave`.
-
-Welcome to your own personal (dark) Internet!
+Welcome to your own personal (dark) private network!
 
 <br />
 <br />
