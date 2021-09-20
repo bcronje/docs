@@ -24,7 +24,7 @@ The easiest way to stop the Enclave container on your Synology NAS drive is via 
 
 ## 2. Download the latest image
 
-Next, using the search box on the `Registry` tab of the Docker app, search for the `enclavenetworks/enclave` image download it from the container registry. If you're prompted to choose a tag, select `latest`. You may be interested to know that the Enclave images are hosted on [here](https://hub.docker.com/r/enclavenetworks/enclave) on the Docker hub website.
+Next, using the search box on the `Registry` tab of the Docker app, search for the `enclavenetworks/enclave` image and download it from the container registry. If you're prompted to choose a tag, select `latest`. You may be interested to know that the Enclave images are hosted [here](https://hub.docker.com/r/enclavenetworks/enclave) on the Docker hub website.
 
 ![Download the latest version of Enclave using the latest tag](/images/guides/synology-nas/synology-update-enclave-select-tag.png)
 
@@ -44,7 +44,7 @@ Your Synology NAS is performing a `docker pull` in the background, wait for a sy
 
 ## 4. Create a new Enclave container
 
-You'll need to create a new container to use the latest Enclave image, but not from scratch. You can take a short-cut here duplicate the settings from your existing Enclave container to create a new one. Navigate to the `Container` section of the Docker app, select the `enclave` container and then go to `Settings` > `Duplicate`.
+You'll need to create a new container to use the latest Enclave image, but not from scratch. You can take a short-cut here by duplicating the settings from your existing Enclave container to create a new one. Navigate to the `Container` section of the Docker app, select the `enclave` container and then go to `Settings` > `Duplicate`.
 
 We suggest temporarily naming your the new container `enclave-copy`. Click `Apply` to create it.
 
@@ -64,7 +64,7 @@ You don't need the original container anymore. Select the older `enclave` contai
 
 ## 6. Rename and Launch
 
-Now you have a new container called `enclave-copy`. If you wish you can rename the container, now is a good time to do so — select it, click `Edit` and change the container name to `enclave`. All done. Click `Apply` and launch your new container running the latest version of Enclave.
+Now you have a new container called `enclave-copy`. If you wish you can rename the container; now is a good time to do so — select it, click `Edit` and change the container name to `enclave`. All done. Click `Apply` and launch your new container running the latest version of Enclave.
 
 ![Rename your copied container before launching it](/images/guides/synology-nas/synology-update-enclave-rename-container.png)
 
