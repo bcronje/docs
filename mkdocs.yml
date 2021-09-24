@@ -102,7 +102,7 @@ nav:
 
     - Setup:
       - Windows: setup/windows.md
-      - macOS: setup/macos.md
+      - MacOS: setup/macos.md
       - Linux: setup/linux.md
       - Containers: setup/containers.md
       - Network attached storage: setup/nas.md
