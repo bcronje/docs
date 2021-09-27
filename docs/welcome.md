@@ -14,8 +14,30 @@ If you're new to Enclave, check out our [getting started guide](getting-started/
 
 [Get Started →](/getting-started/installation){ .md-button .md-button--primary }
 
+## Supported Platforms
+
+The Enclave agent is written in C# and supports a wide range of operating systems and CPU architectures. We support most major architectures and operating systems.
+
+| Platform | Architecture    | Status              |
+| -------- | --------------- | ------------------- |
+| Linux    | x64, arm, arm64 | ✅ Supported         |
+| Windows  | x64             | ✅ Supported         |
+| MacOS    | x64             | ✅ Supported         |
+| iOS      |                 | ⏳ Not supported yet |
+| Android  |                 | ⏳ Not supported yet |
+
+> iOS and Android support is planned and will be added to the Enclave agent.
+
+## Resources
+
+Useful links:
+
+* Join our [Slack community](https://enclave.io/slack)
+* Developer community forum: [https://community.enclave.io/](https://community.enclave.io/)
+* Platform status: [https://status.enclave-networks.com/](https://status.enclave-networks.com/)
+
 ## Stay in touch
 
-We send our regular newsletters with product updates, blog posts, and company news. Sign up below to subscribe.
+We send out regular newsletters with product updates, blog posts, and company news. Sign up below to subscribe.
 
 [Subscribe to our mailing list](https://enclave.io/newsletter){ .md-button }
