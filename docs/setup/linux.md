@@ -77,8 +77,8 @@
     2. Add Enclave’s package signing key and repository to apt sources
 
             curl -fsSL https://packages.enclave.io/apt/enclave.stable.gpg | sudo apt-key add -
-        curl -fsSL https://packages.enclave.io/apt/enclave.stable.list | sudo tee /etc/apt/sources.list.d/enclave.stable.list
-        sudo apt-get update
+            curl -fsSL https://packages.enclave.io/apt/enclave.stable.list | sudo tee /etc/apt/sources.list.d/enclave.stable.list
+            sudo apt-get update
 
     3. Install Enclave.
 
