@@ -44,4 +44,4 @@ Depending on how you arrange the Tags in your Policy you can create either a par
 
 Any future systems you enrol and attach these Tags to will automatically inherit the connectivity defined in this policy, helpful in auto-scaling scenarios to minimise the management overhead of connecting additional systems.
 
-Now that you've got your first connection, see [next steps](/setup/next-steps) to learn more about what you can do with Enclave.
+Now that you've got your first connection, see [next steps](/getting-started/next-steps) to learn more about what you can do with Enclave.
