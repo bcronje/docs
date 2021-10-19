@@ -2,7 +2,7 @@
 
 ## Installation
 
-<small>This guide applies to Windows 7, 8 and 10 and Windows Server 2012, 2016 and 2019 (all editions). Packages are available for the x64 architecture.</small>
+<small>This guide applies to Windows 7, 8, 10, 11 and Windows Server 2012, 2016 and 2019 (all editions). Packages are available for the x64 architecture.</small>
 
 1. Download and run the latest Windows installer
     <div class="download-container">
