@@ -139,6 +139,7 @@ nav:
       - Tags: management/tags.md
       - Policy: management/policy.md
       - DNS: management/dns.md
+      - Exit Nodes: management/exit-nodes.md
 #      - Profiles: management/profiles.md
 #      - Examples: management/examples.md
 
