@@ -163,11 +163,11 @@ You should also notice in the output of the `enclave status` command on the clie
 
 ![Exit node JSON property in Universe.profile](/images/management/exit-nodes/enclave-status-on-client.png "Exit node JSON property in Universe.profile")
 
-If you can ping the exit node via Enclave and your local system is showing `172.26.0.0/20` (or your equivalent subnet) as the `Exit node for` value against the correct peer, you should now be able to start sending traffic directly into that subnet via your new exit node.
+If you can ping the exit node (i.e. ping `100.64.0.70` in this example) via Enclave and your local system is showing `172.26.0.0/20` (or your equivalent subnet) as the `Exit node for` value against the correct peer, you should now be able to start sending traffic directly into that subnet via your new exit node.
 
 ## Step 6: Use your exit node
 
-If the any of the host-based firewalls on systems not running Enclave in your subnet(s) adjacent to the exit node allow it, you may be able to send pings as test of end-to-end connectivity.
+Now we know the exit node itself is reachable, try sending some traffic past the exit node to the subnet behind it. If the any of the host-based firewalls on systems not running Enclave in your subnet(s) adjacent to the exit node allow it, you may be able to send pings as test of end-to-end connectivity.
 
 In the example below I've been able to send a ping from a Windows laptop in a coffee shop, via the Enclave exit node at `172.26.0.3` in the office out to a printer with an IP address of `172.26.0.250` in the local subnet.
 
