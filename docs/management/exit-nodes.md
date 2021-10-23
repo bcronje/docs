@@ -4,7 +4,7 @@ beta-feature: true
 
 > This feature is in beta and may be subject to change in future versions of Enclave. While in beta, this feature doesn't include API endpoints or Portal control and must be manually configured on each system. This page will be updated as the feature enters general availability.
 >   
-> If you have feedback on this feature please let us know in one of our [community support](/community-support/) channels.
+> If you have feedback on this feature, please let us know in one of our [community support](/community-support/) channels.
 
 ## Introduction
 
@@ -27,7 +27,7 @@ Here, you can set up an “exit node” to access systems not running Enclave fr
 
 Before you begin this guide, you’ll need an Enclave account set up with at least two devices enrolled. Read our [getting started guide](getting-started/installation/) if you need help with this.
 
-Your Exit Node system must be running Linux. Currently, we only support Linux systems as exit nodes but we plan to support this feature on Windows and macOS in the future.
+Your Exit Node system must be running Linux. Currently, we only support Linux systems as exit nodes, but we plan to support this feature on Windows and macOS in the future.
 
 ## Limitations
 
@@ -73,7 +73,7 @@ $ sudo sysctl -w net.ipv4.ip_forward=1
 $ sudo sysctl -p
 ```
 
-Next you'll need to configure iptables to forward traffic originating from the overlay network (100.64.0.0/10 by default) out to your local subnet(s).
+Next, you'll need to configure iptables to forward traffic originating from the overlay network (100.64.0.0/10 by default) out to your local subnet(s).
 
 You'll need to replace the `-d` argument below with your own subnet (i.e. change `172.26.0.0/20` in this example) and change the `--to` address to be the IPv4 address of your exit node in its local subnet, so also change `172.26.0.3` to match your network.
 
@@ -91,7 +91,7 @@ Lastly, run `enclave status` and make a note of your exit node's `Local identity
 
 We'll assume you already have Enclave installed and enrolled on other systems in your account, if not you'll need to. Login to one of your other systems which will act as a client to the exit node and route traffic to one of the advertised subnets. Any supported operating system (currently Windows, macOS and Linux) can be setup to route traffic via your new exit node.
 
-> During the beta, without centralised management available, you'll need to manually configure each system that needs to access the subnet(s) provided by the exit node. You'll need to tell each system which of it's peers is providing the access to those subnets, and what those subnets are too.
+> During the beta, without centralised management available, you'll need to manually configure each system that needs to access the subnet(s) provided by the exit node. You'll need to tell each system which of its peers is providing the access to those subnets, and what those subnets are too.
 
 Let's get started.
 
@@ -157,7 +157,7 @@ Make sure your client systems can talk to the exit node using Enclave. We sugges
 
 ## Step 5: Verify the connection
 
-Check that you can ping your new exit node from your client machine, use the exit node's Enclave `Virtual address` (i.e. `100.64.69.156` in the example below). You can find the Enclave `Virtual address` of your exit node by running `enclave status` on either system, once they are connected.
+Check that you can ping your new exit node from your client machine, use the exit node's Enclave `Virtual address` (i.e. `100.64.69.156` in the example below). You can find the Enclave `Virtual address` of your exit node by running `enclave status` on either system once they are connected.
 
 You should also notice in the output of the `enclave status` command on the client system(s) that any route(s) you've advertised via your exit node are listed under the appropriate peer, as shown below.
 
