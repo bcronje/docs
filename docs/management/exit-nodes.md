@@ -21,6 +21,8 @@ However, in some situations, you can’t or might not want to install Enclave on
 
 Here, you can set up an “exit node” to access systems not running Enclave from another system in the same subnet which is. An exit node acts like a gateway, moving traffic from your Enclave peers into your physical subnet and back.
 
+![Exit node topology](/images/management/exit-nodes/topology.png "Exit node topology")
+
 ## Prerequisites
 
 Before you begin this guide, you’ll need an Enclave account set up with at least two devices enrolled. Read our [getting started guide](getting-started/installation/) if you need help with this.
@@ -51,7 +53,7 @@ $ sudo nano /etc/enclave/profiles/Universe.profile
 
 At the bottom of the JSON file you'll see an empty property called `"ExitNode": {}`.
 
-![Configure the ExitNode property in Universe.profile](/images/management/exit-nodes/universe-profile.png "Configure the ExitNode property")
+![Configure the exit node property in Universe.profile](/images/management/exit-nodes/universe-profile.png "Configure the exit node property in Universe.profile")
 
 As shown below, add a `ProvidesRoutes` array. Replace the subnets in the example below with the right ones for your network. You can add one, or more IPv4 subnets in CIDR notation. In this example we've added two subnets.
 
@@ -159,7 +161,7 @@ Check that you can ping your new exit node from your client machine, use the exi
 
 You should also notice in the output of the `enclave status` command on the client system(s) that any route(s) you've advertised via your exit node are listed under the appropriate peer, as shown below.
 
-![ExitNode JSON property in Universe.profile](/images/management/exit-nodes/enclave-status-on-client.png "ExitNode property")
+![Exit node JSON property in Universe.profile](/images/management/exit-nodes/enclave-status-on-client.png "Exit node JSON property in Universe.profile")
 
 If you can ping the exit node via Enclave and your local system is showing `172.26.0.0/20` (or your equivalent subnet) as the `Exit node for` value against the correct peer, you should now be able to start sending traffic directly into that subnet via your new exit node.
 
