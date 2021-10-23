@@ -190,14 +190,24 @@ Approximate round trip times in milli-seconds:
 
 If you find your exit node isn't working as expected, here's a simple troubleshooting checklist:
 
-1. Check both the client and exit node are shown as connected, enrolled and approved in the portal.
-2. Check that the client can ping the exit node using the exit node's Enclave address.
-3. Check the output of `enclave status` on both systems has the correct `Exit node for` values.
-4. Check that the exit node itself can reach other servers on its local subnet.
-5. Check the routing table has been correctly configured by Enclave on the client(s). 
+1. Check your systems (clients and exit nodes) are enrolled, connected approved in the portal.
+2. Check that the client(s) can ping the exit node using the exit node's Enclave address.
+3. Check the output of `enclave status` on all systems has the correct `Exit node for` values.
+4. Check that the exit node itself can reach (i.e. ping) other servers on its local subnet.
+5. Check the routing table has been correctly configured by Enclave on the client(s). The routing table is configured automatically by Enclave so unlikely to be the source of a problem unless there are other conflicting routes already in place. The `Interface` address is the client's local Enclave IP address.
+
+    ```console
+    C:\> route print | findstr 172.26.0.0
+    IPv4 Route Table
+    ===========================================================================
+    Active Routes:
+    Network Destination         Netmask     Gateway         Interface    Metric
+    172.26.0.0            255.255.240.0     On-link    100.119.20.243        26
+    ```
+
 6. Check that iptables on the exit node is correctly configured `sudo iptables -t nat -L -n -v`. In particular pay attention to the `to:` field on the postrouting chain, that should be the local (non-enclave) IP address of your exit node.
    
-    ```shell
+    ```console
     $ sudo iptables -t nat -L -n -v
     Chain PREROUTING (policy ACCEPT 35 packets, 10016 bytes)
     pkts bytes target     prot opt in     out     source               destination
@@ -215,7 +225,6 @@ If you find your exit node isn't working as expected, here's a simple troublesho
 
 7. Check that the iptables `pkts` and `bytes` counters are incrementing, if they're not then the iptables configuration may be incorrect or the routing table on the client may not be correct.
 8. Try running Enclave as a foreground process with high log verbosity enabled `sudo enclave run -v 5` to inspect traffic flows on the client and exit node.
-9. If you're still unable to configure the exit node as expected, you can ask for help on [Slack](https://enclave.io/slack) or [our community forums](https://community.enclave.io/).
 
 ---
 
