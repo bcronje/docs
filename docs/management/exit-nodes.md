@@ -229,8 +229,6 @@ If you find your exit node isn't working as expected, here's a simple troublesho
     
     ```console
     $ sudo tcpdump -ni eth0 host 172.26.0.250
-    tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
-    listening on eth0, link-type EN10MB (Ethernet), capture size 262144 bytes
     11:28:12.444590 IP 172.26.0.3 > 172.26.0.250: ICMP echo request, id 1, seq 4208, length 40
     11:28:12.444995 IP 172.26.0.250 > 172.26.0.3: ICMP echo reply, id 1, seq 4208, length 40
     ```
