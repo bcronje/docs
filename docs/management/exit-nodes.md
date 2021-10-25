@@ -225,7 +225,7 @@ If you find your exit node isn't working as expected, here's a simple troublesho
 
 7. Check that the iptables `pkts` and `bytes` counters are incrementing, if they're not then the iptables configuration may be incorrect or the routing table on the client may not be correct.
 8. Try running Enclave as a foreground process with high log verbosity enabled `sudo enclave run -v 5` to inspect traffic flows on the client and exit node.
-9. Try running `tcpdump` on your exit node. Capture from the interface connected to your local subnet (in our case, that's `eth0`) and capture traffic to and from the host you're trying to communicate with using the exit node, which in our case was the printer at `172.26.0.250`. Here you can see a ping (which was originated by the exit node client) but exiting from eth0 on the exit node (`172.26.0.3`) as an ICMP echo request to the printer followed by an icmp echo reply back from the printer.
+9. Try running `tcpdump` on your exit node. Capture from the interface connected to your local subnet (in our case, that's `eth0`) and capture traffic to and from the host you're trying to communicate with using the exit node, which in our case is a printer at `172.26.0.250`. Below, you can see our ping originated by the exit node client, but exiting from eth0 on the exit node (`172.26.0.3`) as an icmp echo request to the printer followed the returned an icmp echo reply.
     
     ```console
     $ sudo tcpdump -ni eth0 host 172.26.0.250
