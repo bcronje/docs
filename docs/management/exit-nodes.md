@@ -43,7 +43,7 @@ To configure an exit node on a Linux system installation, follow these steps:
 
 [Download and install][download-linux] Enclave onto the system which will be your exit node and provide an enrolment key to join it to your account. We support a variety of Linux distros.
 
-## Step 2: Setup your exit node
+## Step 2: Set up your exit node
 
 You will need to edit an Enclave configuration file, so stop the Enclave process, you can use `sudo enclave stop` or `sudo systemctl stop enclave`. Now that Enclave is stopped, use the editor of your choice to open the default configuration file `Universe.profile`.
 
@@ -87,9 +87,9 @@ Now you've configured the exit node, you can restart Enclave. You can use `sudo 
 
 Lastly, run `enclave status` and make a note of your exit node's `Local identity` as you will need this in the next step. Each identity is unique to each system. In our example, our exit node's identity was `G982V` but yours will be different. 
 
-## Step 3: Setup any other systems
+## Step 3: Set up any other systems
 
-We'll assume you already have Enclave installed and enrolled on other systems in your account, if not you'll need to. Login to one of your other systems which will act as a client to the exit node and route traffic to one of the advertised subnets. Any supported operating system (currently Windows, macOS and Linux) can be setup to route traffic via your new exit node.
+We'll assume you already have Enclave installed and enrolled on other systems in your account, if not you'll need to. Login to one of your other systems which will act as a client to the exit node and route traffic to one of the advertised subnets. Any supported operating system (currently Windows, macOS and Linux) can be set up to route traffic via your new exit node.
 
 > During the beta, without centralised management available, you'll need to manually configure each system that needs to access the subnet(s) provided by the exit node. You'll need to tell each system which of its peers is providing the access to those subnets, and what those subnets are too.
 
