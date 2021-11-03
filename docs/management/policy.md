@@ -20,6 +20,20 @@ Unlike the public Internet, without an Enclave connection in place between two p
 
 Depending on how Administrators arrange Tags in each a Policy they may create either [partially connected](#partially-connected-mesh) or [fully connected](#fully-connected-mesh) mesh topologies.
 
+### Access Control Rules
+
+Once you have indicated which systems should be communicating, using tags, you then want to define what **traffic** is allowed to move between Sender and Receiver. You can control this per-policy with **Access Control Rules**.
+
+Access Control Rules allow you to define which protocol and port(s) you want to allow into systems on the Receiver side of the Policy.
+
+Applying Access Controls at the Receiver side of a policy makes the entire system much easier to reason about. You can set up traffic rules in a similar way to setting up firewall rules to allow access to a service. The way rules are applied should feel pretty intuitive, but fundamentally:
+
+1. If you don't specify any rules on your policy, no traffic will flow (default deny)
+2. Each ACL rule only applies to connections between the senders and receivers of the policy where it was defined.
+3. Different rules on different policies affecting the same systems are combined, but still respecting rule #2.
+
+When you create a new policy, by default we add a rule that allows **All Traffic** to flow between Sender and Receiver. Remove this rule to restrict the set of traffic you want to allow.
+
 ## Naming
 
 The Enclave access control model is defined by the `Receiver` role of each Policy, so Policy names should normally reflect the resource accessed and consumer(s) in an `X for Y` pattern.
