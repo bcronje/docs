@@ -8,7 +8,7 @@ beta-feature: true
 
 ## Introduction
 
-Enclave is designed to be installed directly on every client, server, cloud instance, virtual machine and container in your organisation. That way, Enclave can apply Zero Trust Network Access controls between systems, enforce fully enforce policy and provide end-to-end encryption.
+Enclave is designed to be installed directly on every client, server, cloud instance, virtual machine and container in your organisation. That way, Enclave can apply Zero Trust Network Access controls between systems, fully enforce policy and provide end-to-end encryption.
 
 However, in some situations, you can’t or might not want to install Enclave on all systems:
 
