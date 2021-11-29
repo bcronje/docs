@@ -6,7 +6,7 @@ On each Enclave System, the installed agent runs a local authoritative DNS names
 
 > On Windows and macOS, we automatically configure the operating system to use the Enclave nameserver. However on Linux you currently need to
 > configure your DNS manually (because of the big variation in Linux DNS configurations). 
-> See our knowledge base article on [how to configure DNS on Linux](../kb/how-to-configure-dns-forwarding-on-linux).
+> See our knowledge base article on [how to configure DNS on Linux](/kb/how-to-configure-dns-forwarding-on-linux).
 
 ## Automatic ID Names
 
