@@ -119,13 +119,9 @@ The supervisor service responds to the Enclave CLI verbs `start` and `stop` to c
     Enclave is updated using the standard apt package manager.
 
         sudo apt install enclave
-    
-=== Servers 
-
-    We suggest wrapping the `apt install` command with `nohup` (as shown) so that if the update is performed using via a connection established using Enclave, the upgrade operation is not aborted when the Enclave process is terminated and instead allowed to continue in the background. 
-
-        sudo apt update && sudo nohup apt install --only-upgrade enclave
-
+ 
+    > **Warning:** If you're updating Enclave using an SSH connection established via an Enclave tunnel then during the update the Enclave process will stop and the tunnel may disconnect, at which point, We suggest wrapping the `apt install` command with `nohup` (as shown) so that if the update is performed using via a connection established using Enclave, the upgrade operation is not aborted when the Enclave process is terminated and instead allowed to continue in the background. `sudo nohup apt install enclave`
+        
 === "Other OS"
 
     Upgrade to the latest version of Enclave by running our quick-start script.
