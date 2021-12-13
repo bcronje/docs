@@ -120,7 +120,7 @@ The supervisor service responds to the Enclave CLI verbs `start` and `stop` to c
 
         sudo apt install enclave
  
-    > **Warning:** If you're updating Enclave using an SSH connection established via an Enclave tunnel then during the update the Enclave process will stop and the tunnel may disconnect, at which point, We suggest wrapping the `apt install` command with `nohup` (as shown) so that if the update is performed using via a connection established using Enclave, the upgrade operation is not aborted when the Enclave process is terminated and instead allowed to continue in the background. `sudo nohup apt install enclave`
+    > **Warning:** During updates, the Enclave service will restart. This can cause SSH sessions established over the Enclave tunnel to disconnect and the apt operation to terminate prior to completion. To avoid this, we suggest launching apt install using nohup so even if the SSH session disconnects, the upgrade operation will continue in the background. `sudo nohup apt install enclave`
         
 === "Other OS"
 
