@@ -8,17 +8,17 @@
 
     1. Install apt-transport-https
 
-            sudo apt-get install apt-transport-https
+            sudo apt install apt-transport-https
 
     2. Add Enclave’s package signing key and repository to apt sources
 
             curl -fsSL https://packages.enclave.io/apt/enclave.stable.gpg | sudo apt-key add -
             curl -fsSL https://packages.enclave.io/apt/enclave.stable.list | sudo tee /etc/apt/sources.list.d/enclave.stable.list
-            sudo apt-get update
+            sudo apt update
 
     3. Install Enclave.
 
-            sudo apt-get install enclave
+            sudo apt install enclave
 
     4. Enrol
 
@@ -72,17 +72,17 @@
 
     1. Install apt-transport-https
 
-            sudo apt-get install apt-transport-https
+            sudo apt install apt-transport-https
 
     2. Add Enclave’s package signing key and repository to apt sources
 
             curl -fsSL https://packages.enclave.io/apt/enclave.stable.gpg | sudo apt-key add -
             curl -fsSL https://packages.enclave.io/apt/enclave.stable.list | sudo tee /etc/apt/sources.list.d/enclave.stable.list
-            sudo apt-get update
+            sudo apt update
 
     3. Install Enclave.
 
-            sudo apt-get install enclave
+            sudo apt install enclave
 
     4. Enrol
 
@@ -116,10 +116,12 @@ The supervisor service responds to the Enclave CLI verbs `start` and `stop` to c
 
 === "Ubuntu / Debian / Raspbian"
 
-    Enclave is updated using the standard apt package manager. We suggest wrapping the `apt-get install` command with `nohup` (as shown) so that if the update is performed using via a connection established using Enclave, the upgrade operation is not aborted when the Enclave process is terminated and instead allowed to continue in the background. 
+    Enclave is updated using the standard apt package manager.
 
-        sudo apt-get update && sudo nohup apt-get install --only-upgrade enclave
-
+        sudo apt install enclave
+ 
+    > **Warning:** During updates, the Enclave service will restart. This can cause SSH sessions established over the Enclave tunnel to disconnect and the apt operation to terminate prior to completion. To avoid this, we suggest launching apt install using nohup so even if the SSH session disconnects, the upgrade operation will continue in the background. `sudo nohup apt install enclave`
+        
 === "Other OS"
 
     Upgrade to the latest version of Enclave by running our quick-start script.
@@ -132,11 +134,11 @@ The supervisor service responds to the Enclave CLI verbs `start` and `stop` to c
 
     Remove the Enclave package while leaving configuration files on the system.
 
-        sudo apt-get remove enclave
+        sudo apt remove enclave
 
     Remove the Enclave package and any configuration files (including private any keys generated during enrolment).
 
-        sudo apt-get purge enclave
+        sudo apt purge enclave
 
     > **Note:** Enclave does not backup a system's private keys. Lost or deleted private keys are not recoverable. If a system's configuration and private keys are lost, to use that system with Enclave again it must be re-enrolled.
 
