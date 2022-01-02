@@ -2,8 +2,9 @@
     --md-primary-fg-color:        #003A8C;
     --md-primary-fg-color--light: #336ECC;
     --md-primary-fg-color--dark:  #002250;
+    --md-accent-fg-color:         var(--md-primary-fg-color--light);
   }
-  
+
 * {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
