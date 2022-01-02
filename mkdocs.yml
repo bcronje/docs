@@ -32,8 +32,8 @@ theme:
   favicon: assets/favicon.ico
   icon:
     logo: logo
-#  palette:
-#    primary: red
+  palette:
+    scheme: enclave
 
 extra:
   social:
