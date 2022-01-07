@@ -25,7 +25,7 @@ Here, you can set up an “exit node” to access systems not running Enclave fr
 
 ## Prerequisites
 
-Before you begin this guide, you’ll need an Enclave account set up with at least two devices enrolled. Read our [getting started guide](getting-started/installation/) if you need help with this.
+Before you begin this guide, you’ll need an Enclave account set up with at least two devices enrolled. Read our [getting started guide](/getting-started/installation/) if you need help with this.
 
 Your Exit Node system must be running Linux. Currently, we only support Linux systems as exit nodes, but we plan to support this feature on Windows and macOS in the future.
 
@@ -153,7 +153,7 @@ Now you've configured this system to use your exit node, you can restart Enclave
 
 ## Step 4: Connect it all together
 
-Make sure your client systems can talk to the exit node using Enclave. We suggest [tagging](/getting-started/attach-tags/) your exit node as `exit-node` (or similar) and creating a [policy](getting-started/define-policy/) which allows your clients to access your `exit-node` system.
+Make sure your client systems can talk to the exit node using Enclave. We suggest [tagging](/getting-started/attach-tags/) your exit node as `exit-node` (or similar) and creating a [policy](/getting-started/define-policy/) which allows your clients to access your `exit-node` system.
 
 ## Step 5: Verify the connection
 
