@@ -108,17 +108,6 @@ nav:
       - Linux: setup/linux.md
       - Containers: setup/containers.md
       - Network attached storage: setup/nas.md
-#        - Ubuntu / Debian: setup/ubuntu.md
-#        - CentOS / RHEL: setup/rhel.md
-#        - Fedora: setup/fedora.md
-#        - Amazon Linux: setup/amazon-linux.md
-#        - Arch Linux: setup/arch.md
-#        - Raspbian: setup/raspbian.md
-#      - Containers:
-#        - Docker: setup/docker.md
-#        - Kubernetes: setup/kubernetes.md
-#      - Network Attached Storage:
-#        - Synology NAS: setup/synology-nas.md
 #    - Running enclave: setup/running-enclave.md
 
 #    - Concepts:
