@@ -82,6 +82,37 @@ body, code, input, kbd, pre {
     font-size: .68rem;
 }
 
+/* style lists */
+.md-content ul, 
+.md-content ol {
+    counter-reset: styled-counter;
+    list-style: none;
+}
+
+.md-content ul li, 
+.md-content ol li {
+    margin: 0 0 0.8rem 0;
+    counter-increment: styled-counter;
+    position: relative;
+}
+
+.md-content ul li::before,
+.md-content ol li::before{
+    content: counter(styled-counter);
+    color: #fff;
+    font-size: .7em;
+    position: absolute;
+    --size: 22px;
+    left: calc(-1 * var(--size) - 10px);
+    line-height: var(--size);
+    width: var(--size);
+    height: var(--size);
+    top: 0;
+    background: #71A9F7; 
+    border-radius: 50%;
+    text-align: center;
+}
+
 small {
     font-size: 85%;
     margin-bottom: 26px;
