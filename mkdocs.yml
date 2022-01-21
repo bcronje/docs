@@ -81,6 +81,14 @@ plugins:
         keywords/full-mesh.md: management/policy.md
         keywords/dns-load-balancing.md: networking/dns.md
 
+        # Old sections and pages moved but original links preserved to prevent 404
+        troubleshooting/index.md: kb/index.md
+        troubleshooting/enclave-is-running-but-the-api-service-is-not-responding.md: kb/enclave-is-running-but-the-api-service-is-not-responding.md
+        troubleshooting/static-ip-addresses-in-windows-do-not-save.md: kb/static-ip-addresses-in-windows-do-not-save.md
+
+        setup/containers.md: setup/docker.md
+        setup/nas.md: setup/synology-nas.md
+
         # Permalinks for use in code references and status messages
         go/api.md: api/index.md
         go/quick-start.md: getting-started/installation.md
@@ -89,25 +97,28 @@ plugins:
         go/tutorial-synology.md: tutorials/how-to-securely-access-your-synology-nas-drive-with-enclave.md
 
 nav:
-  - Home: index.md
-
-  - Handbook:
+  - Home:
     - Welcome: welcome.md
     - Community support: community-support.md
 #    - Glossary: glossary.md
 
-    - Getting started:
-      - Installation: getting-started/installation.md
-      - Attach tags: getting-started/attach-tags.md
-      - Define policy: getting-started/define-policy.md
-      - Next steps: getting-started/next-steps.md
+  - Getting Started:
+    - Installation: getting-started/installation.md
+    - Attach tags: getting-started/attach-tags.md
+    - Define policy: getting-started/define-policy.md
+    - Next steps: getting-started/next-steps.md
+    - Problems?:
+      - Troubleshooting: getting-started/troubleshooting.md
+      
+  - Documentation:
 
     - Setup:
       - Windows: setup/windows.md
       - MacOS: setup/macos.md
       - Linux: setup/linux.md
-      - Containers: setup/containers.md
-      - Network attached storage: setup/nas.md
+      - Docker: setup/docker.md
+      - Kubernetes: setup/kubernetes.md
+      - Synology NAS: setup/synology-nas.md
 #    - Running enclave: setup/running-enclave.md
 
 #    - Concepts:
@@ -123,7 +134,7 @@ nav:
 #        - Certificates: concepts/security/certificates.md
 #        - Encryption: concepts/security/encryption.md
 
-    - Management:
+    - Manage:
 #      - Organisations: management/organisations.md
 #      - Endpoint management: management/endpoint-management.md
 #      - Enrolment keys: management/enrolment.md
@@ -167,8 +178,6 @@ nav:
 
   - Knowledge Base: kb/index.md
   
-  - Troubleshooting: troubleshooting/index.md
-
   #- Support:
   #  - Contact us: support/contact.md
   #  - Billing:

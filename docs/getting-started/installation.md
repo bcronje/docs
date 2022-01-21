@@ -44,7 +44,7 @@ You will need to install Enclave on at least two separate devices, systems or co
         </div>
     2. Provide the `Quick Start Key` from your account to complete the installation
 
-=== "macOS"
+=== "MacOS"
 
     <small>Requires at least OSX 10.10 (Yosemite).</small>
 

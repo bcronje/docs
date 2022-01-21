@@ -59,9 +59,9 @@ In order to send data to other systems in your Enclave you will need to know the
 
 Enclave has a built-in DNS resolver. Right click on any connected system (e.g. Gitlab) in the Windows Tray application and select `Copy` > `Hostname`. Alternatively consult the output of `enclave status` to see the `Dns` names available for each connected peer. On Windows, DNS lookups are automatically configured, so in this example given where we're connected to a GitLab server we could `ping gitlab.enclave` or load https://gitlab.enclave in a browser.
 
-On Linux, administrators must manually configure the operating system to use the Enclave DNS resolver — see [how to configure DNS forwarding on Linux](/kb/how-to-configure-dns-forwarding-on-linux).
+<!-- TODO Visit the [DNS section](/networking/dns) to learn how to use the built-in name resolution services inside your Enclave network. --->
 
-Visit the [DNS section](/networking/dns) to learn how to use the built-in name resolution services inside your Enclave network.
+> On Linux, administrators must manually configure the operating system to use the Enclave DNS resolver — see how to [Configure DNS forwarding on Linux](/kb/how-to-configure-dns-forwarding-on-linux).
 
 ## Test connectivity
 
@@ -75,10 +75,6 @@ Reply from 100.81.14.231: bytes=32 time=1ms TTL=128
 Reply from 100.81.14.231: bytes=32 time=1ms TTL=128
 Reply from 100.81.14.231: bytes=32 time=1ms TTL=128
 ```
-
-## Architecture
-
-How Enclave works. [Learn more](/handbook/architecture)
 
 ## Tutorials
 
