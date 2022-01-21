@@ -28,7 +28,9 @@ You will be asked for a valid Enrolment Key from your [Portal](https://portal.en
 
 The installer creates a lightweight supervisor service set to run at system start which is responsible for starting the Enclave fabric. The supervisor service exists to start, stop and restart Enclave fabric in the background as daemon child processes.
 
-The supervisor service responds to the Enclave CLI verbs [start](/handbook/fabric/cli/start) and [stop](/handbook/fabric/cli/stop) to control the Fabric.
+The supervisor service responds to the Enclave CLI verbs `start` and `stop` to control the Fabric.
+
+<!--- TODO The supervisor service responds to the Enclave CLI verbs [start](/handbook/fabric/cli/start) and [stop](/handbook/fabric/cli/stop) to control the Fabric. --->
 
 ## Updating Enclave
 

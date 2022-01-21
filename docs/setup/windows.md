@@ -49,7 +49,9 @@ Alternatively, to perform an unattended roll-out of Enclave without supplying an
 
 The Windows installer creates a lightweight supervisor service (named **Enclave** in the Services MMC snap-in) which automatically runs at system start and is responsible for starting the Enclave fabric. The supervisor service exists to start, stop and restart Enclave fabric in the background as child processes.
 
-The supervisor service responds to the Enclave CLI verbs [start](/handbook/fabric/cli/start) and [stop](/handbook/fabric/cli/stop) to control the Fabric.
+The supervisor service responds to the Enclave CLI verbs `start` and `stop` to control the Fabric.
+
+<!--- TODO The supervisor service responds to the Enclave CLI verbs [start](/handbook/fabric/cli/start) and [stop](/handbook/fabric/cli/stop) to control the Fabric. --->
 
 ## Updating Enclave
 
@@ -75,7 +77,7 @@ Users should remove configuration and private keys when uninstalling if they are
 
 If an install goes horribly wrong, remove Enclave using the uninstaller and try again. If you're still encountering problems, examine the log files in `C:\Program Files\Enclave Networks\Enclave\Agent\logs`. If an install is interrupted use the Enclave setup file to restart the process.
 
-For troubleshooting and errors, use the site search or visit our [troubleshooting](/troubleshooting/) section to look for information about common error messages.
+For troubleshooting and errors, use the site search or visit our [troubleshooting](/kb/#troubleshooting) section to look for information about common error messages.
 
 If your installation fails and you are unable to resolve the problem, please contact <a href="mailto:support@enclave.io">support@enclave.io</a>.
 

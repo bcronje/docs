@@ -2,7 +2,7 @@
 hide: navigation
 ---
 
-<small>[Documentation](/) / [Troubleshooting](/troubleshooting)</small>
+<small>[Documentation](/) / [Knowledge Base](/kb)</small>
 
 # KB937056: Static IP addresses in Windows do not save
 
@@ -30,6 +30,6 @@ This is not a problem caused by Enclave, but a bug in Microsoft Windows. Some cu
 
 ---
 
-Having problems? Contact us at [support@enclave.io](mailto:support@enclave.io) or ask for help in our [community support](/community-support/) channels.
+Having problems? Contact us at [support@enclave.io](mailto:support@enclave.io) or get help and advice in our [community support](/community-support/) channels.
 
 <small>Last updated Aug 19, 2021</small>
