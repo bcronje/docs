@@ -21,3 +21,7 @@ An alternative to our Slack community. Ask questions, get answers and talk about
 All Systems Operational? Our home for real-time and historical data on platform performance, outages and incidents.
 
 [Check the Enclave Platform Status Page](http://status.enclave-networks.com/){ .md-button }
+
+## Email
+
+For any other questions please contact [support@enclave.io](mailto:support@enclave.io).

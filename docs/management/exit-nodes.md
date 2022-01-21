@@ -235,7 +235,7 @@ If you find your exit node isn't working as expected, here's a simple troublesho
 
 ---
 
-Having problems? Contact us at [support@enclave.io](mailto:support@enclave.io) or ask for help in our [community support](/community-support/) channels.
+Having problems? Contact us at [support@enclave.io](mailto:support@enclave.io) or get help and advice in our [community support](/community-support/) channels.
 
 <small>Last updated Oct 23, 2021</small>
 

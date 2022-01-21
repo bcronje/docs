@@ -78,6 +78,6 @@ Now you have a new container called `enclave-copy`. If you wish you can rename t
 
 ---
 
-Having problems? Contact us at [support@enclave.io](mailto:support@enclave.io) or ask for help in our [community support](/community-support/) channels.
+Having problems? Contact us at [support@enclave.io](mailto:support@enclave.io) or get help and advice in our [community support](/community-support/) channels.
 
 <small>Last updated September 17, 2021</small>
