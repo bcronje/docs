@@ -85,7 +85,6 @@ plugins:
         troubleshooting/index.md: kb/index.md
         troubleshooting/enclave-is-running-but-the-api-service-is-not-responding.md: kb/enclave-is-running-but-the-api-service-is-not-responding.md
         troubleshooting/static-ip-addresses-in-windows-do-not-save.md: kb/static-ip-addresses-in-windows-do-not-save.md
-
         setup/containers.md: setup/docker.md
         setup/nas.md: setup/synology-nas.md
 
@@ -95,6 +94,7 @@ plugins:
         go/tutorial-pi.md: tutorials/setting-up-enclave-on-a-raspberry-pi.md
         go/tutorial-docker.md: tutorials/running-enclave-on-docker.md
         go/tutorial-synology.md: tutorials/how-to-securely-access-your-synology-nas-drive-with-enclave.md
+        go/troubleshooting.md: getting-started/troubleshooting.md
 
 nav:
   - Home:
