@@ -33,7 +33,7 @@ Endpoints running Enclave only learn of each other’s existence once mutual int
 
 Once mutual intent is confirmed, Enclave builds a Direct Client-to-Client connection (DCC) as opposed to traditional Client-Server connectivity between cooperating entities. The following diagram illustrates the sequence of events by which two or more systems establish mutually authenticated, peer-to-peer connectivity with Enclave.
 
-[![Connection Establishment Steps](/images/handbook/architecture/enclave-architecture-workflow-small.png)](/images/handbook/architecture/enclave-architecture-workflow.png)
+[![Connection Establishment Steps](/images/concepts/architecture/enclave-architecture-workflow-small.png)](/images/concepts/architecture/enclave-architecture-workflow.png)
 
 Endpoints are only introduced to one another when mutual intent is demonstrated by both parties, and connections terminate if either party decides to disconnect, or their certificate expires.
 
