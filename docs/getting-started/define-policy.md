@@ -15,9 +15,13 @@ Depending on how you arrange the Tags in your Policy you can create either a par
     Here we'll define a policy that connects systems tagged with ==org.workstations== to systems tagged with ==org.servers==. Connectivity is established between the left and right sides of the policy (`Sender` to `Receiver`) but not between systems on the same side.
 
     1. In the Portal, navigate to the `Policies` page.
+
     2. Select the `Create a new policy` button and describe the new Policy as `Server Access`
+
     3. Add the ==org.workstations== Tag to the Sender side of the policy.
+
     4. Add the ==org.servers== Tag to the Receiver side of the policy.
+
     5. Save the policy.
     
         ![Illustration of how tags are applied to systems](/images/quick-start/policy-partially-connected-mesh.png)
@@ -33,9 +37,13 @@ Depending on how you arrange the Tags in your Policy you can create either a par
     > **Production use:** Fully connected mesh networks may create large numbers of connections between participating systems. A fully connected mesh of 16 systems will create 120 connections, but a mesh with 32 participants will create 496 connections. You should consider the capabilities of your underlying network infrastructure when deploying a fully connected mesh. [Learn more](/management/policy#fully-connected-mesh).
     
     1. In the Portal, navigate to the `Policies` page.
-    2. Select the `Create a new policy` button and describe the new Policy as `Full Mesh`
+    
+    2. Select the `Create a new policy` button and describe the new Policy as `Full Mesh`.
+
     3. Add the ==org.any== Tag to the Sender side of the policy.
+   
     4. Add the ==org.any== Tag to the Receiver side of the policy.
+    
     5. Save the policy.
 
         ![Illustration of how tags are applied to systems](/images/quick-start/policy-full-mesh.png)

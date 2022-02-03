@@ -5,6 +5,7 @@ If you find Enclave isn't working as expected, here's a simple set of troublesho
 ## Problems enrolling
 
 1. If you're running on Linux check that the `ca-certificates` package is up to date
+
 2. Check that the date and time on the enrolling system is accurate
 
 ## Platform connectivity
@@ -111,6 +112,7 @@ See our [Exit Node troubleshooting guide](/management/exit-nodes/#troubleshootin
 1.  Try running Enclave as a foreground process with high log verbosity enabled `sudo enclave run -v 5` to inspect traffic flows.
 
 2.  Try running `tcpdump`. Capture from the tap0 interface and inspect the traffic flows.
+
 ---
 
  If you're still having problems after following this checklist, please contact [support@enclave.io](mailto:support@enclave.io) or join one of our [community support](/community-support/) channels to get help and advice.

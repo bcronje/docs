@@ -13,10 +13,15 @@ Enclave is designed to be installed directly on every client, server, cloud inst
 However, in some situations, you can’t or might not want to install Enclave on all systems:
 
 - On domain controllers where [two or more network interfaces][dual-nic-domain-controller] can be problematic
+
 - On networks where the physical infrastructure is not allowed to be changed
+
 - On embedded systems, like firewalls, webcams or printers which prohibit external software
+  
 - When accessing legacy systems which are too old to run, or are incompatible, with the agent 
+
 - When accessing cloud native services like AWS RDS, which don't run third party software
+
 - With large numbers of devices in a single subnet, like a single AWS VPC
 
 Here, you can set up an “exit node” to access systems not running Enclave from another system in the same subnet which is. An exit node acts like a gateway, moving traffic from your Enclave peers into your physical subnet and back.

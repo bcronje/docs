@@ -15,10 +15,15 @@
     </div>
 
 2. Run the installer. Administrator privileges are required, but the installer will prompt for privilege elevation if necessary.
+
 3. You will need to provide a valid Enrolment Key from your [Portal](https://portal.enclave.io/) account to complete installation.
+
 4. Once installed, Enclave will start and add a new tray icon to your system tray. If the Enclave tray icon is not visible, click the up arrow to find it in the hidden system tray overflow area.
-  ![/images/setup/enclave-tray-icon.png](/images/setup/enclave-tray-icon.png)
+
+    ![/images/setup/enclave-tray-icon.png](/images/setup/enclave-tray-icon.png)
+
 5. Right click on the tray icon when you need to open Enclave.
+
 6. Depending on the type of enrolment key you used to enrol your new system, it might be held waiting for an Administrator to provide enrolment approval in your account [Portal](https://portal.enclave.io/). Log in to authorise the enrolment of your new system if you need to and configure additional options like DNS.
 
 **You're all set!** You've successfully enrolled a new system to your Enclave account.
