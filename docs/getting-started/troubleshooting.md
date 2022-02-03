@@ -20,7 +20,9 @@ If you find Enclave isn't working as expected, here's a simple set of troublesho
 
 ## Peer-to-peer traffic not flowing
 
-1. Check the Enclave network adapter is online using `ipconfig /all`. Look for `Ethernet adapter Universe` in the list and check that `Media State` is not shown as `Media disconnected`. If it is, try running `enclave restart` and consider sharing local Enclave logs with [support@enclave.io](mailto:support@enclave. io) to help us investigate the problem.
+1. Check the Enclave network adapter is online using `ipconfig /all`. 
+
+    Look for `Ethernet adapter Universe` in the list and check that `Media State` is not shown as `Media disconnected`. If it is, try running `enclave restart` and consider sharing local Enclave logs with [support@enclave.io](mailto:support@enclave. io) to help us investigate the problem.
     
     ```
     C:\> ipconfig /all
@@ -39,8 +41,12 @@ If you find Enclave isn't working as expected, here's a simple set of troublesho
     ```
 
 2. Check both connected host can ping their own Enclave `Local address`.
-3. Check pings target the `Virtual address` of peer whose state is `Up`, not the `Local address`
-4. Check the routing table is configured correctly. The routing table is configured automatically by Enclave so unlikely to be the source of a problem unless there are other conflicting routes already in place. Check for duplicate entries or conflicting routes in your routing table, or other network interfaces also using the `100.64.0.0/64` subnet.
+
+3. Check pings target the `Virtual address` of peer whose state is `Up`, not the `Local address`.
+   
+4. Check the routing table is configured correctly. 
+
+    The routing table is configured automatically by Enclave so unlikely to be the source of a problem unless there are other conflicting routes already in place. Check for duplicate entries or conflicting routes in your routing table, or other network interfaces also using the `100.64.0.0/64` subnet.
 
     ```
     C:\> route print | findstr 100.64.0.0
@@ -56,7 +62,9 @@ If you find Enclave isn't working as expected, here's a simple set of troublesho
 
 ## DNS resolution not working
 
-1. Get your Enclave local IP address using the `enclave get-ip` command. That's the IP address which the local DNS stub resolver will bind to (`udp\53`).    
+1. Get your Enclave local IP address using the `enclave get-ip` command. 
+
+    That's the IP address which the local DNS stub resolver will bind to (`udp\53`).    
 
     ```
     C:\> enclave get-ip
@@ -75,7 +83,9 @@ If you find Enclave isn't working as expected, here's a simple set of troublesho
     ```
 
 3. Check there isn't other software bound to your Enclave `Local address` on port `udp/53`
-4. If you're running Enclave on a Linux operating system or inside a container, check that you've correctly [configured DNS forwarding](/kb/how-to-configure-dns-forwarding-on-linux/) to ensure DNS queries from the operating system are reaching the local Enclave DNS stub resolver
+
+4. If you're running Enclave on a Linux operating system or inside a container, check that you've correctly [configured DNS forwarding](/kb/how-to-configure-dns-forwarding-on-linux/) to ensure DNS queries from the operating system are reaching the local Enclave DNS stub resolver.
+
 5. Check that your primary recursive nameserver returns a `SRVFAIL` when queried with a hostname it should be unable to resolve. Some ISPs run nameservers which return IP addresses for ad servers instead of returning a `SRVFAIL` for non-existent domains. The ping request shown below _should_ fail. If it does not, your ISPs DNS resolver may be hijacking your DNS requests to serve ads
 
     ```
