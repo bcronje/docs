@@ -10,12 +10,19 @@ If you find Enclave isn't working as expected, here's a simple set of troublesho
 ## Platform connectivity
 
 1. Check your systems are enrolled and showing as both connected and approved in the portal
+
 2. Check you're running on the latest version of Enclave with `enclave version`
+
 3. Check the output of `enclave status` doesn't contain any warnings or errors
+
 4. Check the output of `enclave status` lists at least one `Peer` and the state shows as `Up`
+
 5. Check network traffic is allowed out to `tcp/*:443`
+
 6. Check network traffic is allowed out to `udp/*:1024-65355`
+
 7. Check network traffic isn't forced through a SOCKS proxy, which is currently unsupported
+
 8. Check local anti-virus software is not interfering with Enclave
 
 ## Peer-to-peer traffic not flowing
@@ -102,6 +109,7 @@ See our [Exit Node troubleshooting guide](/management/exit-nodes/#troubleshootin
 ## Advanced troubleshooting
 
 1.  Try running Enclave as a foreground process with high log verbosity enabled `sudo enclave run -v 5` to inspect traffic flows.
+
 2.  Try running `tcpdump`. Capture from the tap0 interface and inspect the traffic flows.
 ---
 

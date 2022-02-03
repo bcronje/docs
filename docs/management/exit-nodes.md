@@ -191,9 +191,13 @@ Approximate round trip times in milli-seconds:
 If you find your exit node isn't working as expected, here's a simple troubleshooting checklist:
 
 1. Check your systems (clients and exit nodes) are enrolled, connected approved in the portal.
+
 2. Check that the client(s) can ping the exit node using the exit node's Enclave address.
+   
 3. Check the output of `enclave status` on all systems has the correct `Exit node for` values.
+
 4. Check that the exit node itself can reach (i.e. ping) other servers on its local subnet.
+
 5. Check the routing table has been correctly configured by Enclave on the client(s). 
 
     The routing table is configured automatically by Enclave so unlikely to be the source of a problem unless there are other conflicting routes already in place. The `Interface` address is the client's local Enclave IP address.
@@ -237,7 +241,7 @@ If you find your exit node isn't working as expected, here's a simple troublesho
 
     Run enclave directly with `sudo enclave run -v 5` to inspect traffic flows on the client and exit node.
 
-9. Try running `tcpdump` on your exit node.
+9.  Try running `tcpdump` on your exit node.
 
     Capture from the interface connected to your local subnet (in our case, that's `eth0`) and capture traffic to and from the host you're trying to communicate with using the exit node, which in our case is a printer at `172.26.0.250`. 
     
