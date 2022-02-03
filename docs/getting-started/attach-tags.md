@@ -20,16 +20,22 @@ In the Portal, navigate to the `Systems` page and confirm at least two systems a
 ### Tag your first system
 
 1. Select the **first** system you've enrolled to open its details pane.
+
 2. Use the pencil icon (top-right of the pane) to enter edit mode. 
+   
 3. Give this first system a recognisable description (_e.g. Jane's Laptop_).
+
 4. Add the Tags ==org.workstations== and ==org.any== to this first system and click Save.
 
 
 ### Tag your second system
 
 1. Open the details pane for the **second** system you've enrolled. 
+
 2. Use the pencil icon to enter edit mode.
+
 3. Give the second system a recognisable description (_e.g. Web Server_).
+
 4. Add the Tags ==org.servers== and ==org.any== to this second system and click Save.
 
 ### Summary
