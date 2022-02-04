@@ -59,7 +59,7 @@ markdown_extensions:
 #      linenums: true
 #      linenums_style: pymdownx.inline
   - pymdownx.tabbed:
-       alternate_style: true 
+      alternate_style: true 
   - pymdownx.mark
   - pymdownx.superfences
   - footnotes
@@ -77,6 +77,7 @@ plugins:
       lang: en
   - redirects:
       redirect_maps:
+        welcome.md: index.md
         quick-start.md: getting-started/installation.md
         keywords/full-mesh.md: management/policy.md
         keywords/dns-load-balancing.md: networking/dns.md
@@ -99,7 +100,6 @@ plugins:
 nav:
   - Documentation:
     - What is Enclave?: index.md
-    - Community support: community-support.md
 #    - Glossary: glossary.md
 
     - Getting Started:
@@ -107,9 +107,12 @@ nav:
       - Attach tags: getting-started/attach-tags.md
       - Define policy: getting-started/define-policy.md
       - Next steps: getting-started/next-steps.md
-      - Problems?:
-        - Troubleshooting: getting-started/troubleshooting.md
-     
+
+    - Support:
+      - Troubleshooting: support/troubleshooting.md
+      - Community: support/community-support.md
+      - Contact: support/contact.md
+
     - Setup:
       - Windows: setup/windows.md
       - MacOS: setup/macos.md
@@ -118,6 +121,8 @@ nav:
       - Kubernetes: setup/kubernetes.md
       - Synology NAS: setup/synology-nas.md
 #    - Running enclave: setup/running-enclave.md
+
+    
 
 #    - Concepts:
 #      - Principles: concepts/principles.md

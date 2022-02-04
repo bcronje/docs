@@ -1,15 +1,14 @@
 
-# How to contact us
+# Contact Us
 
-## Support request
+We'd encourage you to try our [community support](community-support.md) options first, but if you have any questions that aren't answered
+by those platforms, or have something specific you need to ask us about, here are some options for you.
 
-Ask a question or raise a support request. Forum or email.
+## General Queries or Technical Problems
 
-## Share product feedback
+For general issues using Enclave, account or billing queries, or any feedback on Enclave, please contact [support@enclave.io](mailto:support@enclave.io).
 
-Share feedback with us (twitter / email) or questions about roadmap (support@enclave.io)
-
-## How to report a security issue
+## Report a security issue
 
 We want to keep Enclave safe for everyone. If you've discovered a security vulnerability in Enclave, we appreciate your help in disclosing it to us in a responsible manner. Please email us at [security@enclave.io](mailto:security@enclave.io).
 

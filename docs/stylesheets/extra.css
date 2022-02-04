@@ -122,13 +122,13 @@ body, code, input, kbd, pre {
     height: 1.1rem;
     display:inline-flex;
     align-items: center;
-    vertical-align: center;
     justify-content: center;
     font-size:.7em;
-    background-color:var(--md-primary-fg-color--light);
+    background-color:#71A9F7;
     border-radius:50%;
     color:#fff;
     box-sizing: border-box;
+    padding-bottom: 0.01rem;
 }
 
 small {
