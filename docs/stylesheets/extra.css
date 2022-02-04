@@ -103,8 +103,9 @@ body, code, input, kbd, pre {
     text-indent: 0rem;
 }
 
-.md-content ul li p:first-child, 
-.md-content ol li p:first-child {
+.md-content ul li > *:first-child, 
+.md-content ol li > *:first-child
+{
     display: inline-block;
     margin-left: 1.7rem;
     margin-top: 0px;
