@@ -108,11 +108,6 @@ nav:
       - Define policy: getting-started/define-policy.md
       - Next steps: getting-started/next-steps.md
 
-    - Support:
-      - Troubleshooting: support/troubleshooting.md
-      - Community: support/community-support.md
-      - Contact: support/contact.md
-
     - Setup:
       - Windows: setup/windows.md
       - MacOS: setup/macos.md
@@ -121,8 +116,6 @@ nav:
       - Kubernetes: setup/kubernetes.md
       - Synology NAS: setup/synology-nas.md
 #    - Running enclave: setup/running-enclave.md
-
-    
 
 #    - Concepts:
 #      - Principles: concepts/principles.md
@@ -136,6 +129,11 @@ nav:
 #        - Security considerations: concepts/security/considerations.md
 #        - Certificates: concepts/security/certificates.md
 #        - Encryption: concepts/security/encryption.md
+
+    - Support:
+      - Troubleshooting: support/troubleshooting.md
+      - Community: support/community-support.md
+      - Contact: support/contact.md
 
     - Manage:
 #      - Organisations: management/organisations.md
