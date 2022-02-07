@@ -41,7 +41,7 @@ We support most major operating systems and CPU architectures.
 
 ## Other resources
 
-* Enclave developer community forum: [https://community.enclave.io/](https://community.enclave.io/)
+* Enclave developer community forum: [https://community.enclave.io/](https://community.enclave.io/)  
 * Enclave platform status: [https://status.enclave-networks.com/](https://status.enclave-networks.com/)
 
 ## Stay in touch
