@@ -2,9 +2,15 @@
 hide: toc
 ---
 
-# What is Enclave?
+# Enclave Documentation
 
-Enclave connects all of your computers, servers, cloud instances and containers across any infrastructure with secure private networks. Whether you're working in a multi-cloud, remote access or third party integration scenario, Enclave gives you predictable private connectivity that just works.
+## Welcome
+
+Enclave connects all of your computers, servers, cloud instances and containers across any infrastructure with secure private networks regardless of where they are. Whether you're working in a multi-cloud, remote access or third party integration scenario, Enclave gives you predictable private connectivity that just works.
+
+[Getting Started Guide →](/getting-started/installation){ .md-button .md-button--primary }
+
+## What is Enclave?
 
 It's like a VPN, but without the VPN server. Enclave networks are built on strict policy controls where knowledge of participating systems is provided on a need-to-know basis. All network members must successfully authenticate using digital certificates and connections can only be established with supporting policy.
 
@@ -21,9 +27,7 @@ It's like a VPN, but without the VPN server. Enclave networks are built on stric
 
 By default all systems are dark to the public Internet, behind closed firewalls with no knowledge of one other and no ability to communicate. Once policy is defined, members are introduced and must mutually authenticate using digital certificates. If successful, access is granted.
 
-If you're new to Enclave, check out our [Getting Started Guide](getting-started/installation.md) to help get you up and running in a few minutes. If you have questions or get stuck, our [Slack Community](https://enclave.io/slack) has the answers.
-
-[Getting Started Guide →](/getting-started/installation){ .md-button .md-button--primary } &nbsp; [Join our Slack Community](https://enclave.io/slack){ .md-button }
+If you're new to Enclave, check out our [Getting Started Guide](getting-started/installation.md) to help get you up and running in a few minutes. If you have questions or get stuck, our [Slack community](https://enclave.io/slack) has the answers.
 
 ## Supported Platforms
 
@@ -46,6 +50,14 @@ We support most major operating systems and CPU architectures.
 
 ## Stay in touch
 
-We regular newsletters with product updates, blog posts, and company news. Sign up below to subscribe.
+### Slack
+
+We're building a community space for Engineers, Developers, Architects, Security Professionals, DevOps Practitioners and Hobbyists using Enclave to ask questions, get help from the team and interact with each other. Come and join us!
+
+[Join our Slack community](https://enclave.io/slack){ .md-button }
+
+### Newsletter
+
+We share regular product updates, blog posts, and company news on our newsletter. Sign up below to subscribe.
 
 [Subscribe to our mailing list](https://enclave.io/newsletter){ .md-button }

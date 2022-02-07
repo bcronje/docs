@@ -49,7 +49,6 @@ extra:
 #  version:
 #    provider: mike
 
-extra:
   analytics:
     provider: google
     property: UA-244950-15
@@ -99,7 +98,7 @@ plugins:
 
 nav:
   - Documentation:
-    - What is Enclave?: index.md
+    - Home: index.md
 #    - Glossary: glossary.md
 
     - Getting Started:
