@@ -13,10 +13,15 @@ Enclave is designed to be installed directly on every client, server, cloud inst
 However, in some situations, you can’t or might not want to install Enclave on all systems:
 
 - On domain controllers where [two or more network interfaces][dual-nic-domain-controller] can be problematic
+
 - On networks where the physical infrastructure is not allowed to be changed
+
 - On embedded systems, like firewalls, webcams or printers which prohibit external software
+  
 - When accessing legacy systems which are too old to run, or are incompatible, with the agent 
+
 - When accessing cloud native services like AWS RDS, which don't run third party software
+
 - With large numbers of devices in a single subnet, like a single AWS VPC
 
 Here, you can set up an “exit node” to access systems not running Enclave from another system in the same subnet which is. An exit node acts like a gateway, moving traffic from your Enclave peers into your physical subnet and back.
@@ -153,7 +158,7 @@ Now you've configured this system to use your exit node, you can restart Enclave
 
 ## Step 4: Connect it all together
 
-Make sure your client systems can talk to the exit node using Enclave. We suggest [tagging](/getting-started/attach-tags/) your exit node as `exit-node` (or similar) and creating a [policy](/getting-started/define-policy/) which allows your clients to access your `exit-node` system.
+Make sure your client systems can talk to the exit node using Enclave. We suggest [tagging](/getting-started/attach-tags/) your exit node as ==exit-node== (or similar) and creating a [policy](/getting-started/define-policy/) which allows your clients to access your ==exit-node== system.
 
 ## Step 5: Verify the connection
 
@@ -191,10 +196,16 @@ Approximate round trip times in milli-seconds:
 If you find your exit node isn't working as expected, here's a simple troubleshooting checklist:
 
 1. Check your systems (clients and exit nodes) are enrolled, connected approved in the portal.
+
 2. Check that the client(s) can ping the exit node using the exit node's Enclave address.
+   
 3. Check the output of `enclave status` on all systems has the correct `Exit node for` values.
+
 4. Check that the exit node itself can reach (i.e. ping) other servers on its local subnet.
-5. Check the routing table has been correctly configured by Enclave on the client(s). The routing table is configured automatically by Enclave so unlikely to be the source of a problem unless there are other conflicting routes already in place. The `Interface` address is the client's local Enclave IP address.
+
+5. Check the routing table has been correctly configured by Enclave on the client(s). 
+
+    The routing table is configured automatically by Enclave so unlikely to be the source of a problem unless there are other conflicting routes already in place. The `Interface` address is the client's local Enclave IP address.
 
     ```console
     C:\> route print | findstr 172.26.0.0
@@ -205,7 +216,11 @@ If you find your exit node isn't working as expected, here's a simple troublesho
     172.26.0.0            255.255.240.0     On-link    100.119.20.243        26
     ```
 
-6. Check that iptables on the exit node is correctly configured `sudo iptables -t nat -L -n -v`. In particular pay attention to the `to:` field on the postrouting chain, that should be the local (non-enclave) IP address of your exit node.
+6. Check that iptables on the exit node is correctly configured
+
+    Run `sudo iptables -t nat -L -n -v`. 
+
+    In particular pay attention to the `to:` field on the postrouting chain, that should be the local (non-enclave) IP address of your exit node.
    
     ```console
     $ sudo iptables -t nat -L -n -v
@@ -223,9 +238,19 @@ If you find your exit node isn't working as expected, here's a simple troublesho
        0     0 SNAT       all  --  *      *       100.64.0.0/10        172.26.0.0/20     to:172.26.0.3
     ```
 
-7. Check that the iptables `pkts` and `bytes` counters are incrementing, if they're not then the iptables configuration may be incorrect or the routing table on the client may not be correct.
-8. Try running Enclave as a foreground process with high log verbosity enabled `sudo enclave run -v 5` to inspect traffic flows on the client and exit node.
-9. Try running `tcpdump` on your exit node. Capture from the interface connected to your local subnet (in our case, that's `eth0`) and capture traffic to and from the host you're trying to communicate with using the exit node, which in our case is a printer at `172.26.0.250`. Below, you can see our ping originated by the exit node client, but exiting from eth0 on the exit node (`172.26.0.3`) as an icmp echo request to the printer followed the returned an icmp echo reply.
+7. Check that the iptables `pkts` and `bytes` counters are incrementing.
+   
+    If they're not then the iptables configuration may be incorrect or the routing table on the client may not be correct.
+    
+8. Try running Enclave as a foreground process with high log verbosity.
+
+    Run enclave directly with `sudo enclave run -v 5` to inspect traffic flows on the client and exit node.
+
+9.  Try running `tcpdump` on your exit node.
+
+    Capture from the interface connected to your local subnet (in our case, that's `eth0`) and capture traffic to and from the host you're trying to communicate with using the exit node, which in our case is a printer at `172.26.0.250`. 
+    
+    Below, you can see our ping originated by the exit node client, but exiting from eth0 on the exit node (`172.26.0.3`) as an icmp echo request to the printer followed the returned an icmp echo reply.
     
     ```console
     $ sudo tcpdump -ni eth0 host 172.26.0.250

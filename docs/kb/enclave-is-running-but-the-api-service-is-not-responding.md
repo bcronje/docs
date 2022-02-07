@@ -22,9 +22,12 @@ Microsoft has confirmed that this is a problem with dotnet core and has issued a
 This issue has been fixed in the latest version of Enclave. Customers still running Enclave version `2020.4.20.0` should apply the following workaround:
 
 1. Open an administrator command prompt
-1. Run `sc stop "Enclave Fabric Supervisor"`
-1. Delete the contents of `C:\Windows\Temp\.net\enclave`
-1. In the Enclave Tray application use the "Request Start" button to start Enclave again
+   
+2. Run `sc stop "Enclave Fabric Supervisor"`
+
+3. Delete the contents of `C:\Windows\Temp\.net\enclave`
+
+4. In the Enclave Tray application use the "Request Start" button to start Enclave again
 
 ## Notes
 

@@ -22,7 +22,7 @@ and test them out.
 
 ## Authentication
 
-There are almost no 'public' APIs in Enclave's REST API; in most cases, you will need to authenticate with our APIs.
+There are almost no unauthenticated APIs in Enclave's REST API; in most cases, you will need to authenticate with our APIs.
 
 Authentication is achieved through the use of a **Personal Access Token**, that is passed as a standard oauth `Authorisation: Bearer` token in the header.
 
@@ -31,7 +31,8 @@ are 63-character alpha-numeric strings, and are secrets that should be protected
 
 ![Location of Personal Access Tokens in your account page](/images/api/pat-location.png)
 
-> Created tokens have access to all of the Enclave organisations that your account has access to in the portal.
+> Created tokens currently have access to all of the Enclave organisations that your account has access to in the portal. In future we will allow tokens to be restricted
+> to a specific organisation; get in touch on our [community channels](../support/community-support.md) if this is something you need.
 
 As an example, you can use `curl` to authenticate (and get the list of organisations you have access to):
 

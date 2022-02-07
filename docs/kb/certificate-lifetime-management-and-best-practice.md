@@ -28,10 +28,15 @@ Over the last decade, spurred mainly by the introduction of automation technolog
 There are several reasons for this, in short compromised certificates are hard to revoke, and the longer a certificate is valid, the more likely it can be used nefariously in the event of compromise precisely because revocation is tricky.
 
 * Certificate revocation options are imperfect and represent a single point of failure (OCSP responders and CRL distribution points not recognised as reliable network parties, and soft-fails are common practice).
+
 * Long-lived static keys have increased value to attackers and are exposed to the possibility of theft for longer.
+
 * A shorter lifetime reduces exposure in the event of key compromise.
+
 * Revocation infrastructure leads to huge certificate revocation lists and high traffic volume at OCSP servers.
+
 * Automation is not encouraged by the use of long-lived certificates.
+
 * In the event that a vulnerability is discovered in a cryptographic primitive (e.g. SHA1) shorter lived certificates force deprecated and vulnerable protocols out of the ecosystem far more quickly.
 
 The landscape of TLS is inherently fragmented, Browser vendors, Certificate Authorities, system administrators and software developers all exist in isolation of one another, operating independently and on different time scales. The fractured landscape of TLS means that short-lived certificates, which constantly refresh trust are a vital for the future development of the ecosystem. Enclave however, is not a fragmented landscape and does not suffer the same operational challenges which TLS must endure.

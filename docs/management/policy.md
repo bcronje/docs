@@ -10,11 +10,11 @@ Systems are grouped together under common Tags and Tags are attached to Policies
 
 | Policy Name       | Sender Tags                     | Receiver Tags     |
 | ----------------- | ------------------------------- | ----------------- |
-| Kubernetes access | `developers`<br />`contractors` | `kubernetes-pods` |
+| Kubernetes access | ==developers==<br />==contractors== | ==kubernetes-pods== |
 
- Any system which is a member of either the `developers` or `contractors` Tags will be connected to any system in the `kubernetes-pods` Tag, but systems in the `developers` Tag will not be connected to other `developers` or `contractors` by this Policy.
+ Any system which is a member of either the ==developers== or ==contractors== Tags will be connected to any system in the ==kubernetes-pods== Tag, but systems in the ==developers== Tag will not be connected to other ==developers== or ==contractors== by this Policy.
 
-Systems in the `kubernetes-pods` Tag will be unable to initiate outbound connections to `developers` or `contractors` systems, as the `Receiver` role prohibits unsolicited traffic and only allows responses to traffic which originated from a system with the `Sender` role.
+Systems in the ==kubernetes-pods== Tag will be unable to initiate outbound connections to ==developers== or ==contractors== systems, as the `Receiver` role prohibits unsolicited traffic and only allows responses to traffic which originated from a system with the `Sender` role.
 
 Unlike the public Internet, without an Enclave connection in place between two peers, no traffic can be send across an Enclave link; this means access controls can be exclusively `Receiver` defined. There is no way to apply sender-side restrictions to an Enclave peer to prohibit what can or can't be sent to other peers, all access controls are applied by the `Receiver` and govern what each system is willing to accept. 
 
@@ -55,15 +55,15 @@ In a partially connected mesh, only specific systems connect to one another acro
 
 | Policy Name                    | Sender Tags    | Receiver Tags |
 | ------------------------------ | -------------- | ------------- |
-| Server access for Workstations | `workstations` | `servers`     |
+| Server access for Workstations | ==workstations== | ==servers==     |
 
 ### Fully connected mesh
 
-Full mesh connectivity arises when multiple systems are members of Tags on both sides of a Policy, all affected systems are connected to one another. In the following example a Policy defines connectivity between systems tagged with the `servers` Tag.
+Full mesh connectivity arises when multiple systems are members of Tags on both sides of a Policy, all affected systems are connected to one another. In the following example a Policy defines connectivity between systems tagged with the ==servers== Tag.
 
 | Policy Name       | Sender Tags | Receiver Tags |
 | ----------------- | ----------- | ------------- |
-| Servers full mesh | `servers`   | `servers`     |
+| Servers full mesh | ==servers==   | ==servers==     |
 
 Fully connected mesh networks may create large numbers of connections between participating systems. The number of connections in a fully connected mesh is equal to `N∗(N−1)/2` (i.e. number of systems times the number of systems minus 1, divided by 2). 
 

@@ -70,34 +70,34 @@ This was not a permanent change, the module will be unloaded the next time the s
 
 - Switch to root
 
-   ```
-   $ sudo su -
-   ```
+      ```
+      $ sudo su -
+      ```
 
 - Create the following script on your Synology file system by typing `vim /volume1/enable-tun.sh`
 
-  ```
-  #!/bin/sh
+      ```
+      #!/bin/sh
 
-  if ( [ ! -c /dev/net/tun ] ); then
-     if ( [ ! -d /dev/net ] ); then
-        mkdir -m 755 /dev/net
-     fi
-     mknod /dev/net/tun c 10 200
-  fi
+      if ( [ ! -c /dev/net/tun ] ); then
+         if ( [ ! -d /dev/net ] ); then
+            mkdir -m 755 /dev/net
+         fi
+         mknod /dev/net/tun c 10 200
+      fi
 
-  if ( !(lsmod | grep -q "^tun\s") ); then
-     insmod /lib/modules/tun.ko
-  fi
-  ```
+      if ( !(lsmod | grep -q "^tun\s") ); then
+         insmod /lib/modules/tun.ko
+      fi
+      ```
 
 - Save the file with `[escape]` followed by the keys `:wq!`
 
 - Mark the file as executable 
 
-   ```
-   chmod +x /volume1/enable-tun.sh
-   ```
+      ```
+      chmod +x /volume1/enable-tun.sh
+      ```
 
 - Now create a scheduled task to run this script on start-up: Log in to your Synology NAS drive web interface, go to **Control Panel** > **Task Scheduler** and create a new `User-defined script` as a `Triggered Task`. Name the task `Enable TUN`, set the user to be `root` and the event as `Boot-up`. Then, in the `Task Settings` tab enter `bash /volume1/enable-tun.sh` as the User-defined script and hit OK. To test if the script works, after restarting your NAS log back into SSH and run `lsmod | grep -w tun` to check that the TUN module was successfully re-loaded.
 

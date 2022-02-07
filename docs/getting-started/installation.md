@@ -1,6 +1,6 @@
 # Installation
 
-In this quick start guide we will start your journey with Enclave by showing you how to enrol your first systems and use policy and tags to establish a private network between them.
+In this quick start guide we will start your journey with Enclave by showing you how to enrol your first two systems and use policy and tags to establish a private network between them.
 
 ![Quick start steps](/images/quick-start/steps.png)
 
@@ -9,6 +9,7 @@ In this quick start guide we will start your journey with Enclave by showing you
 To follow this guide, you will need:
 
 1. An Enclave account, it's [free to register](https://portal.enclave.io/register)
+
 2. At least two computers, devices or containers where you can install software
 
 ## Get an Enrolment Key
@@ -16,7 +17,9 @@ To follow this guide, you will need:
 You will need an Enrolment Key from your account to install Enclave. Enrolment Keys allow you to enrol new systems or devices to your Enclave account.
 
 1. Login to your account in the [Enclave Portal](https://portal.enclave.io/)
+
 2. Navigate to the Enrolment Keys page and select the [`Quick Start Key`](https://portal.enclave.io/my/keys) from the table
+
 3. In the details pane, select [`View key`](https://portal.enclave.io/my/keys/1) and make a note of the 30 character Enrolment Key
 
 > **Security note:** Enrolment keys should be treated as secrets; handle, share and store your Enrolment Keys as you would any other organisational secret.
@@ -42,6 +45,7 @@ You will need to install Enclave on at least two separate devices, systems or co
           <p><code id="windows-checksum" class="checksum">----------------------------------------------------------------</code></p>
           </div>
         </div>
+
     2. Provide the `Quick Start Key` from your account to complete the installation
 
 === "MacOS"
@@ -140,9 +144,9 @@ You will need to install Enclave on at least two separate devices, systems or co
 
         2. Add Enclave’s package signing key and repository to apt sources
 
-            curl -fsSL https://packages.enclave.io/apt/enclave.stable.gpg | sudo apt-key add -
-            curl -fsSL https://packages.enclave.io/apt/enclave.stable.list | sudo tee /etc/apt/sources.list.d/enclave.stable.list
-            sudo apt-get update
+                curl -fsSL https://packages.enclave.io/apt/enclave.stable.gpg | sudo apt-key add -
+                curl -fsSL https://packages.enclave.io/apt/enclave.stable.list | sudo tee /etc/apt/sources.list.d/enclave.stable.list
+                sudo apt-get update
 
         3. Install Enclave.
 

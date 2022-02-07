@@ -49,7 +49,6 @@ extra:
 #  version:
 #    provider: mike
 
-extra:
   analytics:
     provider: google
     property: UA-244950-15
@@ -60,6 +59,7 @@ markdown_extensions:
 #      linenums_style: pymdownx.inline
   - pymdownx.tabbed:
       alternate_style: true 
+  - pymdownx.mark
   - pymdownx.superfences
   - footnotes
   - toc
@@ -76,7 +76,7 @@ plugins:
       lang: en
   - redirects:
       redirect_maps:
-        index.md: welcome.md
+        welcome.md: index.md
         quick-start.md: getting-started/installation.md
         keywords/full-mesh.md: management/policy.md
         keywords/dns-load-balancing.md: networking/dns.md
@@ -97,20 +97,15 @@ plugins:
         go/troubleshooting.md: getting-started/troubleshooting.md
 
 nav:
-  - Home:
-    - Welcome: welcome.md
-    - Community support: community-support.md
+  - Documentation:
+    - Home: index.md
 #    - Glossary: glossary.md
 
-  - Getting Started:
-    - Installation: getting-started/installation.md
-    - Attach tags: getting-started/attach-tags.md
-    - Define policy: getting-started/define-policy.md
-    - Next steps: getting-started/next-steps.md
-    - Problems?:
-      - Troubleshooting: getting-started/troubleshooting.md
-      
-  - Documentation:
+    - Getting Started:
+      - Installation: getting-started/installation.md
+      - Attach tags: getting-started/attach-tags.md
+      - Define policy: getting-started/define-policy.md
+      - Next steps: getting-started/next-steps.md
 
     - Setup:
       - Windows: setup/windows.md
@@ -133,6 +128,11 @@ nav:
 #        - Security considerations: concepts/security/considerations.md
 #        - Certificates: concepts/security/certificates.md
 #        - Encryption: concepts/security/encryption.md
+
+    - Support:
+      - Troubleshooting: support/troubleshooting.md
+      - Community: support/community-support.md
+      - Contact us: support/contact.md
 
     - Manage:
 #      - Organisations: management/organisations.md
