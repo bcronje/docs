@@ -173,6 +173,30 @@ The supervisor service responds to the Enclave CLI verbs `start` and `stop` to c
  
     > **Warning:** During updates, the Enclave service will restart. This can cause SSH sessions established over the Enclave tunnel to disconnect and the apt operation to terminate prior to completion. To avoid this, we suggest launching apt install using nohup so even if the SSH session disconnects, the upgrade operation will continue in the background. `sudo nohup apt install enclave`
 
+=== "Fedora / CentOS 8 / RHEL 8"
+
+    Enclave is updated using the standard apt package manager.
+
+        sudo dnf update enclave
+ 
+    > **Warning:** During updates, the Enclave service will restart. This can cause SSH sessions established over the Enclave tunnel to disconnect and the apt operation to terminate prior to completion. To avoid this, we suggest launching dnf update using nohup so even if the SSH session disconnects, the upgrade operation will continue in the background. `sudo nohup dnf update enclave`
+
+=== "CentOS 7 / RHEL 7"
+
+    Enclave is updated using the standard apt package manager.
+
+        sudo yum update enclave
+ 
+    > **Warning:** During updates, the Enclave service will restart. This can cause SSH sessions established over the Enclave tunnel to disconnect and the apt operation to terminate prior to completion. To avoid this, we suggest launching yum update using nohup so even if the SSH session disconnects, the upgrade operation will continue in the background. `sudo nohup yum update enclave`
+
+=== "OpenSUSE / SLES"
+
+    Enclave is updated using the standard apt package manager.
+
+        sudo zypper install enclave
+ 
+    > **Warning:** During updates, the Enclave service will restart. This can cause SSH sessions established over the Enclave tunnel to disconnect and the apt operation to terminate prior to completion. To avoid this, we suggest launching zypper install  using nohup so even if the SSH session disconnects, the upgrade operation will continue in the background. `sudo nohup zypper install enclave`
+
 === "Other OS"
 
     Upgrade to the latest version of Enclave by running our quick-start script.
