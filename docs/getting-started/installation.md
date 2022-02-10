@@ -70,142 +70,142 @@ You will need to install Enclave on at least two separate devices, systems or co
 
     Select your distribution:
 
-      === "Ubuntu / Debian"
+    === "Ubuntu / Debian"
 
-          <small>Requires at least Ubuntu 14.04 LTS or Debian 9.</small> 
+        <small>Requires at least Ubuntu 14.04 LTS or Debian 9.</small> 
 
-          1. Install apt-transport-https
+        1. Install apt-transport-https
 
-                  sudo apt install apt-transport-https
+                sudo apt install apt-transport-https
 
-          2. Add Enclave’s package signing key and repository to apt sources
+        2. Add Enclave’s package signing key and repository to apt sources
 
-                  curl -fsSL https://packages.enclave.io/apt/enclave.stable.gpg | sudo gpg --dearmor -o /usr/share/keyrings/enclave.gpg
-                  echo "deb [signed-by=/usr/share/keyrings/enclave.gpg] https://packages.enclave.io/apt main stable" | sudo tee /etc/apt/sources.list.d/enclave.stable.list
-                  sudo apt update
+                curl -fsSL https://packages.enclave.io/apt/enclave.stable.gpg | sudo gpg --dearmor -o /usr/share/keyrings/enclave.gpg
+                echo "deb [signed-by=/usr/share/keyrings/enclave.gpg] https://packages.enclave.io/apt main stable" | sudo tee /etc/apt/sources.list.d/enclave.stable.list
+                sudo apt update
 
-          3. Install Enclave.
+        3. Install Enclave.
 
-                  sudo apt install enclave
+                sudo apt install enclave
 
-          4. Enrol
+        4. Enrol
 
-                  sudo enclave enrol
+                sudo enclave enrol
 
-          5. Provide your `Quick Start Key` to complete the installation
+        5. Provide your `Quick Start Key` to complete the installation
 
-      === "CentOS 7 / RHEL 7"
+    === "CentOS 7 / RHEL 7"
 
-          1. Add Enclave’s repository to rpm sources
+        1. Add Enclave’s repository to rpm sources
 
-                  sudo yum -y install yum-utils
-                  sudo yum-config-manager --add-repo https://packages.enclave.io/rpm/enclave.repo
+                sudo yum -y install yum-utils
+                sudo yum-config-manager --add-repo https://packages.enclave.io/rpm/enclave.repo
 
-          2. Install Enclave.
+        2. Install Enclave.
 
-                  sudo yum install enclave
+                sudo yum install enclave
 
-          3. Enrol
+        3. Enrol
 
-                  sudo enclave enrol
+                sudo enclave enrol
 
-          4. Provide your `Quick Start Key` to complete the installation
+        4. Provide your `Quick Start Key` to complete the installation
 
-      === "CentOS 8 / RHEL 8"
-        
-          1. Add Enclave’s repository to rpm sources
-
-                  sudo dnf -y install dnf-plugins-core
-                  sudo dnf config-manager --add-repo https://packages.enclave.io/rpm/enclave.repo
-
-          2. Install Enclave.
-
-                  sudo dnf install enclave
-
-          3. Enrol
-
-                  sudo enclave enrol
-
-          4. Provide your `Quick Start Key` to complete the installation
-
-      === "Fedora"
-
-          <small>Requires at least Fedora 32.</small> 
-
-          1. Add Enclave’s repository to rpm sources
-
-                  sudo dnf -y install dnf-plugins-core
-                  sudo dnf config-manager --add-repo https://packages.enclave.io/rpm/enclave.repo
-
-          2. Install Enclave.
-
-                  sudo dnf install enclave
-
-          3. Enrol
-
-                  sudo enclave enrol
-
-          4. Provide your `Quick Start Key` to complete the installation
-        
-      === "OpenSUSE / SLES"
-        
-          1. Add Enclave’s repository to rpm sources
-
-                  sudo zypper addrepo https://packages.enclave.io/rpm/enclave.repo
-
-          2. Install Enclave.
-
-                  sudo zypper install enclave
-
-          3. Enrol
-
-                  sudo enclave enrol
-
-          4. Provide your `Quick Start Key` to complete the installation
+    === "CentOS 8 / RHEL 8"
       
-      === "Amazon Linux"
+        1. Add Enclave’s repository to rpm sources
 
-          <small>Requires at least Amazon Linux 2018.03.</small> 
+                sudo dnf -y install dnf-plugins-core
+                sudo dnf config-manager --add-repo https://packages.enclave.io/rpm/enclave.repo
 
-          1. Install Enclave using our quick-start script
+        2. Install Enclave.
 
-                  bash <(curl -Ss https://install.enclave.io/setup.sh)
+                sudo dnf install enclave
 
-          2. Provide your `Quick Start Key` to complete the installation
+        3. Enrol
 
-      === "Arch Linux"
+                sudo enclave enrol
 
-          <small>Requires at least Arch Linux 2020.08.01.</small> 
+        4. Provide your `Quick Start Key` to complete the installation
 
-          1. Install Enclave using our quick-start script
+    === "Fedora"
 
-                  bash <(curl -Ss https://install.enclave.io/setup.sh)
+        <small>Requires at least Fedora 32.</small> 
 
-          2. Provide your `Quick Start Key` to complete the installation
+        1. Add Enclave’s repository to rpm sources
 
-      === "Raspbian"
+                sudo dnf -y install dnf-plugins-core
+                sudo dnf config-manager --add-repo https://packages.enclave.io/rpm/enclave.repo
 
-          <small>Requires at least Raspbian 10 (buster).</small> 
+        2. Install Enclave.
 
-          1. Install apt-transport-https
+                sudo dnf install enclave
 
-                  sudo apt install apt-transport-https
+        3. Enrol
 
-          2. Add Enclave’s package signing key and repository to apt sources
+                sudo enclave enrol
 
-                  curl -fsSL https://packages.enclave.io/apt/enclave.stable.gpg | sudo gpg --dearmor -o /usr/share/keyrings/enclave.gpg
-                  echo "deb [signed-by=/usr/share/keyrings/enclave.gpg] https://packages.enclave.io/apt main stable" | sudo tee /etc/apt/sources.list.d/enclave.stable.list
-                  sudo apt update
+        4. Provide your `Quick Start Key` to complete the installation
+      
+    === "OpenSUSE / SLES"
+      
+        1. Add Enclave’s repository to rpm sources
 
-          3. Install Enclave.
+                sudo zypper addrepo https://packages.enclave.io/rpm/enclave.repo
 
-                  sudo apt install enclave
+        2. Install Enclave.
 
-          4. Enrol
+                sudo zypper install enclave
 
-                  sudo enclave enrol
+        3. Enrol
 
-          5. Provide your `Quick Start Key` to complete the installation
+                sudo enclave enrol
+
+        4. Provide your `Quick Start Key` to complete the installation
+    
+    === "Amazon Linux"
+
+        <small>Requires at least Amazon Linux 2018.03.</small> 
+
+        1. Install Enclave using our quick-start script
+
+                bash <(curl -Ss https://install.enclave.io/setup.sh)
+
+        2. Provide your `Quick Start Key` to complete the installation
+
+    === "Arch Linux"
+
+        <small>Requires at least Arch Linux 2020.08.01.</small> 
+
+        1. Install Enclave using our quick-start script
+
+                bash <(curl -Ss https://install.enclave.io/setup.sh)
+
+        2. Provide your `Quick Start Key` to complete the installation
+
+    === "Raspbian"
+
+        <small>Requires at least Raspbian 10 (buster).</small> 
+
+        1. Install apt-transport-https
+
+                sudo apt install apt-transport-https
+
+        2. Add Enclave’s package signing key and repository to apt sources
+
+                curl -fsSL https://packages.enclave.io/apt/enclave.stable.gpg | sudo gpg --dearmor -o /usr/share/keyrings/enclave.gpg
+                echo "deb [signed-by=/usr/share/keyrings/enclave.gpg] https://packages.enclave.io/apt main stable" | sudo tee /etc/apt/sources.list.d/enclave.stable.list
+                sudo apt update
+
+        3. Install Enclave.
+
+                sudo apt install enclave
+
+        4. Enrol
+
+                sudo enclave enrol
+
+        5. Provide your `Quick Start Key` to complete the installation
 
 === "Containers"
 
