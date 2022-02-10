@@ -52,19 +52,17 @@ You will need to install Enclave on at least two separate devices, systems or co
 
     <small>Requires at least OSX 10.10 (Yosemite).</small>
 
-    1. Install the [homebrew package manager](https://brew.sh/) if you don't already have it.
+    1. Install the [Homebrew Package Manager](https://brew.sh/) if you don't already have it
 
-    2. Install Enclave
-    ```bash
-    brew install enclave
-    ```
-    You will likely be prompted to provide local credentials.  
+    2. Install Enclave, you will likely be prompted to provide local credentials.
 
-    1. Once installed, enrol your system with your Enclave Organisation   
-    ```bash
-    sudo enclave enrol
-    ```
-    Provide the `Quick Start Key` from your account to complete the installation.
+            brew install enclave
+
+    3. Once installed, enrol your system with your Enclave Organisation
+
+            sudo enclave enrol
+
+    Provide the `Quick Start Key` from your account to complete the installation
 
 === "Linux"
 
@@ -84,7 +82,7 @@ You will need to install Enclave on at least two separate devices, systems or co
                 echo "deb [signed-by=/usr/share/keyrings/enclave.gpg] https://packages.enclave.io/apt main stable" | sudo tee /etc/apt/sources.list.d/enclave.stable.list
                 sudo apt update
 
-        3. Install Enclave.
+        3. Install Enclave
 
                 sudo apt install enclave
 
@@ -94,50 +92,58 @@ You will need to install Enclave on at least two separate devices, systems or co
 
         5. Provide your `Quick Start Key` to complete the installation
 
-    === "CentOS 7 / RHEL 7"
+    === "CentOS / RHEL"
 
-        1. Add Enclave’s repository to rpm sources
+        Select your version:
 
-                sudo yum -y install yum-utils
-                sudo yum-config-manager --add-repo https://packages.enclave.io/rpm/enclave.repo
+        === "CentOS / RHEL 7"
 
-        2. Install Enclave.
+            <small>Requires CentOS or RHEL 7.</small>
 
-                sudo yum install enclave
+            1. Add Enclave’s repository to rpm sources
 
-        3. Enrol
+                    sudo yum -y install yum-utils
+                    sudo yum-config-manager --add-repo https://packages.enclave.io/rpm/enclave.repo
 
-                sudo enclave enrol
+            2. Install Enclave
 
-        4. Provide your `Quick Start Key` to complete the installation
+                    sudo yum install enclave
 
-    === "CentOS 8 / RHEL 8"
-      
-        1. Add Enclave’s repository to rpm sources
+            3. Enrol
 
-                sudo dnf -y install dnf-plugins-core
-                sudo dnf config-manager --add-repo https://packages.enclave.io/rpm/enclave.repo
+                    sudo enclave enrol
 
-        2. Install Enclave.
+            4. Provide your `Quick Start Key` to complete the installation
 
-                sudo dnf install enclave
+        === "CentOS / RHEL 8"
 
-        3. Enrol
+            <small>Requires at least CentOS or RHEL 8.</small>
 
-                sudo enclave enrol
+            1. Add Enclave’s repository to rpm sources
 
-        4. Provide your `Quick Start Key` to complete the installation
+                    sudo dnf -y install dnf-plugins-core
+                    sudo dnf config-manager --add-repo https://packages.enclave.io/rpm/enclave.repo
+
+            2. Install Enclave
+
+                    sudo dnf install enclave
+
+            3. Enrol
+
+                    sudo enclave enrol
+
+            4. Provide your `Quick Start Key` to complete the installation
 
     === "Fedora"
 
-        <small>Requires at least Fedora 32.</small> 
+        <small>Requires at least Fedora 32.</small>
 
         1. Add Enclave’s repository to rpm sources
 
                 sudo dnf -y install dnf-plugins-core
                 sudo dnf config-manager --add-repo https://packages.enclave.io/rpm/enclave.repo
 
-        2. Install Enclave.
+        2. Install Enclave
 
                 sudo dnf install enclave
 
@@ -146,42 +152,6 @@ You will need to install Enclave on at least two separate devices, systems or co
                 sudo enclave enrol
 
         4. Provide your `Quick Start Key` to complete the installation
-      
-    === "OpenSUSE / SLES"
-      
-        1. Add Enclave’s repository to rpm sources
-
-                sudo zypper addrepo https://packages.enclave.io/rpm/enclave.repo
-
-        2. Install Enclave.
-
-                sudo zypper install enclave
-
-        3. Enrol
-
-                sudo enclave enrol
-
-        4. Provide your `Quick Start Key` to complete the installation
-    
-    === "Amazon Linux"
-
-        <small>Requires at least Amazon Linux 2018.03.</small> 
-
-        1. Install Enclave using our quick-start script
-
-                bash <(curl -Ss https://install.enclave.io/setup.sh)
-
-        2. Provide your `Quick Start Key` to complete the installation
-
-    === "Arch Linux"
-
-        <small>Requires at least Arch Linux 2020.08.01.</small> 
-
-        1. Install Enclave using our quick-start script
-
-                bash <(curl -Ss https://install.enclave.io/setup.sh)
-
-        2. Provide your `Quick Start Key` to complete the installation
 
     === "Raspbian"
 
@@ -197,7 +167,7 @@ You will need to install Enclave on at least two separate devices, systems or co
                 echo "deb [signed-by=/usr/share/keyrings/enclave.gpg] https://packages.enclave.io/apt main stable" | sudo tee /etc/apt/sources.list.d/enclave.stable.list
                 sudo apt update
 
-        3. Install Enclave.
+        3. Install Enclave
 
                 sudo apt install enclave
 
@@ -206,6 +176,44 @@ You will need to install Enclave on at least two separate devices, systems or co
                 sudo enclave enrol
 
         5. Provide your `Quick Start Key` to complete the installation
+
+    === "Amazon Linux"
+
+        <small>Requires at least Amazon Linux 2018.03.</small> 
+
+        1. Install Enclave using our quick-start script:
+
+                bash <(curl -Ss https://install.enclave.io/setup.sh)
+
+        2. Provide your `Quick Start Key` to complete the installation
+
+    === "Other"
+
+        === "Arch Linux"
+
+            <small>Requires at least Arch Linux 2020.08.01.</small>
+
+            1. Install Enclave using our quick-start script
+
+                    bash <(curl -Ss https://install.enclave.io/setup.sh)
+
+            2. Provide your `Quick Start Key` to complete the installation
+
+        === "OpenSUSE / SLES"
+        
+            1. Add Enclave’s repository to rpm sources
+
+                    sudo zypper addrepo https://packages.enclave.io/rpm/enclave.repo
+
+            2. Install Enclave
+
+                    sudo zypper install enclave
+
+            3. Enrol
+
+                    sudo enclave enrol
+
+            4. Provide your `Quick Start Key` to complete the installation
 
 === "Containers"
 
