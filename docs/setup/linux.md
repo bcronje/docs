@@ -28,8 +28,6 @@
 
 === "CentOS 7 / RHEL 7"
 
-    <small>Requires at least Fedora 32.</small> 
-
     1. Add Enclave’s repository to rpm sources
 
             sudo yum -y install yum-utils
