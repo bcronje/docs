@@ -12,8 +12,8 @@
 
     2. Add Enclave’s package signing key and repository to apt sources
 
-            curl -fsSL https://packages.enclave.io/apt/enclave.stable.gpg | sudo apt-key add -
-            curl -fsSL https://packages.enclave.io/apt/enclave.stable.list | sudo tee /etc/apt/sources.list.d/enclave.stable.list
+            curl -fsSL https://packages.enclave.io/apt/enclave.stable.gpg | sudo gpg --dearmor -o /usr/share/keyrings/enclave.gpg
+            echo "deb [signed-by=/usr/share/keyrings/enclave.gpg] https://packages.enclave.io/apt main stable" | sudo tee /etc/apt/sources.list.d/enclave.stable.list
             sudo apt update
 
     3. Install Enclave.
@@ -26,26 +26,77 @@
 
     5. Provide your `Default Enrolment Key` to complete the installation
 
-=== "CentOS / RHEL"
+=== "CentOS 7 / RHEL 7"
 
-    <small>Requires at least CentOS 7.6 or RHEL 7.</small> 
+    <small>Requires at least Fedora 32.</small> 
 
-    1. Install Enclave using our quick-start script
+    1. Add Enclave’s repository to rpm sources
 
-            bash <(curl -Ss https://install.enclave.io/setup.sh)
+            sudo yum -y install yum-utils
+            sudo yum-config-manager --add-repo https://packages.enclave.io/rpm/enclave.repo
 
-    2. Provide your `Default Enrolment Key` to complete the installation
+    2. Install Enclave.
+
+            sudo yum install enclave
+
+    3. Enrol
+
+            sudo enclave enrol
+
+    4. Provide your `Default Enrolment Key` to complete the installation
+
+=== "CentOS 8 / RHEL 8"
+   
+    1. Add Enclave’s repository to rpm sources
+
+            sudo dnf -y install dnf-plugins-core
+            sudo dnf config-manager --add-repo https://packages.enclave.io/rpm/enclave.repo
+
+    2. Install Enclave.
+
+            sudo dnf install enclave
+
+    3. Enrol
+
+            sudo enclave enrol
+
+    4. Provide your `Default Enrolment Key` to complete the installation
 
 === "Fedora"
 
     <small>Requires at least Fedora 32.</small> 
 
-    1. Install Enclave using our quick-start script
+    1. Add Enclave’s repository to rpm sources
 
-            bash <(curl -Ss https://install.enclave.io/setup.sh)
+            sudo dnf -y install dnf-plugins-core
+            sudo dnf config-manager --add-repo https://packages.enclave.io/rpm/enclave.repo
 
-    2. Provide your `Default Enrolment Key` to complete the installation
+    2. Install Enclave.
 
+            sudo dnf install enclave
+
+    3. Enrol
+
+            sudo enclave enrol
+
+    4. Provide your `Default Enrolment Key` to complete the installation
+   
+=== "OpenSUSE / SLES"
+   
+    1. Add Enclave’s repository to rpm sources
+
+            sudo zypper addrepo https://packages.enclave.io/rpm/enclave.repo
+
+    2. Install Enclave.
+
+            sudo zypper install enclave
+
+    3. Enrol
+
+            sudo enclave enrol
+
+    4. Provide your `Default Enrolment Key` to complete the installation
+ 
 === "Amazon Linux"
 
     <small>Requires at least Amazon Linux 2018.03.</small> 
@@ -76,8 +127,8 @@
 
     2. Add Enclave’s package signing key and repository to apt sources
 
-            curl -fsSL https://packages.enclave.io/apt/enclave.stable.gpg | sudo apt-key add -
-            curl -fsSL https://packages.enclave.io/apt/enclave.stable.list | sudo tee /etc/apt/sources.list.d/enclave.stable.list
+            curl -fsSL https://packages.enclave.io/apt/enclave.stable.gpg | sudo gpg --dearmor -o /usr/share/keyrings/enclave.gpg
+            echo "deb [signed-by=/usr/share/keyrings/enclave.gpg] https://packages.enclave.io/apt main stable" | sudo tee /etc/apt/sources.list.d/enclave.stable.list
             sudo apt update
 
     3. Install Enclave.
