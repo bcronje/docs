@@ -68,9 +68,9 @@ You will need to install Enclave on at least two separate devices, systems or co
 
     Select your distribution:
 
-    === "Ubuntu / Debian"
+    === "Ubuntu / Debian / Raspbian"
 
-        <small>Requires at least Ubuntu 14.04 LTS or Debian 9.</small> 
+        <small>Requires at least Ubuntu 14.04 LTS or Debian 9 or Raspbian 10.</small> 
 
         1. Install apt-transport-https
 
@@ -92,7 +92,7 @@ You will need to install Enclave on at least two separate devices, systems or co
 
         5. Provide your `Quick Start Key` to complete the installation
 
-    === "CentOS / RHEL"
+    === "CentOS / RHEL / Fedora"
 
         Select your version:
 
@@ -134,58 +134,59 @@ You will need to install Enclave on at least two separate devices, systems or co
 
             4. Provide your `Quick Start Key` to complete the installation
 
-    === "Fedora"
+        === "Fedora"
 
-        <small>Requires at least Fedora 32.</small>
+                <small>Requires at least Fedora 32.</small>
+
+                1. Add Enclave’s repository to rpm sources
+
+                        sudo dnf -y install dnf-plugins-core
+                        sudo dnf config-manager --add-repo https://packages.enclave.io/rpm/enclave.repo
+
+                2. Install Enclave
+
+                        sudo dnf install enclave
+
+                3. Enrol
+
+                        sudo enclave enrol
+
+                4. Provide your `Quick Start Key` to complete the installation
+
+    === "Amazon Linux"
+
+        <small>Requires at least Amazon Linux 2018.03.</small> 
+
+         1. Add Enclave’s repository to rpm sources
+
+                 sudo yum -y install yum-utils
+                 sudo yum-config-manager --add-repo https://packages.enclave.io/rpm/enclave.repo
+
+         2. Install Enclave
+
+                 sudo yum install enclave
+
+         3. Enrol
+
+                 sudo enclave enrol
+
+         4. Provide your `Quick Start Key` to complete the installation
+   
+    === "OpenSUSE / SLES"
 
         1. Add Enclave’s repository to rpm sources
 
-                sudo dnf -y install dnf-plugins-core
-                sudo dnf config-manager --add-repo https://packages.enclave.io/rpm/enclave.repo
+                sudo zypper addrepo https://packages.enclave.io/rpm/enclave.repo
 
         2. Install Enclave
 
-                sudo dnf install enclave
+                sudo zypper install enclave
 
         3. Enrol
 
                 sudo enclave enrol
 
         4. Provide your `Quick Start Key` to complete the installation
-
-    === "Raspbian"
-
-        <small>Requires at least Raspbian 10 (buster).</small> 
-
-        1. Install apt-transport-https
-
-                sudo apt install apt-transport-https
-
-        2. Add Enclave’s package signing key and repository to apt sources
-
-                curl -fsSL https://packages.enclave.io/apt/enclave.stable.gpg | sudo gpg --dearmor -o /usr/share/keyrings/enclave.gpg
-                echo "deb [signed-by=/usr/share/keyrings/enclave.gpg] https://packages.enclave.io/apt main stable" | sudo tee /etc/apt/sources.list.d/enclave.stable.list
-                sudo apt update
-
-        3. Install Enclave
-
-                sudo apt install enclave
-
-        4. Enrol
-
-                sudo enclave enrol
-
-        5. Provide your `Quick Start Key` to complete the installation
-
-    === "Amazon Linux"
-
-        <small>Requires at least Amazon Linux 2018.03.</small> 
-
-        1. Install Enclave using our quick-start script:
-
-                bash <(curl -Ss https://install.enclave.io/setup.sh)
-
-        2. Provide your `Quick Start Key` to complete the installation
 
     === "Other"
 
@@ -198,22 +199,6 @@ You will need to install Enclave on at least two separate devices, systems or co
                     bash <(curl -Ss https://install.enclave.io/setup.sh)
 
             2. Provide your `Quick Start Key` to complete the installation
-
-        === "OpenSUSE / SLES"
-        
-            1. Add Enclave’s repository to rpm sources
-
-                    sudo zypper addrepo https://packages.enclave.io/rpm/enclave.repo
-
-            2. Install Enclave
-
-                    sudo zypper install enclave
-
-            3. Enrol
-
-                    sudo enclave enrol
-
-            4. Provide your `Quick Start Key` to complete the installation
 
 === "Containers"
 
