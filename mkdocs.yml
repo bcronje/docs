@@ -94,7 +94,7 @@ plugins:
         go/tutorial-pi.md: tutorials/setting-up-enclave-on-a-raspberry-pi.md
         go/tutorial-docker.md: tutorials/running-enclave-on-docker.md
         go/tutorial-synology.md: tutorials/how-to-securely-access-your-synology-nas-drive-with-enclave.md
-        go/troubleshooting.md: getting-started/troubleshooting.md
+        go/troubleshooting.md: support/troubleshooting.md
 
 nav:
   - Documentation:
