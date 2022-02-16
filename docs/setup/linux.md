@@ -211,6 +211,30 @@ The supervisor service responds to the Enclave CLI verbs `start` and `stop` to c
 
     > **Note:** Enclave does not backup a system's private keys. Lost or deleted private keys are not recoverable. If a system's configuration and private keys are lost, to use that system with Enclave again it must be re-enrolled.
 
+=== "Fedora / CentOS 8 / RHEL 8"
+
+    Remove the Enclave package while leaving configuration files on the system.
+
+        sudo dnf remove enclave
+ 
+    > **Note:** Enclave does not backup a system's private keys. Lost or deleted private keys are not recoverable. If a system's configuration and private keys are lost, to use that system with Enclave again it must be re-enrolled.
+
+=== "CentOS 7 / RHEL 7"
+
+    Remove the Enclave package while leaving configuration files on the system.
+
+        sudo yum remove enclave
+ 
+    > **Note:** Enclave does not backup a system's private keys. Lost or deleted private keys are not recoverable. If a system's configuration and private keys are lost, to use that system with Enclave again it must be re-enrolled.
+
+=== "OpenSUSE / SLES"
+
+    Remove the Enclave package while leaving configuration files on the system.
+
+        sudo zypper remove enclave
+    
+    > **Note:** Enclave does not backup a system's private keys. Lost or deleted private keys are not recoverable. If a system's configuration and private keys are lost, to use that system with Enclave again it must be re-enrolled.
+
 ## What to do if the install fails
 
 If an install goes horribly wrong or is interrupted, try re-running the Enclave `setup.sh` script to restart the process. If your installation fails and you are unable to resolve the problem by retrying, please contact <a href="mailto:support@enclave.io">support@enclave.io</a>.

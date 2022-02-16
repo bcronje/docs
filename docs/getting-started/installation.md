@@ -136,22 +136,22 @@ You will need to install Enclave on at least two separate devices, systems or co
 
         === "Fedora"
 
-                <small>Requires at least Fedora 32.</small>
+            <small>Requires at least Fedora 32.</small>
 
-                1. Add Enclave’s repository to rpm sources
+            1. Add Enclave’s repository to rpm sources
 
-                        sudo dnf -y install dnf-plugins-core
-                        sudo dnf config-manager --add-repo https://packages.enclave.io/rpm/enclave.repo
+                    sudo dnf -y install dnf-plugins-core
+                    sudo dnf config-manager --add-repo https://packages.enclave.io/rpm/enclave.repo
 
-                2. Install Enclave
+            2. Install Enclave
 
-                        sudo dnf install enclave
+                    sudo dnf install enclave
 
-                3. Enrol
+            3. Enrol
 
-                        sudo enclave enrol
+                    sudo enclave enrol
 
-                4. Provide your `Quick Start Key` to complete the installation
+            4. Provide your `Quick Start Key` to complete the installation
 
     === "Amazon Linux"
 
