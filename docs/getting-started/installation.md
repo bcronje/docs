@@ -159,16 +159,16 @@ You will need to install Enclave on at least two separate devices, systems or co
 
          1. Add Enclave’s repository to rpm sources
 
-                 sudo yum -y install yum-utils
-                 sudo yum-config-manager --add-repo https://packages.enclave.io/rpm/enclave.repo
+                sudo yum -y install yum-utils
+                sudo yum-config-manager --add-repo https://packages.enclave.io/rpm/enclave.repo
 
          2. Install Enclave
 
-                 sudo yum install enclave
+                sudo yum install enclave
 
          3. Enrol
 
-                 sudo enclave enrol
+                sudo enclave enrol
 
          4. Provide your `Quick Start Key` to complete the installation
    
