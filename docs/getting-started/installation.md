@@ -100,20 +100,11 @@ You will need to install Enclave on at least two separate devices, systems or co
 
             <small>Requires CentOS or RHEL 7.</small>
 
-            1. Add Enclave’s repository to rpm sources
+            1. Install Enclave using our quick-start script
 
-                    sudo yum -y install yum-utils
-                    sudo yum-config-manager --add-repo https://packages.enclave.io/rpm/enclave.repo
+                    bash <(curl -Ss https://install.enclave.io/setup.sh)
 
-            2. Install Enclave
-
-                    sudo yum install enclave
-
-            3. Enrol
-
-                    sudo enclave enrol
-
-            4. Provide your `Quick Start Key` to complete the installation
+            2. Provide your `Quick Start Key` to complete the installation
 
         === "CentOS / RHEL 8"
 
@@ -156,22 +147,14 @@ You will need to install Enclave on at least two separate devices, systems or co
     === "Amazon Linux"
 
         <small>Requires at least Amazon Linux 2018.03.</small> 
+                        
+        1. Install Enclave using our quick-start script
 
-         1. Add Enclave’s repository to rpm sources
+                bash <(curl -Ss https://install.enclave.io/setup.sh)
 
-                sudo yum -y install yum-utils
-                sudo yum-config-manager --add-repo https://packages.enclave.io/rpm/enclave.repo
+        2. Provide your `Quick Start Key` to complete the installation
 
-         2. Install Enclave
 
-                sudo yum install enclave
-
-         3. Enrol
-
-                sudo enclave enrol
-
-         4. Provide your `Quick Start Key` to complete the installation
-   
     === "OpenSUSE / SLES"
 
         1. Add Enclave’s repository to rpm sources

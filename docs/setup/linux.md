@@ -32,22 +32,11 @@
 
     === "CentOS / RHEL 7"
 
-        <small>Requires CentOS or RHEL 7.</small>
+        1. Install Enclave using our quick-start script
 
-        1. Add Enclave’s repository to rpm sources
+                bash <(curl -Ss https://install.enclave.io/setup.sh)
 
-                sudo yum -y install yum-utils
-                sudo yum-config-manager --add-repo https://packages.enclave.io/rpm/enclave.repo
-
-        2. Install Enclave
-
-                sudo yum install enclave
-
-        3. Enrol
-
-                sudo enclave enrol
-
-        4. Provide your `Default Enrolment Key` to complete the installation
+        2. Provide your `Default Enrolment Key` to complete the installation
 
     === "CentOS / RHEL 8"
 
@@ -91,20 +80,11 @@
 
     <small>Requires at least Amazon Linux 2018.03.</small> 
 
-    1. Add Enclave’s repository to rpm sources
+    1. Install Enclave using our quick-start script
 
-            sudo yum -y install yum-utils
-            sudo yum-config-manager --add-repo https://packages.enclave.io/rpm/enclave.repo
+            bash <(curl -Ss https://install.enclave.io/setup.sh)
 
-    2. Install Enclave
-
-            sudo yum install enclave
-
-    3. Enrol
-
-            sudo enclave enrol
-
-    4. Provide your `Default Enrolment Key` to complete the installation
+    2. Provide your `Default Enrolment Key` to complete the installation
    
 === "OpenSUSE / SLES"
 
@@ -175,14 +155,6 @@ The supervisor service responds to the Enclave CLI verbs `start` and `stop` to c
  
     > **Warning:** During updates, the Enclave service will restart. This can cause SSH sessions established over the Enclave tunnel to disconnect and the apt operation to terminate prior to completion. To avoid this, we suggest launching dnf update using nohup so even if the SSH session disconnects, the upgrade operation will continue in the background. `sudo nohup dnf update enclave`
 
-=== "CentOS 7 / RHEL 7"
-
-    Enclave is updated using the standard apt package manager.
-
-        sudo yum update enclave
- 
-    > **Warning:** During updates, the Enclave service will restart. This can cause SSH sessions established over the Enclave tunnel to disconnect and the apt operation to terminate prior to completion. To avoid this, we suggest launching yum update using nohup so even if the SSH session disconnects, the upgrade operation will continue in the background. `sudo nohup yum update enclave`
-
 === "OpenSUSE / SLES"
 
     Enclave is updated using the standard apt package manager.
@@ -216,14 +188,6 @@ The supervisor service responds to the Enclave CLI verbs `start` and `stop` to c
     Remove the Enclave package while leaving configuration files on the system.
 
         sudo dnf remove enclave
- 
-    > **Note:** Enclave does not backup a system's private keys. Lost or deleted private keys are not recoverable. If a system's configuration and private keys are lost, to use that system with Enclave again it must be re-enrolled.
-
-=== "CentOS 7 / RHEL 7"
-
-    Remove the Enclave package while leaving configuration files on the system.
-
-        sudo yum remove enclave
  
     > **Note:** Enclave does not backup a system's private keys. Lost or deleted private keys are not recoverable. If a system's configuration and private keys are lost, to use that system with Enclave again it must be re-enrolled.
 
