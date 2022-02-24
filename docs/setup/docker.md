@@ -10,19 +10,19 @@
 
     services:
       enclave-fabric:
-    container_name: fabric
-    image: enclavenetworks/enclave:latest
-    restart: always
+        container_name: fabric
+        image: enclavenetworks/enclave:latest
+        restart: always
 
-    cap_add:
-      - NET_ADMIN
-    devices:
-      - /dev/net/tun
-    environment:
-      ENCLAVE_ENROLMENT_KEY: XXXXX-XXXXX-XXXXX-XXXXX-XXXXX
-    volumes:
-      - enclave-config:/etc/enclave/profiles
-      - enclave-logs:/var/log/enclave
+        cap_add:
+          - NET_ADMIN
+        devices:
+          - /dev/net/tun
+        environment:
+          ENCLAVE_ENROLMENT_KEY: XXXXX-XXXXX-XXXXX-XXXXX-XXXXX
+        volumes:
+          - enclave-config:/etc/enclave/profiles
+          - enclave-logs:/var/log/enclave
 
     volumes:
       enclave-config:
