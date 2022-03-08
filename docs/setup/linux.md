@@ -13,7 +13,7 @@
     2. Add Enclave’s package signing key and repository to apt sources
 
             curl -fsSL https://packages.enclave.io/apt/enclave.stable.gpg | sudo gpg --dearmor -o /usr/share/keyrings/enclave.gpg
-            echo "deb [signed-by=/usr/share/keyrings/enclave.gpg] https://packages.enclave.io/apt stable main" | sudo tee /etc/apt/sources.list.d/enclave.stable.list
+            echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/enclave.gpg] https://packages.enclave.io/apt stable main" | sudo tee /etc/apt/sources.list.d/enclave.stable.list
             sudo apt update
 
     3. Install Enclave
