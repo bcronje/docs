@@ -78,8 +78,8 @@ plugins:
       redirect_maps:
         welcome.md: index.md
         quick-start.md: getting-started/installation.md
-        keywords/full-mesh.md: management/policy.md
-        keywords/dns-load-balancing.md: networking/dns.md
+        keywords/full-mesh.md: 'https://docs.enclave.io/management/policy/#fully-connected-mesh'
+        keywords/dns-load-balancing.md: 'https://docs.enclave.io/management/dns/#dns-load-balancing'
 
         # Old sections and pages moved but original links preserved to prevent 404
         troubleshooting/index.md: kb/index.md
