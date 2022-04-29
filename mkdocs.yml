@@ -78,23 +78,25 @@ plugins:
       redirect_maps:
         welcome.md: index.md
         quick-start.md: getting-started/installation.md
+
+        # Keyword aliases to pages used in marketing slugs
         keywords/full-mesh.md: 'https://docs.enclave.io/management/policy/#fully-connected-mesh'
         keywords/dns-load-balancing.md: 'https://docs.enclave.io/management/dns/#dns-load-balancing'
 
-        # Old sections and pages moved but original links preserved to prevent 404
-        troubleshooting/index.md: kb/index.md
-        troubleshooting/enclave-is-running-but-the-api-service-is-not-responding.md: kb/enclave-is-running-but-the-api-service-is-not-responding.md
-        troubleshooting/static-ip-addresses-in-windows-do-not-save.md: kb/static-ip-addresses-in-windows-do-not-save.md
-        setup/containers.md: setup/docker.md
-        setup/nas.md: setup/synology-nas.md
-
-        # Permalinks for use in code references and status messages
+        # Permalinks for use in code references, status messages and else-where
         go/api.md: api/index.md
         go/quick-start.md: getting-started/installation.md
         go/tutorial-pi.md: tutorials/setting-up-enclave-on-a-raspberry-pi.md
         go/tutorial-docker.md: tutorials/running-enclave-on-docker.md
         go/tutorial-synology.md: tutorials/how-to-securely-access-your-synology-nas-drive-with-enclave.md
         go/troubleshooting.md: support/troubleshooting.md
+
+        # Old sections and pages moved but original links, preserved to prevent 404s
+        troubleshooting/index.md: kb/index.md
+        troubleshooting/enclave-is-running-but-the-api-service-is-not-responding.md: kb/enclave-is-running-but-the-api-service-is-not-responding.md
+        troubleshooting/static-ip-addresses-in-windows-do-not-save.md: kb/static-ip-addresses-in-windows-do-not-save.md
+        setup/containers.md: setup/docker.md
+        setup/nas.md: setup/synology-nas.md
 
 nav:
   - Documentation:
