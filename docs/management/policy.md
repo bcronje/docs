@@ -59,7 +59,7 @@ In a partially connected mesh, only specific systems connect to one another acro
 
 ### Fully connected mesh
 
-Full mesh connectivity arises when multiple systems are members of Tags on both sides of a Policy, all affected systems are connected to one another. In the following example a Policy defines connectivity between systems tagged with the ==servers== Tag.
+Full mesh connectivity arises when multiple systems are members of Tags on both sides of a Policy, all affected systems are connected to one another. In the following example a Policy defines connectivity between systems tagged as ==servers==.
 
 | Policy Name       | Sender Tags | Receiver Tags |
 | ----------------- | ----------- | ------------- |

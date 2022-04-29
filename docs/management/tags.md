@@ -49,7 +49,7 @@ Once defined, account Administrators can add member systems to Tags and compose 
 | Access to preprod db | ==uk.laptops.developers==<br />==nyc-office.developers== | ==aws-eu-west-2.staging.db-servers==<br />==aws-eu-west-2.uat.db-servers== |
 | R22 prototype team   | ==f22-raptor.rapid-prototype-team==                      | ==f22-raptor.rapid-prototype-team==                                        |
 
-> **Note:** When the same Tag is applied to both the `Sender` and `Receiver` sides of the same policy Enclave will create connectivity _between_ that Tag's member systems. In this case, forming a fully connected mesh and community of interest between members of the ==f22-raptor.rapid-prototype-team== Tag. You should consider the capabilities of your underlying network infrastructure when deploying a fully connected mesh. [Learn more](/management/policy#full-mesh).
+> **Note:** When the same Tag is applied to both the `Sender` and `Receiver` sides of the same policy Enclave will create connectivity _between_ that Tag's member systems. In this case, forming a fully connected mesh and community of interest between members of the ==f22-raptor.rapid-prototype-team== Tag. You should consider the capabilities of your underlying network infrastructure when deploying a fully connected mesh. [Learn more](/keywords/full-mesh).
 
 
 
