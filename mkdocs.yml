@@ -79,9 +79,18 @@ plugins:
         welcome.md: index.md
         quick-start.md: getting-started/installation.md
 
+        # Editors note:
+        #
+        # When linking to/some/url#with-a-fragment use the full https:// prefix version
+        # When linking to/some/url without a fragment use the relative path to the .md file
+        # 
+        # Any links defined here are by contention and contract
+        # guaranteed to always work and point to a valid page.
+
         # Keyword aliases to pages used in marketing slugs
         keywords/full-mesh.md: 'https://docs.enclave.io/management/policy/#fully-connected-mesh'
         keywords/dns-load-balancing.md: 'https://docs.enclave.io/management/dns/#dns-load-balancing'
+        keywords/community-support.md: support/community-support.md
 
         # Permalinks for use in code references, status messages and else-where
         go/api.md: api/index.md
