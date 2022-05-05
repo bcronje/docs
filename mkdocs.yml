@@ -90,6 +90,7 @@ plugins:
         # Keyword aliases to pages used in marketing slugs for inter-documentation links, especially used to decouple from URL fragments
         keywords/full-mesh.md: 'https://docs.enclave.io/management/policy/#fully-connected-mesh'
         keywords/dns-load-balancing.md: 'https://docs.enclave.io/management/dns/#dns-load-balancing'
+        keywords/no-traffic.md: 'https://docs.enclave.io//support/troubleshooting/#peer-to-peer-traffic-not-flowing'
         keywords/community-support.md: support/community-support.md
 
         # Permalinks for pretty-links, to be used in code references, status messages and places where SEO is a relevant concern

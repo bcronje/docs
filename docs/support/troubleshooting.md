@@ -4,13 +4,13 @@ If you find Enclave isn't working as expected, here's a simple set of troublesho
 
 Your first port of call should always be to run `enclave self-test` to see if any installation or runtime problems are detected.
 
-## Problems enrolling
+## Problems enrolling new peers
 
 1. If you're running on Linux check that the `ca-certificates` package is up to date
 
 2. Check that the date and time on the enrolling system is accurate
 
-## Platform connectivity
+## Platform connectivity problems
 
 If you think Enclave is having trouble reaching our SaaS services, please work through the following checklist to identify the problem.
 
@@ -30,7 +30,7 @@ If you think Enclave is having trouble reaching our SaaS services, please work t
 
 8. Check local anti-virus software is not interfering with Enclave by temporarily disabling it
 
-## Peer-to-peer traffic not flowing
+## Traffic not flowing between peers
 
 If Enclave appears to be connected to our SaaS services and other peers, but you can't get network traffic to cross the tunnel, please work through the following checklist to identify the problem.
 
@@ -123,7 +123,7 @@ If you're using ping traffic to verify connectivity, it's important to check tha
 
 6. On Windows, check that the Enclave network adapter doesn't list more than _one_ DNS nameserver. If it does, please remove the DNS server that does not match the Enclave `Local address` shown by the `enclave get-ip` command
 
-## Exit node not working
+## Exit nodes not working
 
 See our [Exit Node troubleshooting guide](/management/exit-nodes/#troubleshooting).
 

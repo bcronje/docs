@@ -4,7 +4,7 @@ hide: navigation
 
 <small>[Documentation](/) / [Knowledge Base](/kb)</small>
 
-# Windows firewall classifies Enclave interface as Public
+# Windows Firewall classifies Enclave interface as Public
 
 By default Enclave will attempt to mark any network interfaces it creates as `Private` in the Windows Firewall. In some circumstances when the WMI subsystem is not available, or if an administrator or another process has re-classified the `NetworkCategory`, the Enclave interface may not be set to `Private`.
 
@@ -12,7 +12,7 @@ We recommend that customers classify all Enclave network interfaces as `Private`
 
 ## Symptoms
 
-Traffic may not be flowing between connected peers according to the Policies defined in the Enclave management portal.
+Traffic may not be flowing as expected between connected peers according to the Policies defined by administrators in the Enclave management portal.
 
 ## Cause
 
@@ -20,11 +20,11 @@ The Windows Firewall may be unexpectedly miss-classifying the Enclave network in
 
 ## Resolution
 
-Get a list of all network interfaces installed by Enclave on the target operating system and use PowerShell to check the Enclave interfaces are incorrectly classified, and manually update the classification if not.
+Obtain a list of all network interfaces installed by Enclave on the relevant systems and use PowerShell to check all Enclave interfaces are incorrectly classified as `Private` by the Windows Firewall and manually update the classification for any that aren't.
 
-1. Open an administrator PowerShell prompt
+1. Open an administrator PowerShell command prompt
 
-2. Run `enclave list-adapters`. If you have enrolled multiple profiles enrolled on the same OS, you may have more than one Enclave network interface installed. 
+2. Run `enclave list-adapters`. If you have enrolled multiple profiles enrolled on the same operating system, you may have more than one Enclave network interface listed. 
 
     ```
     Index    Net Connection Id      Service Name    Driver Name                         Guid
@@ -33,7 +33,7 @@ Get a list of all network interfaces installed by Enclave on the target operatin
     #16      Ganymede Robotics      enclavetap6     Enclave Virtual Network Port #2     {64CBD519-E5AA-469B-9C14-74C8777E1C45}
     ```
 
-3. Run `Get-NetConnectionProfile -InterfaceAlias "Universe"` using the correct `Net Connection Id` value in place of `Universe` if your adapter has a different name and check the `NetworkCategory` value.
+3. Choose the appropriate Enclave network interface and run `Get-NetConnectionProfile -InterfaceAlias "Universe"` and check the `NetworkCategory` value. Be sure to use the correct `Net Connection Id` value in place of `Universe` if your adapter has a different name.
 
     ```
     Name             : Network 2
@@ -44,13 +44,13 @@ Get a list of all network interfaces installed by Enclave on the target operatin
     IPv6Connectivity : NoTraffic
     ```
 
-4. If the `NetworkCategory` is not shown as private it, use the following command to reclassify the interface.
+4. If the `NetworkCategory` is not shown as `Private`, use the following command to reclassify the interface. Be sure to use the correct value for the `-InterfaceAlias` argument.
 
     `Get-NetConnectionProfile -InterfaceAlias "Universe" | Set-NetConnectionProfile -NetworkCategory Private`
 
 ## Notes
 
-If you are experiencing difficulties with traffic flows, please follow our [troubleshooting guide](/support/troubleshooting/).
+If you continue to experiencing difficulties with traffic flows, please  follow our [troubleshooting guide](keywords/no-traffic).
 
 ---
 
