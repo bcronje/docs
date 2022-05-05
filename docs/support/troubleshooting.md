@@ -4,33 +4,35 @@ If you find Enclave isn't working as expected, here's a simple set of troublesho
 
 Your first port of call should always be to run `enclave self-test` to see if any installation or runtime problems are detected.
 
-## Problems enrolling new peers
-
-1. If you're running on Linux check that the `ca-certificates` package is up to date
-
-2. Check that the date and time on the enrolling system is accurate
-
-3. Check [https://status.enclave-networks.com/](https://status.enclave-networks.com/) for any potential service disruptions or outages
-
 ## Platform connectivity problems
 
 If you think Enclave is having trouble reaching our SaaS services, please work through the following checklist to identify the problem.
 
-1. Check your systems are enrolled and showing as both connected and approved in the portal
+1. Check [https://status.enclave-networks.com/](https://status.enclave-networks.com/) for any potential service disruptions or outages
 
-2. Check you're running on the latest version of Enclave with `enclave version`
+2. Check your systems are enrolled and showing as both connected and approved in the portal
 
-3. Check the output of `enclave status` doesn't contain any warnings or errors
+3. Check you're running on the latest version of Enclave with `enclave version`
 
-4. Check the output of `enclave status` lists at least one `Peer` and the state shows as `Up`
+4. Check the output of `enclave status` doesn't contain any warnings or errors
 
-5. Check network traffic is allowed out to `tcp/*:443`
+5. Check the output of `enclave status` lists at least one `Peer` and the state shows as `Up`
 
-6. Check network traffic is allowed out to `udp/*:1024-65355`
+6. Check network traffic is allowed out to `tcp/*:443`
 
-7. Check network traffic isn't forced through a SOCKS proxy, which is currently unsupported
+7. Check network traffic is allowed out to `udp/*:1024-65355`
 
-8. Check local anti-virus software is not interfering with Enclave by temporarily disabling it
+8. Check network traffic isn't forced through a SOCKS proxy, which is currently unsupported
+
+9. Check local anti-virus software is not interfering with Enclave by temporarily disabling it
+
+## Problems enrolling new peers
+
+1. Check [https://status.enclave-networks.com/](https://status.enclave-networks.com/) for any potential service disruptions or outages
+
+2. If you're running on Linux check that the `ca-certificates` package is up to date
+
+3. Check that the date and time on the enrolling system is accurate
 
 ## Traffic not flowing between peers
 
