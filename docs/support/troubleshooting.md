@@ -8,7 +8,7 @@ Your first port of call should always be to run `enclave self-test` to see if an
 
 If you think Enclave is having trouble reaching our SaaS services, please work through the following checklist to identify the problem.
 
-1. Check [https://status.enclave-networks.com/](https://status.enclave-networks.com/) for any potential service disruptions or outages
+1. Check [https://status.enclave-networks.com/](https://status.enclave-networks.com/) for any disruptions or service outages
 
 2. Check your systems are enrolled and showing as both connected and approved in the portal
 
@@ -28,7 +28,7 @@ If you think Enclave is having trouble reaching our SaaS services, please work t
 
 ## Problems enrolling new peers
 
-1. Check [https://status.enclave-networks.com/](https://status.enclave-networks.com/) for any potential service disruptions or outages
+1. Check [https://status.enclave-networks.com/](https://status.enclave-networks.com/) for disruptions or service outages
 
 2. If you're running on Linux check that the `ca-certificates` package is up to date
 
