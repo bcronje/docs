@@ -23,7 +23,7 @@ This issue has been fixed in the latest version of Enclave. Customers still runn
 
 1. Open an administrator command prompt
    
-2. Run `sc stop "Enclave Fabric Supervisor"`
+2. Run `sc stop Enclave`
 
 3. Delete the contents of `C:\Windows\Temp\.net\enclave`
 
