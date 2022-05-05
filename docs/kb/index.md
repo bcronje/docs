@@ -23,7 +23,7 @@ The knowledge base serves as a repository how-to articles and guides designed to
 
 ## Troubleshooting
 
-- [Windows firewall classifies Enclave interface as public](/kb/windows-firewall-classifies-enclave-interface-as-public)
+- [Windows firewall classifies Enclave interface as Public](/kb/windows-firewall-classifies-enclave-interface-as-public)
 - [Enclave is running but the API service is not responding](/kb/enclave-is-running-but-the-api-service-is-not-responding)
 - [KB937056: Static IP addresses in Windows do not save](/kb/static-ip-addresses-in-windows-do-not-save)
 
