@@ -101,7 +101,7 @@ plugins:
         go/troubleshooting.md: support/troubleshooting.md
 
         # Permalinks for use in the CLI. Forward rolling numbered short-links. Increment the number to add a new link
-        go/12071: kb/enclave-is-running-but-the-api-service-is-not-responding.md
+        go/12071: kb/windows-firewall-classifies-enclave-interface-as-public.md
 
         # ----------------------------------------------
         # Old sections and pages now moved but preserved 
