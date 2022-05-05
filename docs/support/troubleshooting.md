@@ -100,9 +100,9 @@ If you're using ping tests to verify connectivity, it's important to check that 
 
     For example, if your attempts to ping a target system are timing out, check that the system you're sending the pings from has an allow ACL like `allow [X] from local -> peer` where `X` is either `[any]` or includes the word `icmp`.
 
-    Critically you'r checking that the `local -> peer` rule on the sender-side of the tunnel permits `icmp` (or `any`) to be sent. If it does, that means the `peer -> local` rule on the receiver side permits `icmp` (or `any`) to be received too.
+    Critically you're checking that the Enclave `local -> peer` ACL on the sender-side of the tunnel permits `icmp` (or `any`) to be sent. If it does, that means the `peer -> local` ACL on the receiver side of the tunnel also permits that traffic to be received too.
 
-     Policies in Enclave are symmetric, so if the sender is allowed to send ICMP traffic, the receiver will implicitly be allowed to receive it.
+     ACLs in Enclave are symmetric, so if the sender-side is allowed to send ICMP traffic, the receiver-side will implicitly be allowed to receive it.
 
 ## DNS resolution not working
 
