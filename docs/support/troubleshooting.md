@@ -88,7 +88,7 @@ If you're using ping tests to verify connectivity, it's important to check that 
 
     On Linux the Enclave network interface is likely to be named `tap0` (or similar) and on Windows the Enclave network interface is usually called `Universe` or `Enclave Virtual Network Port`.
 
-    The easiest way to verify that the host-local firewall is not interfering with Enclave traffic is to temporarily disable it, but if that's not possible for your scenario, ensure ICMP echo traffic (type 8, code 0) is permitted.
+    The easiest way to verify that the host-local firewall is not interfering with Enclave traffic is to temporarily disable it, but if that's not possible for in environment, you should ensure ping traffic (icmp type 8, code 0) is permitted by the host-local firewall.
 
 2. On Windows, you should check that the Enclave network interface is [correctly classified](/kb/windows-firewall-classifies-enclave-interface-as-public/) by the Windows Firewall as `Private` and if required, create an ACL permitting inbound ICMP traffic using PowerShell:
 
@@ -96,13 +96,13 @@ If you're using ping tests to verify connectivity, it's important to check that 
     New-NetFirewallRule -DisplayName "ICMPv4 (In)" -Profile Private -Direction Inbound -Protocol ICMPv4 -Program Any -Action Allow`
     ```
 
-3. Check that the ACLs defined by your Policies are allowing ICMP traffic to flow on both systems by examining the `ACLs` state reported by `enclave status` on each peer.
+3. Check that the ACLs defined by your Policies are allowing ICMP traffic to flow on both systems by examining the ACLs reported by `enclave status` on each peer.
 
     For example, if your attempts to ping a target system are timing out, check that the system you're sending the pings from has an allow ACL like `allow [X] from local -> peer` where `X` is either `[any]` or includes the word `icmp`.
 
-    Critically you'll want to check the `local -> peer` rule on the sender-side of the tunnel permits `icmp` (or `any`) to be sent, and that the `peer -> local` rule on the receiver side also permits `icmp` (or `any`) to be received.
+    Critically you'r checking that the `local -> peer` rule on the sender-side of the tunnel permits `icmp` (or `any`) to be sent. If it does, that means the `peer -> local` rule on the receiver side permits `icmp` (or `any`) to be received too.
 
-     Note that policies in Enclave are symmetric, so if the sender is allowed to send ICMP traffic, the receiver will implicitly also be allowed to receive it.
+     Policies in Enclave are symmetric, so if the sender is allowed to send ICMP traffic, the receiver will implicitly be allowed to receive it.
 
 ## DNS resolution not working
 
