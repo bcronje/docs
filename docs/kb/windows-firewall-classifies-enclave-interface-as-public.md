@@ -6,25 +6,25 @@ hide: navigation
 
 # Windows Firewall classifies Enclave interface as Public
 
-By default Enclave will attempt to mark any network interfaces it creates as `Private` in the Windows Firewall. In some circumstances when the WMI subsystem is not available, or if an administrator or another process has re-classified the `NetworkCategory`, the Enclave interface may not be set to `Private`.
+By default Enclave will attempt to mark any network interface it installs as `Private` in the Windows Firewall. In some circumstances the Enclave interface may not be set to `Private`. This can happen if the WMI subsystem is not available, or if an administrator, or another process changes the interface's `NetworkCategory` setting.
 
 We recommend that customers classify all Enclave network interfaces as `Private` in the Windows Firewall at all times.
 
 ## Symptoms
 
-Traffic may not be flowing as expected between connected peers according to the Policies defined by administrators in the Enclave management portal.
+Network traffic may not be flowing as expected between connected peers according to the Policies defined by administrators in the Enclave management portal.
 
 ## Cause
 
-The Windows Firewall may be unexpectedly miss-classifying the Enclave network interface as either `Public` or `Domain` instead of `Private`.
+The Windows Firewall may be unexpectedly and incorrectly classifying Enclave network interfaces as either `Public` or `Domain` instead of `Private`.
 
 ## Resolution
 
-Obtain a list of all network interfaces installed by Enclave on the relevant systems and use PowerShell to check all Enclave interfaces are incorrectly classified as `Private` by the Windows Firewall and manually update the classification for any that aren't.
+Obtain a list of all network interfaces installed by Enclave on the relevant systems and use PowerShell to check if any are incorrectly classified by the Windows Firewall. Manually update the `NetworkCategory` classification as needed.
 
 1. Open an administrator PowerShell command prompt
 
-2. Run `enclave list-adapters`. If you have enrolled multiple profiles enrolled on the same operating system, you may have more than one Enclave network interface listed. 
+2. Run `enclave list-adapters`. If you have enrolled multiple profiles enrolled on the same device, you may have more than one Enclave network interface listed. If you only have one profile enrolled, it is usually called `Universe`.
 
     ```
     Index    Net Connection Id      Service Name    Driver Name                         Guid
@@ -33,7 +33,7 @@ Obtain a list of all network interfaces installed by Enclave on the relevant sys
     #16      Ganymede Robotics      enclavetap6     Enclave Virtual Network Port #2     {64CBD519-E5AA-469B-9C14-74C8777E1C45}
     ```
 
-3. Choose the appropriate Enclave network interface and run `Get-NetConnectionProfile -InterfaceAlias "Universe"` and check the `NetworkCategory` value. Be sure to use the correct `Net Connection Id` value in place of `Universe` if your adapter has a different name.
+3. Choose the appropriate Enclave network interface and run `Get-NetConnectionProfile -InterfaceAlias "Universe"` to check the `NetworkCategory` value. Be sure to use the correct `Net Connection Id` value in place of `Universe` if your adapter has a different name.
 
     ```
     Name             : Network 2
@@ -44,13 +44,13 @@ Obtain a list of all network interfaces installed by Enclave on the relevant sys
     IPv6Connectivity : NoTraffic
     ```
 
-4. If the `NetworkCategory` is not shown as `Private`, use the following command to reclassify the interface. Be sure to use the correct value for the `-InterfaceAlias` argument.
+4. If the `NetworkCategory` is not shown as `Private`, use the following command to reclassify the interface. Be sure to use the correct name for the `-InterfaceAlias` argument.
 
     `Get-NetConnectionProfile -InterfaceAlias "Universe" | Set-NetConnectionProfile -NetworkCategory Private`
 
 ## Notes
 
-If you continue to experiencing difficulties with traffic flows, please  follow our [troubleshooting guide](keywords/no-traffic).
+If you continue to experiencing difficulties with traffic flows, please follow our [troubleshooting guide](/keywords/no-traffic).
 
 ---
 
