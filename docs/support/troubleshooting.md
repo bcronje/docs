@@ -2,6 +2,8 @@
 
 If you find Enclave isn't working as expected, here's a simple set of troubleshooting checklists to follow. You can also search our [developer community forum](https://community.enclave.io/) to see if any issue you might be experiencing have been observed by other users.
 
+Your first port of call should always be to run `enclave self-test` to see if any installation or runtime problems are detected.
+
 ## Problems enrolling
 
 1. If you're running on Linux check that the `ca-certificates` package is up to date
@@ -9,6 +11,8 @@ If you find Enclave isn't working as expected, here's a simple set of troublesho
 2. Check that the date and time on the enrolling system is accurate
 
 ## Platform connectivity
+
+If you think Enclave is having trouble reaching our SaaS services, please work through the following checklist to identify the problem.
 
 1. Check your systems are enrolled and showing as both connected and approved in the portal
 
@@ -24,9 +28,11 @@ If you find Enclave isn't working as expected, here's a simple set of troublesho
 
 7. Check network traffic isn't forced through a SOCKS proxy, which is currently unsupported
 
-8. Check local anti-virus software is not interfering with Enclave
+8. Check local anti-virus software is not interfering with Enclave by temporarily disabling it
 
 ## Peer-to-peer traffic not flowing
+
+If Enclave appears to be connected to our SaaS services and other peers, but you can't get network traffic to cross the tunnel, please work through the following checklist to identify the problem.
 
 1. Check the Enclave network adapter is online using `ipconfig /all`. 
 
@@ -48,11 +54,13 @@ If you find Enclave isn't working as expected, here's a simple set of troublesho
     DNS Servers . . . . . . . . . . . : 100.117.177.98
     ```
 
-2. Check both connected host can ping their own Enclave `Local address`.
+2. Check both connected peers can each ping their own Enclave IP address listed in `enclave status` as the `Local address:`.
 
-3. Check pings target the `Virtual address` of peer whose state is `Up`, not the `Local address`.
-   
-4. Check the routing table is configured correctly. 
+3. Check that the `Peer state` of the peer you're trying to reach is showing as `Up` in the `enclave status` output.
+
+4. When trying to ping another peer connected via Enclave, check that your ping requests are targeting the `Virtual address` of the destination peer and not the `Local address`.
+
+6. Check the routing table on each peer is configured correctly. 
 
     The routing table is configured automatically by Enclave so unlikely to be the source of a problem unless there are other conflicting routes already in place. Check for duplicate entries or conflicting routes in your routing table, or other network interfaces also using the `100.64.0.0/64` subnet.
 
@@ -66,7 +74,19 @@ If you find Enclave isn't working as expected, here's a simple set of troublesho
     100.64.0.0             255.192.0.0    On-link    100.117.177.98       281
     ```
 
-5. Check the MTU configured in the `.profile` files matches on both sides of the tunnel
+7. Check the MTU configured in the `.profile` files matches on both sides of the tunnel
+
+### Using ping to verify connectivity
+
+If you're using ping traffic to verify connectivity, it's important to check that the Operating System's host-local firewall is not dropping traffic arriving on the Enclave network interface.
+
+1. Check that the host-local firewall on both peers is not obstructing traffic flows either to or from the Enclave network interfaces. On Linux the Enclave network interface is likely to be named `tap0` (or similar) and on Windows the Enclave network interface is usually called `Enclave Virtual Network Port`, or `Universe`. The easiest way to verify that the host-local firewall is not interfering is to temporarily disable it, but if that's not possible for your use-case, ensure ICMP echo traffic (type 8, code 0) is permitted.
+
+2. On Windows, you can check that the Enclave network interface is [correctly classified](/kb/windows-firewall-classifies-enclave-interface-as-public/) by the Windows Firewall as `Private` and that the Windows Firewall on your target peer has an ACL that allow inbound ICMP traffic using PowerShell:
+
+    `New-NetFirewallRule -DisplayName "ICMPv4 (In)" -Profile Private -Direction Inbound -Protocol ICMPv4 -Program Any -Action Allow`
+
+3. Check that the ACLs defined by your Policies are allowing ICMP traffic to flow on both systems by examining the `ACLs` state reported by `enclave status` on each peer. For example, if you're pings to a target system are timing out, check that the system you're sending the pings from has an ACL `allow [X] from local -> peer` where `X` is either `[any]` or includes the word `icmp`. Critically you'll want to check the `local -> peer` rule on the sender permits `icmp` (or `any`) to be sent, and that the `peer -> local` rule on the receiver also permits `icmp` (or `any`) to be received. Note that policies in Enclave are symmetric, so if the sender is allowed to send ICMP traffic, the receiver will implicitly also be allowed to receive it.
 
 ## DNS resolution not working
 
@@ -111,10 +131,10 @@ See our [Exit Node troubleshooting guide](/management/exit-nodes/#troubleshootin
 
 1.  Try running Enclave as a foreground process with high log verbosity enabled `sudo enclave run -v 5` to inspect traffic flows.
 
-2.  Try running `tcpdump`. Capture from the tap0 interface and inspect the traffic flows.
+2.  Try running `tcpdump` or `WireShark` to capture from the tap0 interface (or `Enclave Virtual Network Port` on Windows, usually also called `Universe`) and inspect the traffic flows.
 
 ---
 
  If you're still having problems after following this checklist, please contact [support@enclave.io](mailto:support@enclave.io) or join one of our [community support](/community-support/) channels to get help and advice.
 
-<small>Last updated January 21, 2022</small>
+<small>Last updated May 5, 2022</small>
