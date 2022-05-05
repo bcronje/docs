@@ -38,7 +38,7 @@ If you think Enclave is having trouble reaching our SaaS services, please work t
 
 If Enclave appears to be connected to our SaaS services and other peers, but you can't get network traffic to cross the tunnel, please work through the following checklist to identify the problem.
 
-1. Check the Enclave network adapter is online using `ipconfig /all`. 
+1. Check the Enclave network interface is online using `ipconfig /all`. 
 
     Look for `Ethernet adapter Universe` in the list and check that `Media State` is not shown as `Media disconnected`. If it is, try running `enclave restart` and consider sharing local Enclave logs with [support@enclave.io](mailto:support@enclave. io) to help us investigate the problem.
     
@@ -80,17 +80,25 @@ If Enclave appears to be connected to our SaaS services and other peers, but you
 
 7. Check the MTU configured in the `.profile` files matches on both sides of the tunnel
 
-### Using ping to verify connectivity
+### Using Ping to verify connectivity
 
-If you're using ping traffic to verify connectivity, it's important to check that the Operating System's host-local firewall is not dropping traffic arriving on the Enclave network interface.
+If you're using ping tests to verify connectivity, it's important to check that the host-local firewall is not dropping traffic arriving on the Enclave network interface.
 
-1. Check that the host-local firewall on both peers is not obstructing traffic flows either to or from the Enclave network interfaces. On Linux the Enclave network interface is likely to be named `tap0` (or similar) and on Windows the Enclave network interface is usually called `Enclave Virtual Network Port`, or `Universe`. The easiest way to verify that the host-local firewall is not interfering is to temporarily disable it, but if that's not possible for your use-case, ensure ICMP echo traffic (type 8, code 0) is permitted.
+1. Check that the host-local firewall on both peers is not obstructing traffic flows either to, or from the Enclave network interfaces.
 
-2. On Windows, you can check that the Enclave network interface is [correctly classified](/kb/windows-firewall-classifies-enclave-interface-as-public/) by the Windows Firewall as `Private` and that the Windows Firewall on your target peer has an ACL that allow inbound ICMP traffic using PowerShell:
+    On Linux the Enclave network interface is likely to be named `tap0` (or similar) and on Windows the Enclave network interface is usually called `Enclave Virtual Network Port`, or `Universe`.
 
-    `New-NetFirewallRule -DisplayName "ICMPv4 (In)" -Profile Private -Direction Inbound -Protocol ICMPv4 -Program Any -Action Allow`
+    The easiest way to verify that the host-local firewall is not interfering is to temporarily disable it, but if that's not possible for your use-case, ensure ICMP echo traffic (type 8, code 0) is permitted.
 
-3. Check that the ACLs defined by your Policies are allowing ICMP traffic to flow on both systems by examining the `ACLs` state reported by `enclave status` on each peer. For example, if you're pings to a target system are timing out, check that the system you're sending the pings from has an ACL `allow [X] from local -> peer` where `X` is either `[any]` or includes the word `icmp`. Critically you'll want to check the `local -> peer` rule on the sender permits `icmp` (or `any`) to be sent, and that the `peer -> local` rule on the receiver also permits `icmp` (or `any`) to be received. Note that policies in Enclave are symmetric, so if the sender is allowed to send ICMP traffic, the receiver will implicitly also be allowed to receive it.
+2. On Windows, you can check that the Enclave network interface is [correctly classified](/kb/windows-firewall-classifies-enclave-interface-as-public/) by the Windows Firewall as `Private` and if required, create an ACL permitting inbound ICMP traffic using PowerShell:
+
+    ```
+    New-NetFirewallRule -DisplayName "ICMPv4 (In)" -Profile Private -Direction Inbound -Protocol ICMPv4 -Program Any -Action Allow`
+    ```
+
+3. Check that the ACLs defined by your Policies are allowing ICMP traffic to flow on both systems by examining the `ACLs` state reported by `enclave status` on each peer. For example, if you're pings to a target system are timing out, check that the system you're sending the pings from has an ACL `allow [X] from local -> peer` where `X` is either `[any]` or includes the word `icmp`.
+
+    Critically you'll want to check the `local -> peer` rule on the sender permits `icmp` (or `any`) to be sent, and that the `peer -> local` rule on the receiver also permits `icmp` (or `any`) to be received. Note that policies in Enclave are symmetric, so if the sender is allowed to send ICMP traffic, the receiver will implicitly also be allowed to receive it.
 
 ## DNS resolution not working
 
@@ -125,7 +133,7 @@ If you're using ping traffic to verify connectivity, it's important to check tha
     Ping request could not find host null.enclave.io. Please check the name and try again.
     ```
 
-6. On Windows, check that the Enclave network adapter doesn't list more than _one_ DNS nameserver. If it does, please remove the DNS server that does not match the Enclave `Local address` shown by the `enclave get-ip` command
+6. On Windows, check that the Enclave network interface doesn't list more than _one_ DNS nameserver. If it does, please remove the DNS server that does not match the Enclave `Local address` shown by the `enclave get-ip` command
 
 ## Exit nodes not working
 
