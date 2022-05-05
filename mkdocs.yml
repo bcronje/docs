@@ -87,12 +87,12 @@ plugins:
         # Any links defined here are by contention and contract
         # guaranteed to always work and point to a valid page.
 
-        # Keyword aliases to pages used in marketing slugs
+        # Keyword aliases to pages used in marketing slugs for inter-documentation links, especially used to decouple from URL fragments
         keywords/full-mesh.md: 'https://docs.enclave.io/management/policy/#fully-connected-mesh'
         keywords/dns-load-balancing.md: 'https://docs.enclave.io/management/dns/#dns-load-balancing'
         keywords/community-support.md: support/community-support.md
 
-        # Permalinks for use in code references, status messages and else-where
+        # Permalinks for pretty-links, to be used in code references, status messages and places where SEO is a relevant concern
         go/api.md: api/index.md
         go/quick-start.md: getting-started/installation.md
         go/tutorial-pi.md: tutorials/setting-up-enclave-on-a-raspberry-pi.md
@@ -100,12 +100,21 @@ plugins:
         go/tutorial-synology.md: tutorials/how-to-securely-access-your-synology-nas-drive-with-enclave.md
         go/troubleshooting.md: support/troubleshooting.md
 
-        # Old sections and pages moved but original links, preserved to prevent 404s
+        # Permalinks for use in the CLI. Forward rolling numbered short-links. Increment the number to add a new link
+        go/12071: kb/windows-firewall-classifies-enclave-interface-as-public.md
+
+        # ----------------------------------------------
+        # Old sections and pages now moved but preserved 
+        # to prevent 404s in old indexes and links.
+        #
+        #    -- DO NOT EDIT OR ADD TO THIS SECTION --
         troubleshooting/index.md: kb/index.md
         troubleshooting/enclave-is-running-but-the-api-service-is-not-responding.md: kb/enclave-is-running-but-the-api-service-is-not-responding.md
         troubleshooting/static-ip-addresses-in-windows-do-not-save.md: kb/static-ip-addresses-in-windows-do-not-save.md
         setup/containers.md: setup/docker.md
         setup/nas.md: setup/synology-nas.md
+        #    -- DO NOT EDIT OR ADD TO THIS SECTION --
+        # ----------------------------------------------
 
 nav:
   - Documentation:
