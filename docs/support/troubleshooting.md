@@ -10,6 +10,8 @@ Your first port of call should always be to run `enclave self-test` to see if an
 
 2. Check that the date and time on the enrolling system is accurate
 
+3. Check [https://status.enclave-networks.com/](https://status.enclave-networks.com/) for any potential service disruptions or outages
+
 ## Platform connectivity problems
 
 If you think Enclave is having trouble reaching our SaaS services, please work through the following checklist to identify the problem.
