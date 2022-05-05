@@ -15,7 +15,7 @@ The knowledge base serves as a repository how-to articles and guides designed to
 
 ## Availability
 
-- [What happens if Enclave is down?](/docs/kb/what-happens-if-enclave-is-down)
+- [What happens if Enclave is down?](/kb/what-happens-if-enclave-is-down)
 
 ## DNS
 
