@@ -106,7 +106,7 @@ If you're using ping tests to verify connectivity, it's important to check that 
 
 ## DNS resolution not working
 
-1. Get your Enclave local IP address using the `enclave get-ip` command. 
+1. Obtain your Enclave local IP address using the `enclave get-ip` command. 
 
     That's the IP address which the local DNS stub resolver will bind to (`udp\53`).    
 
@@ -115,7 +115,7 @@ If you're using ping tests to verify connectivity, it's important to check that 
     100.117.177.98
     ```
 
-2. Use `nslookup` to confirm the nameserver identified in step 1 is responding to queries by attempting to resolve the special, reserved DNS name `_my.id.enclave`.
+2. Use `nslookup` to query the nameserver identified in step 1 by attempting to resolve the special DNS name `_my.id.enclave`
 
     ```
     C:\> nslookup _my.id.enclave 100.117.177.98
