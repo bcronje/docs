@@ -116,6 +116,7 @@ body, code, input, kbd, pre {
     color:#fff;
     box-sizing: border-box;
     padding-bottom: 0.01rem;
+    line-height: 1rem;
 }
 
 small {
