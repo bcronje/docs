@@ -13,6 +13,10 @@ The knowledge base serves as a repository how-to articles and guides designed to
 - [Cancel subscription or close account](/kb/cancel-subscription)
 - [Transfer organisation ownership to another account](/kb/transfer-ownership)
 
+## Availability
+
+- [What happens if Enclave is down?](/docs/kb/what-happens-if-enclave-is-down)
+
 ## DNS
 
 - [How to configure DNS forwarding on Linux](/kb/how-to-configure-dns-forwarding-on-linux)

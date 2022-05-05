@@ -1,10 +1,3 @@
-
-
-
-todo Introduce policy-based connectivity
-
-
-
 # Architecture
 
 *Patents and patents-pending: WO2017060675A1, GB2543072A, US20180287803A1*
