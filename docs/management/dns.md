@@ -64,7 +64,7 @@ the name (via a system or tags assignment).
 
 ## DNS Load Balancing
 
-If more than system has a given name assigned to it, either directly, or because of a tag, then implicit DNS load balancing kicks in.
+If more than one system has a given name assigned to it, either directly, or because of a tag, then implicit DNS load balancing kicks in.
 
 If a System resolves a name with multiple systems assigned to it, it will randomly resolve to one of the systems **it is connected to**
 with that name.
