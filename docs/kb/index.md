@@ -16,6 +16,7 @@ The knowledge base serves as a repository how-to articles and guides designed to
 ## Availability
 
 - [What happens if Enclave is down?](/kb/what-happens-if-enclave-is-down)
+- [What firewall ports should I open to use Enclave?](/kb/firewall-ports)
 
 ## DNS
 
