@@ -1,4 +1,5 @@
 ---
+title: What firewall ports should I open to use Enclave?
 hide: navigation
 ---
 
@@ -18,11 +19,11 @@ If your network operates with an aggressive NAT configuration, you may consider 
 
 Enclave does not use a default port and instead randomises port selection each time it restarts. We generally discourage network configurations in which a fix port is required because it runs counter to the design principles behind Enclave, but sometimes it may be necessary to assign a specific port for Enclave to use.
 
-### 1. Force Enclave to use a specific port number
+### 1. Force a specific port number
 
 To force Enclave to use a specific port number
 
-1. Stop Enclave by running `enclave stop` and open the local Enclave configuration file (usually called `Universe.profile`) located in either `C:\Program Files\Enclave Networks\Enclave\Agent\profiles` or `/etc/enclave/profiles`
+1. First, stop Enclave by running `enclave stop`, then open the local Enclave configuration file (usually `Universe.profile`) located in either `C:\Program Files\Enclave Networks\Enclave\Agent\profiles` on Windows or `/etc/enclave/profiles` on Linux and MacOS
 2. Change the value of `"LocalPort": 0` from `0` to the port number you wish to use. We suggest `47100`, but you can choose another if you prefer
 3. Save the configuration file and restart Enclave by running `enclave start`
 
