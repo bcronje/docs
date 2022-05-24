@@ -220,6 +220,6 @@ small {
     border: 1px solid rgb(210, 232, 253);
     font-size: .65rem;
     line-height: 1em;
-    margin: 0 1px;
+    margin: 2px 1px 0px 1px;
     padding: 4px 5px 4px 5px;
 }
