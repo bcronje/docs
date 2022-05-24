@@ -97,8 +97,7 @@ body, code, input, kbd, pre {
     position: relative;
 }
 
-.md-content ul li::before,
-.md-content ol li::before{
+.md-content ol li::before {
     text-indent: 0rem;
     content: counter(styled-counter);
     margin-right: 0.4rem;
@@ -117,6 +116,18 @@ body, code, input, kbd, pre {
     box-sizing: border-box;
     padding-bottom: 0.01rem;
     line-height: 1rem;
+}
+
+.md-content ul li::before {
+    content: '';
+    margin-right: 0.4rem;
+    margin-top: 0.4rem;
+    position: absolute;
+    left: -1.1rem;
+    width: 0.4rem;
+    height: 0.4rem;
+    background-color:#ADADAD;
+    border-radius:50%;
 }
 
 small {
