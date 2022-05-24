@@ -32,8 +32,8 @@ To force Enclave to use a specific port number:
 
 Allow your devices can reach the Enclave control plane servers on `tcp/443`, and ensure your devices can reach each other (assuming you've forced Enclave to use port `47100`):
 
-* Allow your devices initiate TCP connections to `*:443`
-* Allow your devices initiate UDP connections **from** `:47100` to `*:*`
+* Allow your devices to initiate TCP connections to `*:443`
+* Allow your devices to initiate UDP connections **from** `:47100` to `*:*`
 
 ## Network Address Translation
 
