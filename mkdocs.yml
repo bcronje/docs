@@ -28,8 +28,8 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
-  logo: assets/favicon.ico
-  favicon: assets/favicon.ico
+  logo: assets/favicon.svg
+  favicon: assets/favicon.png
   icon:
     logo: logo
   palette:
