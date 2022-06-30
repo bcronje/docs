@@ -137,7 +137,7 @@ If you're using ping tests to verify connectivity, it's important to check that 
     Ping request could not find host null.enclave.io. Please check the name and try again.
     ```
 
-## DNS queries are slow to complete
+## DNS queries slow to complete
 
 1. On Windows, check that the Enclave network interface doesn't list more than _one_ DNS nameserver. If it does, please remove the DNS server that does not match the Enclave `Local address` shown by the `enclave get-ip` command.
 

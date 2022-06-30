@@ -91,7 +91,7 @@ plugins:
         # for inter-documentation links, particularly to decouple links from URL fragments.
         keywords/full-mesh.md: 'https://docs.enclave.io/management/policy/#fully-connected-mesh'
         keywords/dns-load-balancing.md: 'https://docs.enclave.io/management/dns/#dns-load-balancing'
-        keywords/no-traffic.md: 'https://docs.enclave.io//support/troubleshooting/#traffic-not-flowing-between-peers'
+        keywords/no-traffic.md: 'https://docs.enclave.io/support/troubleshooting/#traffic-not-flowing-between-peers'
         keywords/community-support.md: support/community-support.md
 
         # Permalinks for pretty-links, to be used in code references, status messages and places where SEO is a relevant concern
@@ -102,8 +102,9 @@ plugins:
         go/tutorial-synology.md: tutorials/how-to-securely-access-your-synology-nas-drive-with-enclave.md
         go/troubleshooting.md: support/troubleshooting.md
 
-        # Permalinks for use in the CLI. Forward rolling numbered short-links. Increment the number to add a new link
+        # Permalinks for use in the CLI. Forward rolling numbered short-links. Increment the number to add a new link. Link to the github issue that asked for the document
         go/12071: kb/windows-firewall-classifies-enclave-interface-as-public.md
+        go/12072: 'https://docs.enclave.io/support/troubleshooting/#dns-queries-slow-to-complete'   # https://github.com/enclave-networks/fabric/issues/514
 
         # ----------------------------------------------
         # Old sections and pages now moved but preserved 
