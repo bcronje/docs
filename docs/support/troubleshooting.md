@@ -115,7 +115,7 @@ If you're using ping tests to verify connectivity, it's important to check that 
     100.117.177.98
     ```
 
-2. Use `nslookup` to query the nameserver identified in step 1 by attempting to resolve the special DNS name `_my.id.enclave`
+2. Use `nslookup` to send a test query to the Enclave nameserver identified in step 1 by attempting to resolve the special DNS name `_my.id.enclave`. It should resolve to your own local Enclave IP address, the same IP as the nameserver you're querying.
 
     ```
     C:\> nslookup _my.id.enclave 100.117.177.98
@@ -126,18 +126,20 @@ If you're using ping tests to verify connectivity, it's important to check that 
     Address:  100.117.177.98
     ```
 
-3. Check there isn't other software bound to your Enclave `Local address` on port `udp/53`
+3. If the DNS query fails, check there isn't other software bound to your Enclave `Local address` on port `udp/53`
 
 4. If you're running Enclave on a Linux operating system or inside a container, check that you've correctly [configured DNS forwarding](/kb/how-to-configure-dns-forwarding-on-linux/) to ensure DNS queries from the operating system are reaching the local Enclave DNS stub resolver.
 
-5. Check that your primary recursive nameserver returns a `SRVFAIL` when queried with a hostname it should be unable to resolve. Some ISPs run nameservers which return IP addresses for ad servers instead of returning a `SRVFAIL` for non-existent domains. The ping request shown below _should_ fail. If it does not, your ISPs DNS resolver may be hijacking your DNS requests to serve ads
+5. Some ISPs hijack DNS queries to serve ads. Check that your primary recursive nameserver correctly returns a `SRVFAIL` response when queried with a hostname it should be unable to resolve. Some ISPs run nameservers which return IP addresses for ad servers instead of a `SRVFAIL` for non-existent domains. The ping request shown below to the non-existing hostname `null.enclave.io` _should_ fail. If it does not, your ISPs nameservers may be hijacking your DNS requests to serve ads, in which case we recommend contacting your ISP to disable this function or switching to another primary resolver.
 
     ```
     C:\> ping null.enclave.io
     Ping request could not find host null.enclave.io. Please check the name and try again.
     ```
 
-6. On Windows, check that the Enclave network interface doesn't list more than _one_ DNS nameserver. If it does, please remove the DNS server that does not match the Enclave `Local address` shown by the `enclave get-ip` command
+## DNS queries are slow to complete
+
+1. On Windows, check that the Enclave network interface doesn't list more than _one_ DNS nameserver. If it does, please remove the DNS server that does not match the Enclave `Local address` shown by the `enclave get-ip` command.
 
 ## Exit nodes not working
 
