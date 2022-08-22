@@ -101,6 +101,7 @@ plugins:
         go/tutorial-docker.md: tutorials/running-enclave-on-docker.md
         go/tutorial-synology.md: tutorials/how-to-securely-access-your-synology-nas-drive-with-enclave.md
         go/troubleshooting.md: support/troubleshooting.md
+        go/install-windows-unattended.md: https://docs.enclave.io/setup/windows/#unattended-installation
 
         # Permalinks for use in the CLI. Forward rolling numbered short-links. Increment the number to add a new link. Link to the github issue that asked for the document
         go/12071: kb/windows-firewall-classifies-enclave-interface-as-public.md

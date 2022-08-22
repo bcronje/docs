@@ -44,7 +44,9 @@ You will need to install Enclave on at least two separate devices, systems or co
           <p>Package checksum (<span id="windows-hash-alg">loading ...</span>)</p>
           <p><code id="windows-checksum" class="checksum">----------------------------------------------------------------</code></p>
           </div>
-        </div>
+        </div>       
+
+        <small>Want to deploy Enclave automatically via Group Policy or Configuration Manager? Check our [docs on unattended installation](../setup/windows.md#unattended-installation) for details.</small>
 
     2. Provide the `Quick Start Key` from your account to complete the installation
 
