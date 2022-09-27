@@ -160,8 +160,8 @@ msiexec /i enclave-setup-unattended-<version>.exe /quiet ENROLMENT_KEY=XXXXX-XXX
   }
 
   populateDownload("https://install.enclave.io/manifest/windows/setup.json", 'GA', 'download-primary');
-  populateDownload("https://install.enclave.io/manifest/windows/setup-unattended-exe.json", 'RC', 'download-unattended-exe');
-  populateDownload("https://install.enclave.io/manifest/windows/setup-unattended-msi.json", 'RC', 'download-unattended-msi');
+  populateDownload("https://install.enclave.io/manifest/windows/setup-unattended-exe.json", 'GA', 'download-unattended-exe');
+  populateDownload("https://install.enclave.io/manifest/windows/setup-unattended-msi.json", 'GA', 'download-unattended-msi');
 
   function base64ToHex(str) {
     const raw = atob(str);
