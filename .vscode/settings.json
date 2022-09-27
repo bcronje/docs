@@ -16,5 +16,9 @@
         "rhel",
         "roadmap"
     ],
-    "cSpell.language": "en,en-GB"
+    "cSpell.language": "en,en-GB",
+    "pasteImage.showFilePathConfirmInputBox": true,
+    "pasteImage.basePath": "${currentFileDir}",
+    "pasteImage.namePrefix": "${currentFileNameWithoutExt}-",
+    "pasteImage.path": "${currentFileDir}/images"
 }

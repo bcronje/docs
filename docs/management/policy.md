@@ -34,6 +34,12 @@ Applying Access Controls at the Receiver side of a policy makes the entire syste
 
 When you create a new policy, by default we add a rule that allows **All Traffic** to flow between Sender and Receiver. Remove this rule to restrict the set of traffic you want to allow.
 
+### Sender Trust Requirements
+
+You can apply [trust requirements](trust-requirements/index.md) directly to policies, which indicate requirements for all systems on the sender side of the policy. Systems must meet all the specified requirements before their connectivity granted by this policy can establish. 
+
+If a sender originally meets all the requirements, but subsequently stops meeting one or more requirements (e.g. by logging out on the device), the policy stops taking effect (including any existing connections).
+
 ## Naming
 
 The Enclave access control model is defined by the `Receiver` role of each Policy, so Policy names should normally reflect the resource accessed and consumer(s) in an `X for Y` pattern.

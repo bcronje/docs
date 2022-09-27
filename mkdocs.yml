@@ -166,6 +166,11 @@ nav:
       - Policy: management/policy.md
       - DNS: management/dns.md
       - Exit Nodes: management/exit-nodes.md
+      - Trust Requirements:
+        - Introduction:  management/trust-requirements/index.md
+        - User Authentication: management/trust-requirements/user-authentication.md
+        - Public IP Address: management/trust-requirements/public-ip-address.md
+
 #      - Profiles: management/profiles.md
 #      - Examples: management/examples.md
 

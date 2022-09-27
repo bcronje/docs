@@ -51,5 +51,33 @@ Once defined, account Administrators can add member systems to Tags and compose 
 
 > **Note:** When the same Tag is applied to both the `Sender` and `Receiver` sides of the same policy Enclave will create connectivity _between_ that Tag's member systems. In this case, forming a fully connected mesh and community of interest between members of the ==f22-raptor.rapid-prototype-team== Tag. You should consider the capabilities of your underlying network infrastructure when deploying a fully connected mesh. [Learn more](/keywords/full-mesh).
 
+## Automatic Creation vs Manual Creation
 
+Tags can be automatically created wherever you need to use them; there's no need to pre-define a tag before using it. 
 
+However, for easier management, you can add/rename/remove tags from within the 'Tags' page:
+
+![Tags User Interface](images/tags-screen.png)
+
+You can assign a colour for a tag. This can make it easier to visually distinguish tags at-a-glance.
+
+## Trust Requirements
+
+You can assign [Trust Requirements](./trust-requirements/index.md) to a tag from the Tags screen; trust requirements applied to a tag are applied to all systems with that tag, and restrict all policies that depend on that tag.
+
+For example, let's say you define:
+
+- A ==developers== tag
+- A trust requirement "Must be Logged In", and add it to the ==developers== tag
+- A "Developer Access to Test Environment" policy with:
+  
+    ==developers== --> ==test-env==
+
+- A "Developer Access to Build Servers" policy with:
+
+    ==developers== --> ==build-servers==
+
+With this configuration, because there is a trust requirement on the tag ==developers==, neither of our defined policies
+will take effect until the user is logged-on to the device.
+
+This makes it easier to manage trust requirements that apply to *all* connectivity for a particular system or group of systems.
