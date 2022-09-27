@@ -58,8 +58,9 @@ You can specify multiple IPFIX collectors and Enclave will forward IPFIX flow in
 
 - `Direction` - Valid string values are `Both`, `SendingToPeer` and `ReceivedFromPeer`. The default value if not specified is `Both`.
 IPFIX supports single direction flow information per data record. This means a normal bidirectional flow e.g. a TCP session, will generate two IPFIX data records, one for ingress information and a second for egress information. This is the default behaviour and what will be expected when you configure `Both` as the direction. In certain circumstances this might not be ideal, imagine you are running Enclave on System A and System B, both have IPFIX enabled and is monitoring a TCP session between them. With the default `Both` direction System A will export both ingress and egress data, while System B will also export both ingress and egress data. This means you end up with 4 flow records for a single TCP session. With the `SendingToPeer` and `ReceivedFromPeer` direction options you can limit flow information export to either egress information or ingress information respectively.
+> There is one exception to the direction setting. Frames dropped due to violation of [Access Control Rules](/management/policy/#access-control-rules) will always generate an IPFIX record and be exported, irrespective of the direction setting. For example, even if you have configure `ReceivedFromPeer`, if an outgoing frame to a remote Enclave peer is dropped due to an [Access Control Rules](/management/policy/#access-control-rules) violation, Enclave will still report on this egress record.
 
-
+- `Interval` - The interval in millisecond that Enclave will generate and export interim IPFIX flow records. If `Interval` is set to 0, then Enclave will only generate and export flow records at the end of each flow. The default value is 0.
 
 At the bottom of the configuration file add the following JSON configuration:
 
