@@ -6,7 +6,9 @@ Until the necessary trust *requirements* are met, no access to the resource shou
 
 This is where our **Trust Requirements** feature comes from.
 
-Enclave trust requirements are continuously evaluated properties of a system enrolled with Enclave, collected either from the local endpoint, or from a remote API, that can be either *met*, meaning the enrolled system has passed all conditions on the requirement, or *unmet*, meaning that the enrolled system **has not** passed all the conditions on the requirement.
+Enclave trust requirements are continuously evaluated properties of a system enrolled with Enclave, collected either from the local endpoint, or from a remote API.
+
+Trust requirements can be either *met*, meaning the enrolled system has passed all conditions on the requirement, or *unmet*, meaning that the enrolled system **has not** passed all the conditions on the requirement.
 
 Trust Requirements can be added from within the portal (or via our APIs):
 
@@ -18,7 +20,7 @@ Once you have defined the trust requirements you want, you can add these to:
 
 - A [Tag](../tags.md), meaning that anywhere the tag is used to configure connectivity via a policy, the trust requirement must be met. This can be a useful way to specify requirements that apply to a lot of different policies.
   
-    > Want to apply a trust requirement to the receiver side of a policy? Apply the requirement to the tag(s) on the receiver side instead of in the policy.
+    > Want to apply a trust requirement to the receiver side of a policy? Apply the requirement to the tag(s) on the receiver side instead of to the policy.
 
 ## Trust Requirement Types
 

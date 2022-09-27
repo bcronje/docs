@@ -9,10 +9,10 @@ This requirement can be useful for:
 
 ## IP Ranges
 
-Under IP Ranges, you can specify multiple IP Range rules, with each one being specified as:
+Under IP Ranges, you can specify multiple IP Range rules, using:
 
-- A single IP,
-- A range of IP Addresses or
+- A single IP Address
+- A range of IP Addresses
 - A subnet in CIDR Notation
 
 ![](images/public-ip-address-office-range.png)

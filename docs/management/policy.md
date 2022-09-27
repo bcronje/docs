@@ -36,7 +36,7 @@ When you create a new policy, by default we add a rule that allows **All Traffic
 
 ### Sender Trust Requirements
 
-You can apply [trust requirements](trust-requirements/index.md) directly to policies, that indicate requirements for all systems on the sender side of the policy. Systems must meet all the specified requirements before their connectivity granted by this policy can establish. 
+You can apply [trust requirements](trust-requirements/index.md) directly to policies, which indicate requirements for all systems on the sender side of the policy. Systems must meet all the specified requirements before their connectivity granted by this policy can establish. 
 
 If a sender originally meets all the requirements, but subsequently stops meeting one or more requirements (e.g. by logging out on the device), the policy stops taking effect (including any existing connections).
 

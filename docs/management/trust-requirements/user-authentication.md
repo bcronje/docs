@@ -1,6 +1,6 @@
 # User Authentication
 
-A User Authentication trust requirement allows you to require that a user must have authenticated with a nominated **authority** on their device before connectivity can establish.
+A User Authentication trust requirement allows you to require that a user must have authenticated with a nominated **authority** on their device before connectivity can be established.
 
 An **authority** is a provider of authentication, sometimes called an Identity Provider (or IdP).  You can have a different authority for each trust requirement, if you wish (this can be useful when managing a diverse estate of authentication providers).
 
@@ -28,9 +28,9 @@ You can get your Tenant ID from the Azure Portal:
 
 #### Security Group
 
-In addition to generally require authentication via your tenant, you can also specify an Azure AD **Security Group ID**. Users must then be a member of that security group in order to meet the trust requirement.
+In addition to generally requiring authentication via your tenant, you can also specify an Azure AD **Security Group ID**. Users must then be a member of that security group in order to meet the trust requirement.
 
-Using security groups you can create finely-grained connectivity rules that maps your user security assignments to the resources they can access.
+Using security groups you can create finely-grained connectivity rules that map your user security assignments to the resources they can access.
 
 The Security Group ID is the "Object ID" in Azure for that group:
 
