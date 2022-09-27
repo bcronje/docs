@@ -24,9 +24,14 @@ To enable and configure IPFIX on your system, you will need to edit your Enclave
 
 ## Step 1: Stop the Enclave process
 
-On Windows, right click on the Enclave tray icon, click on `Universe` and then click on `Stop`.
+On Windows, either right click on the Enclave tray icon, click on **Universe** and then click on **Stop**.
 
 ![image](/images/management/windows-stop-enclave.png)
+
+You can also stop Enclave in a command prompt using `enclave stop`
+```
+C:\> enclave stop
+```
 
 On Linux you can use `sudo enclave stop` or `sudo systemctl stop enclave`
 
@@ -38,9 +43,33 @@ On Windows the Enclave configuration file is located at `C:\Program Files\Enclav
 
 ![image](/images/management/windows-edit-profile.png)
 
+On Linux the Enclave configuration file is located at `/etc/enclave/profiles/Universe.profile` and can be edit using your preferred editor, e.g.
+
+```
+$ sudo nano /etc/enclave/profiles/Universe.profile
+```
+
+## Step 3: Configure IPFIX
+
+IPFIX is configured using the JSON property `FlowMetadata`. Under `FlowMetadata` we provide the following configuration properties and options:
+
+- `IpFixCollectors` - A list of zero of more IPFIX collector information in the string format "_Udp/Collector IP Address:Port_" e.g. `Udp/172.16.1.100:4739`. The example specifies that `UDP` is the transport protocol to use, `172.16.1.100` is the IP address of the IPFIX collector and the collector is listening on UDP port `4739`.
+You can specify multiple IPFIX collectors and Enclave will forward IPFIX flow information to all configured collectors. By default no exporters are configured.
+
+- `Direction` - Valid string values are `Both`, `SendingToPeer` and `ReceivedFromPeer`. The default value if not specified is `Both`.
+IPFIX supports single direction flow information per data record. This means a normal bidirectional flow e.g. a TCP session, will generate two IPFIX data records, one for ingress information and a second for egress information. This is the default behaviour and what will be expected when you configure `Both` as the direction. In certain circumstances this might not be ideal, imagine you are running Enclave on System A and System B, both have IPFIX enabled and is monitoring a TCP session between them. With the default `Both` direction System A will export both ingress and egress data, while System B will also export both ingress and egress data. This means you end up with 4 flow records for a single TCP session. With the `SendingToPeer` and `ReceivedFromPeer` direction options you can limit flow information export to either egress information or ingress information respectively.
 
 
 
+At the bottom of the configuration file add the following JSON configuration:
 
-
-
+```
+  "FlowMetadata":{
+    "IpFixCollectors": [
+        "Udp/10.1.10.120:9995"
+    ],
+    "Direction": "Both"
+    "Interval": 60000,
+    "Enabled": true
+  }
+```
