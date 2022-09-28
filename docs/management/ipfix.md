@@ -16,7 +16,7 @@ Enclave implements IPFIX templates for exporting IPv4/IPv6 TCP, IPv4/IPv6 UDP, r
 
 ## Limitation
 
-The IPFIX specification defines three transport protocols that can be used to transport flow information from the exporter to the collector: SCTP, TCP and UDP. Our research showed that all IPFIX collectors almost exclusively support UDP as their transport protocol. As such, we have focused our efforts on implementing UDP as the transport protocol for the Enclave exporter.
+The IPFIX specification defines three transport protocols that can be used to transport flow information from the exporter to the collector: SCTP, TCP and UDP. Our research found that all IPFIX collectors support UDP almost exclusively as their transport protocol. As such, we have focused our efforts on implementing UDP as the transport protocol for the Enclave exporter.
 
 ## Configuration
 
