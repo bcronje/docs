@@ -18,13 +18,21 @@ Network metadata-based tools such as NetFlow and IPFIX are well known in the net
 
 **Flow Collector** - responsible for reception, storage and pre-processing of flow metadata received from a flow exporter.
 
-**Analysis/Reporting application** - analyses flow metadata in the context of reporting, intrusion detection, traffic profiling, network performance, user access behaviour, etc.
+**Flow Analysis Application** - analyses flow metadata in the context of reporting, intrusion detection, traffic profiling, network performance, user access behaviour, etc.
 
 Traditionally flow exporters are implemented on network devices such as routers, switches and firewalls. End-to-end encrypted overlay networks such as Enclave make it impossible for these network devices to extract metadata from the actual underlying application traffic as they can only “see” the already encrypted overlay packets. This is where the Enclave Network Flow Metadata feature comes into play.
 
 ## Enclave Network Flow Metadata
 
-The Enclave Network Flow Metadata feature provides the functionality to generate network flow metadata on traffic going over the Enclave overlay. Enclave Network Flow Metadata implements an Internet Protocol Flow Information Export (IPFIX) exporter. IPFIX is an IETF protocol that provides a universal standard for the export and collection of IP flow information. The Enclave IPFIX exporter conforms to [RFC 7011](https://www.ietf.org/rfc/rfc7011.html) and [RFC 7012](https://www.ietf.org/rfc/rfc7012.html) and should be compatible with any IPFIX collector that supports the IPFIX standard.
+The Enclave Network Flow Metadata feature provides the functionality to generate network flow metadata on traffic going over the encrypted Enclave overlay. Enclave Network Flow Metadata implements an IPFIX exporter. IPFIX is an IETF protocol that provides a universal standard for the export and collection of IP flow metadata.
+The Enclave IPFIX exporter conforms to [RFC 7011](https://www.ietf.org/rfc/rfc7011.html) and [RFC 7012](https://www.ietf.org/rfc/rfc7012.html).
+
+## IPFIX Collectors
+
+The Enclave IPFIX exporter generates network flow metadata and sends it to one or more collectors using the IPFIX protocol. The collectors are responsible for storage and processing of the flow metadata received from the Enclave IPFIX exporter, and they typically also provide the flow analysis and insights applications. Since the Enclave Network Flow Metadata feature implements a standards-based IPFIX exporter, it should be compatible with any collector that supports the IPFIX standard.
+We have tested integration with the following 3rd party collectors:
+
+[ElastiFlow](https://www.elastiflow.com/), [Plixer Scrutinizer](https://www.plixer.com/products/scrutinizer/), [Noction](https://www.noction.com/), [Paessler PRTG IPFIX Analyzer](https://www.paessler.com/ipfix)
 
 ## IPFIX Templates
 
