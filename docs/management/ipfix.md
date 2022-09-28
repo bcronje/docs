@@ -4,7 +4,7 @@ beta-feature: true
 
 > This feature is in beta and may be subject to change in future versions of Enclave. While in beta, this feature doesn't include API endpoints or Portal control and must be manually configured on each system. This page will be updated as the feature enters general availability.
 >   
-> If you have feedback on this feature, please let us know in one of our [community support](/community-support/) channels.
+> If you have feedback on this feature, please let us know at [support@enclave.io](mailto:support@enclave.io).
 
 ## Introduction
 
@@ -100,4 +100,4 @@ Enclave should now be running with the IPFIX exporter feature enabled and you sh
 
 ---
 
-Having problems? Contact us at [support@enclave.io](mailto:support@enclave.io) or get help and advice in our [community support](/community-support/) channels.
+Having problems? Contact us at [support@enclave.io](mailto:support@enclave.io)
