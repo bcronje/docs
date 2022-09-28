@@ -13,9 +13,12 @@ Having deeper visibility and insights into your network usage and performance ca
 To facilitate this level of network visibility and monitoring your network requires tools that can efficiently generate valuable metadata from your network traffic in real-time. This metadata can then be analysed to provide the visibility and insights described above.
 
 Network metadata-based tools such as NetFlow and IPFIX are well known in the network industry. These tools and protocols all share a common architecture:
-Flow Exporter – Generates network flow metadata and exports the metadata towards one or more flow collectors.
-Flow Collector - responsible for reception, storage and pre-processing of flow metadata received from a flow exporter.
-Analysis/Reporting application - analyses flow metadata in the context of reporting, intrusion detection, traffic profiling, network performance, user access behaviour, etc.
+
+**Flow Exporter** – Generates network flow metadata and exports the metadata towards one or more flow collectors.
+
+**Flow Collector** - responsible for reception, storage and pre-processing of flow metadata received from a flow exporter.
+
+**Analysis/Reporting application** - analyses flow metadata in the context of reporting, intrusion detection, traffic profiling, network performance, user access behaviour, etc.
 
 Traditionally flow exporters are implemented on network devices such as routers, switches and firewalls. End-to-end encrypted overlay networks such as Enclave make it impossible for these network devices to extract metadata from the actual underlying application traffic as they can only “see” the already encrypted overlay packets. This is where the Enclave Network Flow Metadata feature comes into play.
 
