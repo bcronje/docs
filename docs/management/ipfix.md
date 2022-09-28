@@ -24,11 +24,11 @@ To enable and configure IPFIX on your system, you will need to edit your Enclave
 
 ## Step 1: Stop the Enclave process
 
-On Windows, either right click on the Enclave tray icon, click on **Universe** and then click on **Stop**.
+On Windows, right click on the Enclave tray icon, click on **Universe** and then click on **Stop**.
 
 ![image](/images/management/windows-stop-enclave.png)
 
-You can also stop Enclave in a command prompt using `enclave stop`
+You can also stop Enclave in a Windows command prompt using `enclave stop`
 ```
 C:\> enclave stop
 ```
@@ -60,10 +60,10 @@ You can specify multiple IPFIX collectors and Enclave will forward IPFIX flow in
 IPFIX supports single direction flow information per data record. This means a normal bidirectional flow e.g. a TCP session, will generate two IPFIX data records, one for ingress information and a second for egress information. This is the default behaviour and what will be expected when you configure `Both` as the direction. In certain circumstances this might not be ideal, imagine you are running Enclave on System A and System B, both have IPFIX enabled and is monitoring a TCP session between them. With the default `Both` direction System A will export both ingress and egress data, while System B will also export both ingress and egress data. This means you end up with 4 flow records for a single TCP session. With the `SendingToPeer` and `ReceivedFromPeer` direction options you can limit flow information export to either egress information or ingress information respectively.
 > There is one exception to the direction setting. Frames dropped due to violation of [Access Control Rules](/management/policy/#access-control-rules) will always generate an IPFIX record and be exported, irrespective of the direction setting. For example, even if you have configure `ReceivedFromPeer`, if an outgoing frame to a remote Enclave peer is dropped due to an [Access Control Rules](/management/policy/#access-control-rules) violation, Enclave will still report on this egress record.
 
-- `Interval` - The interval in millisecond that Enclave will generate and export interim IPFIX flow records. If `Interval` is set to 0, then Enclave will not generate interim flow records, but will only generate and export flow records at the end of each flow. Interval should be either 0, or a multiple of 60000 (1 minute) as Enclave only processes interim records on a 1 minute frequency. The default value is 0.
+- `Interval` - The interval in millisecond that Enclave will generate and export interim IPFIX flow records. If `Interval` is set to 0, then Enclave will not generate interim flow records, but will only generate and export flow records at the end of each flow. Interval should be either 0, or a multiple of 60000 (1 minute) as Enclave only processes interim records on a 1-minute frequency. The default value is 0.
 
 - `Enabled` - Valid values are `true` or `false`. Used to enable or disable the Enclave IPFIX exporter feature. The default value is `true`.
-> Note that if you have enabled IPFIX through this setting, but have not configured a collector in `IpFixCollectors`, then the Enclave IPFIX exporter will effectively be disabled. You need to both set enabled to true and have a collector configured for the Enclave collector to function.
+> Note that if you have enabled IPFIX through this setting but have not configured a collector in `IpFixCollectors`, then the Enclave IPFIX exporter will effectively be disabled. You need to both set enabled to true and have a collector configured for the Enclave collector to function.
 
 
 To add the IPFIX configuration options, add the JSON settings at the bottom of the Enclave configuration file you edited in Step 2.
@@ -79,3 +79,25 @@ The following example enables IPFIX and adds a single IPFIX collector with IP ad
     "Enabled": true
   }
 ```
+
+Save the configuration file.
+
+## Step 4: Start the Enclave process
+
+Once you have saved the IPFIX configuration you can start the Enclave process again.
+On Windows, right click on the Enclave tray icon, click on **Universe** and then click on **Start**.
+
+![image](/images/management/windows-start-enclave.png)
+
+You can also start Enclave in a Windows command prompt using `enclave start`
+```
+C:\> enclave start
+```
+
+On Linux you can use `sudo enclave start` or `sudo systemctl start enclave`
+
+Enclave should now be running with the IPFIX exporter feature enabled and you should start receiving flow records in your IPFIX collector.
+
+---
+
+Having problems? Contact us at [support@enclave.io](mailto:support@enclave.io) or get help and advice in our [community support](/community-support/) channels.
