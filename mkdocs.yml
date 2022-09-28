@@ -170,6 +170,7 @@ nav:
         - Introduction:  management/trust-requirements/index.md
         - User Authentication: management/trust-requirements/user-authentication.md
         - Public IP Address: management/trust-requirements/public-ip-address.md
+      - IPFIX: management/ipfix.md
 
 #      - Profiles: management/profiles.md
 #      - Examples: management/examples.md
