@@ -44,7 +44,7 @@ The IPFIX specification defines three transport protocols that can be used to tr
 
 ## Configuration
 
-To enable and configure IPFIX on your system, you will need to edit your Enclave configuration file. Follow these steps:
+To enable and configure the Enclave Network Flow Metadata feature on your system, you will need to edit your Enclave configuration file. Follow these steps:
 
 ## Step 1: Stop the Enclave process
 
@@ -67,30 +67,34 @@ On Windows the Enclave configuration file is located at `C:\Program Files\Enclav
 
 ![image](/images/management/windows-edit-profile.png)
 
-On Linux the Enclave configuration file is located at `/etc/enclave/profiles/Universe.profile` and can be edit using your preferred editor, e.g.
+On Linux the Enclave configuration file is located at `/etc/enclave/profiles/Universe.profile` and can be edited using your preferred editor, e.g.
 
 ```
 $ sudo nano /etc/enclave/profiles/Universe.profile
 ```
 
-## Step 3: Configure IPFIX
+## Step 3: Configure Enclave Network Flow Metadata
 
-IPFIX is configured using the JSON property `FlowMetadata`. Under `FlowMetadata` we provide the following configuration properties and options:
+Enclave Network Flow Metadata is configured using the JSON property `FlowMetadata`. Under `FlowMetadata` we provide the following configuration properties and options:
 
-- `IpFixCollectors` - A list of zero of more IPFIX collector information in the string format "_Udp/Collector IP Address:Port_" e.g. `Udp/172.16.1.100:4739`. The example specifies that `UDP` is the transport protocol to use, `172.16.1.100` is the IP address of the IPFIX collector and the collector is listening on UDP port `4739`.
+- `IpFixCollectors` - A list of zero of more IPFIX collector endpoints in the string format "_Udp/Collector IP Address:Port_" e.g. `Udp/172.16.1.100:4739`. The example specifies that `UDP` is the transport protocol to use, `172.16.1.100` is the IP address of the IPFIX collector and the collector is listening on UDP port `4739`.
 You can specify multiple IPFIX collectors and Enclave will forward IPFIX flow information to all configured collectors. By default no exporters are configured.
 
 - `Direction` - Valid string values are `Both`, `SendingToPeer` and `ReceivedFromPeer`. The default value if not specified is `Both`.
-IPFIX supports single direction flow information per data record. This means a normal bidirectional flow e.g. a TCP session, will generate two IPFIX data records, one for ingress information and a second for egress information. This is the default behaviour and what will be expected when you configure `Both` as the direction. In certain circumstances this might not be ideal, imagine you are running Enclave on System A and System B, both have IPFIX enabled and is monitoring a TCP session between them. With the default `Both` direction System A will export both ingress and egress data, while System B will also export both ingress and egress data. This means you end up with 4 flow records for a single TCP session. With the `SendingToPeer` and `ReceivedFromPeer` direction options you can limit flow information export to either egress information or ingress information respectively.
-> There is one exception to the direction setting. Frames dropped due to violation of [Access Control Rules](/management/policy/#access-control-rules) will always generate an IPFIX record and be exported, irrespective of the direction setting. For example, even if you have configure `ReceivedFromPeer`, if an outgoing frame to a remote Enclave peer is dropped due to an [Access Control Rules](/management/policy/#access-control-rules) violation, Enclave will still report on this egress record.
 
-- `Interval` - The interval in millisecond that Enclave will generate and export interim IPFIX flow records. If `Interval` is set to 0, then Enclave will not generate interim flow records, but will only generate and export flow records at the end of each flow. Interval should be either 0, or a multiple of 60000 (1 minute) as Enclave only processes interim records on a 1-minute frequency. The default value is 0.
+  IPFIX supports single direction flow information per data record. This means a normal bidirectional flow e.g. a TCP session, will generate two IPFIX data records, one for ingress information and a second for egress information. This is the default behaviour and what will be expected when you configure `Both` as the direction.
+
+  In certain circumstances this might not be ideal; imagine you are running Enclave on System A and System B, both have IPFIX enabled and is monitoring a TCP session between them. With the default `Both` direction, System A will export both ingress and egress data, while System B will also export both ingress and egress data. This means you end up with 4 flow records for a single TCP session. With the `SendingToPeer` and `ReceivedFromPeer` direction options you can limit flow information export to either egress information or ingress information respectively.
+
+  > There is one exception to the direction setting. Frames dropped due to violation of [Trust Requirements](/management/trust-requirements/) or [Access Control Rules](/management/policy/#access-control-rules) will always generate an IPFIX record and be exported, irrespective of the direction setting. For example, even if you have configure `ReceivedFromPeer`, if an outgoing frame to a remote Enclave peer is dropped due to either a [Trust Requirements](/management/trust-requirements/) or an [Access Control Rules](/management/policy/#access-control-rules) violation, Enclave will still report on this egress record.
+
+- `Interval` - The interval in milliseconds at which Enclave will generate and export interim IPFIX flow records. If `Interval` is set to 0, then Enclave will not generate interim flow records, but will only generate and export flow records at the end of each flow. Interval should be either 0, or a multiple of 60000 (1 minute) as Enclave only processes interim records on a 1-minute frequency. The default value is 0.
 
 - `Enabled` - Valid values are `true` or `false`. Used to enable or disable the Enclave IPFIX exporter feature. The default value is `true`.
-> Note that if you have enabled IPFIX through this setting but have not configured a collector in `IpFixCollectors`, then the Enclave IPFIX exporter will effectively be disabled. You need to both set enabled to true and have a collector configured for the Enclave collector to function.
+  > Note that if you have enabled IPFIX through this setting but have not configured a collector in `IpFixCollectors`, then the Enclave IPFIX exporter will effectively be disabled. You need to both set enabled to true and have a collector configured for the Enclave collector to function.
 
 
-To add the IPFIX configuration options, add the JSON settings at the bottom of the Enclave configuration file you edited in Step 2.
+To add the IPFIX configuration options, add the JSON settings at the bottom of the Enclave configuration file you opened in Step 2.
 The following example enables IPFIX and adds a single IPFIX collector with IP address 172.16.1.100 that is listing on UDP port 4739. Enclave will be configured to export both ingress and egress flow information, and interim IPFIX flow records will be generated every 60 seconds (60000 milliseconds).
 
 ```json
