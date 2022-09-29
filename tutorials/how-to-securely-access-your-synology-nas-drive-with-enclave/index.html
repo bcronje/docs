@@ -1,0 +1,1242 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Deploy, manage and scale your Enclave networks">
+      
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.3">
+    
+    
+      
+        <title>How to securely access your synology nas drive with enclave - Enclave Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7a952b86.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-244950-15","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");ga("send","event","feedback","click",t,e),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){ga("send","pageview",e.pathname)})});var e=document.createElement("script");e.async=!0,e.src="https://www.google-analytics.com/analytics.js",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+<meta property="og:site_name" content="Enclave Documentation" />
+<meta property="og:title" content="Enclave Documentation" />
+<meta property="og:locale" content="en" />
+<meta property="og:description" content="Deploy, manage and scale your Enclave networks" />
+<meta property="og:url" content="https://docs.enclave.io/" />
+
+<meta property="twitter:title" content="Enclave Documentation" />
+
+<meta property="og:type" content="website" />
+<meta property="og:image" itemprop="image" content="https://enclave.io/uploads/feature-1200x630-enclave.png" />
+<meta property="og:image:secure_url" itemprop="image" content="https://enclave.io/uploads/feature-1200x630-enclave.png" />
+
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="enclave" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#how-to-securely-access-your-synology-nas-drive-with-enclave" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Enclave Documentation" class="md-header__button md-logo" aria-label="Enclave Documentation" data-md-component="logo">
+      
+  <img src="../../assets/favicon.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Enclave Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              How to securely access your synology nas drive with enclave
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        Documentation
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../" class="md-tabs__link">
+      Tutorials
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../kb/" class="md-tabs__link">
+      Knowledge Base
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Enclave Documentation" class="md-nav__button md-logo" aria-label="Enclave Documentation" data-md-component="logo">
+      
+  <img src="../../assets/favicon.svg" alt="logo">
+
+    </a>
+    Enclave Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          Documentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Documentation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Documentation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_2" type="checkbox" id="__nav_1_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_2">
+          Getting Started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Getting Started" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/attach-tags/" class="md-nav__link">
+        Attach tags
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/define-policy/" class="md-nav__link">
+        Define policy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/next-steps/" class="md-nav__link">
+        Next steps
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_3">
+          Setup
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Setup" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          Setup
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/windows/" class="md-nav__link">
+        Windows
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/macos/" class="md-nav__link">
+        MacOS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/linux/" class="md-nav__link">
+        Linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/docker/" class="md-nav__link">
+        Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/kubernetes/" class="md-nav__link">
+        Kubernetes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/synology-nas/" class="md-nav__link">
+        Synology NAS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_4">
+          Support
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Support" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          Support
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support/troubleshooting/" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support/community-support/" class="md-nav__link">
+        Community
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support/contact/" class="md-nav__link">
+        Contact us
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" type="checkbox" id="__nav_1_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_5">
+          Manage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Manage" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_5">
+          <span class="md-nav__icon md-icon"></span>
+          Manage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../management/tags/" class="md-nav__link">
+        Tags
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../management/policy/" class="md-nav__link">
+        Policy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../management/dns/" class="md-nav__link">
+        DNS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../management/exit-nodes/" class="md-nav__link">
+        Exit Nodes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5_5" type="checkbox" id="__nav_1_5_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_5_5">
+          Trust Requirements
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Trust Requirements" data-md-level="3">
+        <label class="md-nav__title" for="__nav_1_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          Trust Requirements
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../management/trust-requirements/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../management/trust-requirements/user-authentication/" class="md-nav__link">
+        User Authentication
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../management/trust-requirements/public-ip-address/" class="md-nav__link">
+        Public IP Address
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../management/network-flow-metadata/" class="md-nav__link">
+        Network Flow Metadata
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_6" type="checkbox" id="__nav_1_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_6">
+          API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="API" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_6">
+          <span class="md-nav__icon md-icon"></span>
+          API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/reference/" class="md-nav__link">
+        Reference
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Tutorials
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kb/" class="md-nav__link">
+        Knowledge Base
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-enable-ssh-access" class="md-nav__link">
+    1. Enable SSH access
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-install-the-tun-kernel-module" class="md-nav__link">
+    2. Install the TUN kernel module
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-install-docker" class="md-nav__link">
+    3. Install Docker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-download-enclave" class="md-nav__link">
+    4. Download Enclave
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-launch-an-enclave-container" class="md-nav__link">
+    5. Launch an Enclave container
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-connect-with-enclave" class="md-nav__link">
+    6. Connect with Enclave
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<p><small><a href="/">Documentation</a> / <a href="/tutorials">Tutorials</a></small></p>
+<h1 id="how-to-securely-access-your-synology-nas-drive-with-enclave">How to securely access your Synology NAS drive with Enclave</h1>
+<blockquote>
+<p><strong>Note:</strong> If you already have Enclave running on your Synology NAS drive and need to update Enclave to the latest version, please visit our <a href="/tutorials/how-to-update-enclave-on-your-synology-nas-drive">how to update Enclave on your Synology NAS drive</a> tutorial.</p>
+</blockquote>
+<p>Synology are market leaders in network attached storage devices, perfect for home or small business use. Enclave helps you easily build safe, secure and private network connectivity without the hassle of configuring firewalls and VPNs, or needing to manage IP addresses, subnets, ACLs, NAT, routing tables, certificates and secret keys.</p>
+<p>In this article we will show you how to easily provide private remote access to your Synology NAS drive without needing to open ports or setup a VPN server, darkening your network to third parties by installing Enclave.</p>
+<p>Before you begin, you will need:</p>
+<ul>
+<li>An Enclave account (Register <a href="https://portal.enclave.io/register">here</a>, for free)</li>
+<li>A Synology NAS drive running at least <a href="https://www.synology.com/en-uk/beta/DSM70Beta">DSM 7.0</a> (currently in Beta)</li>
+<li>Administrative access to your Synology NAS drive</li>
+</ul>
+<p>When setup, Enclave will be running inside a Docker container on your Synology NAS drive. At the time of writing, Docker can only be installed on devices from the Synology Plus Series product line (not the Value Series) so please check to see if your system is a <a href="#supported-models">supported model</a>.</p>
+<p><img alt="Our Synology NAS drive running DSM 7.0 Beta" src="/images/guides/synology-nas/synology-info-center.png" /></p>
+<p>The Synology NAS allows administrators to fully own their devices, enabling SSH and dropping into a root bash prompt on the DSM software, Synology's Linux-based operating system.</p>
+<p>Okay, lets get started.</p>
+<blockquote>
+<p>If you have opened administrative access ports on your Synology NAS drive to the public Internet (default ports are 5000, 5001 and 22 for SSH) you should re-consider if they really need to be open and close those ports if not. They are the default HTTP and HTTPS web server ports for Synology DSM and allow access to the administration console.</p>
+</blockquote>
+<p><br /></p>
+<h2 id="1-enable-ssh-access">1. Enable SSH access</h2>
+<p>First, you'll need to enable SSH access to your Synology NAS drive. For Enclave to create a virtual network interface, we'll need to ensure that the <code>tun</code> kernel module is installed and enabled on the device. We do this by enabling and connecting into the device via SSH. Open the <code>Control Panel</code>, navigate to <code>Terminal &amp; SNMP</code> and enable the SSH service. </p>
+<p><img alt="Enable SSH access to your Synology NAS drive" src="/images/guides/synology-nas/synology-enable-ssh.png" /></p>
+<p><br /></p>
+<h2 id="2-install-the-tun-kernel-module">2. Install the TUN kernel module</h2>
+<p>With SSH enabled, log into your NAS using the <em>admin</em> account and check to see if the <code>tun</code> kernel module is installed and enabled.</p>
+<div class="highlight"><pre><span></span><code>$ lsmod <span class="p">|</span> grep -w tun
+</code></pre></div>
+<p>If <code>lsmod</code> returns no results, you'll need to use <code>insmod</code> to install it.</p>
+<div class="highlight"><pre><span></span><code>$ sudo insmod /lib/modules/tun.ko
+</code></pre></div>
+<p>Now check <code>lsmod</code> again, you should see <code>tun</code> module is now loaded:</p>
+<div class="highlight"><pre><span></span><code>tun                    19133  0
+</code></pre></div>
+<p><img alt="Install the TUN kernel module" src="/images/guides/synology-nas/synology-insmod-tun.png" /></p>
+<blockquote>
+<p>We don't need SSH access any more, if you're not going to use it again please go back and disable the SSH service in the DSM Control Panel.</p>
+</blockquote>
+<p>This was not a permanent change, the module will be unloaded the next time the system reboots, so lets create a script which can be scheduled to run on start-up which will re-install <code>tun.ko</code> at boot.</p>
+<ul>
+<li>
+<p>Switch to root</p>
+<div class="highlight"><pre><span></span><code>$ sudo su -
+</code></pre></div>
+</li>
+<li>
+<p>Create the following script on your Synology file system by typing <code>vim /volume1/enable-tun.sh</code></p>
+<div class="highlight"><pre><span></span><code>#!/bin/sh
+
+if ( [ ! -c /dev/net/tun ] ); then
+   if ( [ ! -d /dev/net ] ); then
+      mkdir -m 755 /dev/net
+   fi
+   mknod /dev/net/tun c 10 200
+fi
+
+if ( !(lsmod | grep -q &quot;^tun\s&quot;) ); then
+   insmod /lib/modules/tun.ko
+fi
+</code></pre></div>
+</li>
+<li>
+<p>Save the file with <code>[escape]</code> followed by the keys <code>:wq!</code></p>
+</li>
+<li>
+<p>Mark the file as executable </p>
+<div class="highlight"><pre><span></span><code>chmod +x /volume1/enable-tun.sh
+</code></pre></div>
+</li>
+<li>
+<p>Now create a scheduled task to run this script on start-up: Log in to your Synology NAS drive web interface, go to <strong>Control Panel</strong> &gt; <strong>Task Scheduler</strong> and create a new <code>User-defined script</code> as a <code>Triggered Task</code>. Name the task <code>Enable TUN</code>, set the user to be <code>root</code> and the event as <code>Boot-up</code>. Then, in the <code>Task Settings</code> tab enter <code>bash /volume1/enable-tun.sh</code> as the User-defined script and hit OK. To test if the script works, after restarting your NAS log back into SSH and run <code>lsmod | grep -w tun</code> to check that the TUN module was successfully re-loaded.</p>
+</li>
+</ul>
+<p><br /></p>
+<h2 id="3-install-docker">3. Install Docker</h2>
+<p>The easiest way to install Docker on your Synology NAS drive is via the DSM package manager. Navigate to the <code>Package Center</code> and install Docker.</p>
+<p><img alt="Install Docker" src="/images/guides/synology-nas/synology-docker-package.png" /></p>
+<p><br /></p>
+<h2 id="4-download-enclave">4. Download Enclave</h2>
+<p>Using the search box on the <code>Registry</code> tab of the Docker package, search for <code>enclave</code> and download the <code>enclavenetworks/enclave</code> image from the container registry. The Enclave Docker image hosted on <a href="https://hub.docker.com/r/enclavenetworks/enclave">Docker hub</a>. If you're prompted to choose a tag, select <code>latest</code>.</p>
+<p><img alt="Download Enclave from the Docker Registry" src="/images/guides/synology-nas/synology-docker-registry.png" /></p>
+<p><br /></p>
+<h2 id="5-launch-an-enclave-container">5. Launch an Enclave container</h2>
+<p>Once the Enclave image is downloaded, the <code>Launch</code> button (shown below) in the <code>Image</code> tab will become available, click this.</p>
+<p><img alt="Download Enclave from the Docker Container Registry" src="/images/guides/synology-nas/synology-docker-image.png" /></p>
+<p>Now we are ready to setup the Enclave container. First, give the container a name, we've used <code>enclave</code>. Also need to be sure to check <code>Execute container using high privilege</code>, this causes DSM to pass the <code>--privileged</code> to Docker, which effectively enables the container to request <code>--cap-add NET_ADMIN</code> (Perform various network-related operations) and <code>--device /dev/net/tun</code> (Allows devices to run inside the container).</p>
+<p><img alt="Configure Docker Container" src="/images/guides/synology-nas/synology-docker-create-container.png" /></p>
+<p>Before clicking <code>Next</code>, open the <code>Advanced Settings</code> dialog.</p>
+<ul>
+<li>
+<p>Under the <code>Advanced Settings</code> tab</p>
+</li>
+<li>
+<p>Select <code>Enable auto-restart</code></p>
+</li>
+<li>
+<p>Under the <code>Volume</code> tab</p>
+</li>
+<li>
+<p>Select <code>Add Folder</code>. Create a mount path to <code>/etc/enclave/profiles</code> in the <code>docker</code> directory on your DiskStation. This is where Enclave will write its configuration file, private keys, and certificates to persist between reboots.</p>
+<p><img alt="Create a volume for Enclave configuration data" src="/images/guides/synology-nas/synology-docker-container-volume-settings.png" /></p>
+</li>
+<li>
+<p>Under the <code>Network</code> tab</p>
+</li>
+<li>
+<p>Select the checkbox to <code>Use the same network as Docker host</code>. This will allow you to access the Synology NAS drive via the Enclave network.</p>
+</li>
+<li>
+<p>Under the <code>Environment</code> tab</p>
+</li>
+<li>
+<p>Define a new Environment Variable called <code>ENCLAVE_ENROLMENT_KEY</code> and set its value to a valid (and enabled) enrolment key from your Enclave account. Be careful not to include whitespace!</p>
+<p><img alt="Configure an enrolment key" src="/images/guides/synology-nas/synology-docker-container-enrolment-key.png" /></p>
+<p>This Enrolment key is only used the first time Enclave runs. When Enclave has successfully started once and written a profile to disk, it is safe to remove this environment variable.</p>
+<blockquote>
+<p>Enrolment keys are available from the <a href="https://portal.enclave.io/">Enclave Portal</a> and determine which systems can register to your Enclave account, so we recommend that you <strong>keep them secret</strong>.</p>
+</blockquote>
+</li>
+<li>
+<p>Leave the <code>Execution Command</code> set to the default value of <code>run</code> and click Apply.</p>
+</li>
+</ul>
+<p><br /></p>
+<p>Congratulations! You've finished configuring your container, click <code>Done</code> to Launch.</p>
+<p><img alt="Launch the Enclave Docker Container" src="/images/guides/synology-nas/synology-docker-launch-container.png" /></p>
+<p><br /></p>
+<h2 id="6-connect-with-enclave">6. Connect with Enclave</h2>
+<p>Your Enclave container is starting up and will enrol to your account, within 1 or 2 seconds your Enclave container will be happily humming away in the background. Let's create a connection to another system running Enclave.</p>
+<p>From the Docker package, go to the <code>Container</code> tab, select the Enclave container you've just created and open the container <code>Details</code> pane. Here you can see CPU usage, RAM usage, container uptime and other information. </p>
+<p>Move to the <code>Terminal</code> tab and click on the <code>Create</code> button to drop into a bash shell inside the container, from here you can work with and manipulate Enclave as normal using the CLI.</p>
+<p><img alt="Output from Enclave Status command" src="/images/guides/synology-nas/synology-docker-enclave-status.png" /></p>
+<p>First, use the <code>status</code> verb to check on the Enclave process and view your container's Local Identity. The container will also be visible as a newly connected system in the <a href="https://portal.enclave.io">Enclave Portal</a>.</p>
+<div class="highlight"><pre><span></span><code># enclave status
+</code></pre></div>
+<p>Now you know the Local Identity of your container, you can <a href="/management/tags/">authorise other systems to talk to your container</a>.</p>
+<p>Now you've added some connections, be sure to check the <a href="/kb/how-to-configure-dns-forwarding-on-linux">DNS forwarding</a> is enabled on any peers which you're connected to so they can access your Synology NAS drive using a friendly DNS hostname like <code>diskstation.enclave</code>.</p>
+<p>Welcome to your own personal (dark) private network!</p>
+<p><br />
+<br />
+<br /></p>
+<h1 id="supported-models"><a name="supported-models"></a> Supported Models</h1>
+<p>This tutorial requires Docker to be installed on your Synology NAS drive which, at the time of writing, only runs on Synology NAS drives from the Plus Series product line (not the Value Series). Please see the <a href="https://www.synology.com/en-uk/dsm/packages/Docker">Docker</a> package for an up to date list of supported models.</p>
+<table>
+<thead>
+<tr>
+<th>Series</th>
+<th>Supported Models</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>21 series</td>
+<td><code>RS1221RP+</code>, <code>RS1221+</code>, <code>DS1821+</code>, <code>DS1621xs+</code>, <code>DS1621+</code>, <code>DVA3221</code></td>
+</tr>
+<tr>
+<td>20 series</td>
+<td><code>FS6400</code>, <code>FS3600</code>, <code>FS3400</code>, <code>RS820RP+</code>, <code>RS820+</code>, <code>DS920+</code>, <code>DS720+</code>, <code>DS620slim</code>, <code>DS420+</code>, <code>DS220+</code>, <code>DS1520+</code>, <code>SA3600</code>, <code>SA3400</code>, <code>SA3200D</code></td>
+</tr>
+<tr>
+<td>19 series</td>
+<td><code>RS1619xs+</code>, <code>RS1219+</code>, <code>DS2419+</code>, <code>DS1819+</code>, <code>DS1019+</code>, <code>DVA3219</code></td>
+</tr>
+<tr>
+<td>18 series</td>
+<td><code>FS1018</code>, <code>RS3618xs</code>, <code>RS818RP+</code>, <code>RS818+</code>, <code>RS2818RP+</code>, <code>RS2418RP+</code>, <code>RS2418+</code>, <code>DS3018xs</code>, <code>DS918+</code>, <code>DS718+</code>, <code>DS218+</code>, <code>DS1618+</code></td>
+</tr>
+<tr>
+<td>17 series</td>
+<td><code>FS3017</code>, <code>FS2017</code>, <code>RS3617RPxs</code>, <code>RS3617xs</code>, <code>RS4017xs+</code>, <code>RS3617xs+</code>, <code>RS18017xs+</code>, <code>DS3617xs</code>, <code>DS1817+</code>, <code>DS1517+</code></td>
+</tr>
+<tr>
+<td>16 series</td>
+<td><code>RS2416RP+</code>, <code>RS2416+</code>, <code>RS18016xs+</code>, <code>DS916+</code>, <code>DS716+II</code>, <code>DS716+</code>, <code>DS216+II</code>, <code>DS216+</code></td>
+</tr>
+<tr>
+<td>15 series</td>
+<td><code>RS815RP+</code>, <code>RS815+</code>, <code>RC18015xs+</code>, <code>DS3615xs</code>, <code>DS415+</code>, <code>DS2415+</code>, <code>DS1815+</code>, <code>DS1515+</code></td>
+</tr>
+<tr>
+<td>14 series</td>
+<td><code>RS3614RPxs</code>, <code>RS3614xs</code>, <code>RS814RP+</code>, <code>RS814+</code>, <code>RS3614xs+</code>, <code>RS2414RP+</code>, <code>RS2414+</code></td>
+</tr>
+<tr>
+<td>13 series</td>
+<td><code>RS3413xs+</code>, <code>RS10613xs+</code>, <code>DS713+</code>, <code>DS2413+</code>, <code>DS1813+</code>, <code>DS1513+</code></td>
+</tr>
+<tr>
+<td>12 series</td>
+<td><code>RS3412RPxs</code>, <code>RS3412xs</code>, <code>RS812RP+</code>, <code>RS812+</code>, <code>RS2212RP+</code>, <code>RS2212+</code>, <code>DS3612xs</code>, <code>DS712+</code>, <code>DS412+</code>, <code>DS1812+</code>, <code>DS1512+</code></td>
+</tr>
+<tr>
+<td>11 series</td>
+<td><code>RS3411RPxs</code>, <code>RS3411xs</code>, <code>RS2211RP+</code>, <code>RS2211+</code>, <code>DS3611xs</code>, <code>DS411+II</code>, <code>DS411+</code>, <code>DS2411+</code>, <code>DS1511+</code></td>
+</tr>
+</tbody>
+</table>
+<p><br />
+<br />
+<br /></p>
+<hr />
+<p>Having problems? Contact us at <a href="mailto:support@enclave.io">support@enclave.io</a> or get help and advice in our <a href="/community-support/">community support</a> channels.</p>
+<p><small>Last updated September 17, 2021</small></p>
+
+
+  
+
+
+  
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/enclave-networks" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://hub.docker.com/r/enclavenetworks/enclave" target="_blank" rel="noopener" title="hub.docker.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/enclavenetworks" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/company/enclave-networks/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.tabs"], "search": "../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.37e9125f.min.js"></script>
+      
+        <script src="../../javascript/extra.js"></script>
+      
+    
+  </body>
+</html>

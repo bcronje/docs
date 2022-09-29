@@ -1,0 +1,225 @@
+[data-md-color-scheme="enclave"] {
+    --md-primary-fg-color:        #524FC9;
+    --md-primary-fg-color--light: #8770D9;
+    --md-primary-fg-color--dark:  rgb(29, 28, 80);
+    --md-accent-fg-color:         var(--md-primary-fg-color--light);
+  }
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* adjust font size
+.md-typeset {
+    font-size: .774rem;
+    line-height: 1.53;
+} */
+
+body, code, input, kbd, pre {
+    color: rgb(0 0 0 / 75%);
+}
+
+/* give the content some room to breathe */
+.md-content {
+    margin-bottom: 90px;
+}
+
+/* light border on primary sidebar */
+.md-sidebar--primary .md-sidebar__scrollwrap {
+    border-right: 1px solid #f5f5f5;
+}
+
+/* restore bottom margin */
+.md-content__inner>:last-child {
+    margin-bottom: inherit;
+}
+
+/* make [code] blocks stand out */
+.md-typeset code {
+    font-size: .8em;
+    padding: .15em .3em;
+    border-radius: 0;
+}
+
+/* increase tabbed set spacing */ 
+.md-typeset .tabbed-set {    
+    margin: 2em 0;
+}
+
+.md-typeset .tabbed-content {
+    padding: .5em 0 0 0;
+}
+
+.md-typeset ol li, .md-typeset ul li {
+    margin-bottom: .6em;
+}
+
+/* ensure images have room to breathe */
+.md-typeset img, .md-typeset svg {
+    margin: .4em 0;
+}
+
+/* reduce size of the blockquote text and left border */
+.md-typeset blockquote {
+    font-size: .88em;
+    margin: 2.4em 0 1em 0;
+}
+
+.md-typeset blockquote p {
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.md-typeset blockquote p:first-child {
+    padding: 0;
+    margin: 0;
+}
+
+/* get the font in tables to a reasonable size */
+.md-typeset table:not([class]) {    
+    font-size: .68rem;
+}
+
+/* style lists */
+.md-content ul, 
+.md-content ol {
+    counter-reset: styled-counter;
+    list-style: none;
+    margin-left: 0px !important;
+}
+
+.md-content ul li, 
+.md-content ol li {
+    margin: 0 0 0.5rem 1.6rem !important;
+    counter-increment: styled-counter;
+    position: relative;
+}
+
+.md-content ol li::before {
+    text-indent: 0rem;
+    content: counter(styled-counter);
+    margin-right: 0.4rem;
+    margin-top: 2px;
+    position: absolute;
+    left: -1.6rem;
+    width: 1.1rem;
+    height: 1.1rem;
+    display:inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size:.7em;
+    background-color:#71A9F7;
+    border-radius:50%;
+    color:#fff;
+    box-sizing: border-box;
+    padding-bottom: 0.01rem;
+    line-height: 1rem;
+}
+
+.md-content ul li::before {
+    content: '';
+    margin-right: 0.4rem;
+    margin-top: 0.4rem;
+    position: absolute;
+    left: -1.1rem;
+    width: 0.4rem;
+    height: 0.4rem;
+    background-color:#ADADAD;
+    border-radius:50%;
+}
+
+small {
+    font-size: 85%;
+    margin-bottom: 26px;
+}
+
+.download-container {
+    display: inline-block;
+    background-color: #f5f5f5;
+    padding: 24px 20px 8px 20px;
+    margin: 0 0 14px 0;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.download-container button {    
+    margin: 0;
+    padding: 12px 30px;
+    background-color: #71A9F7;
+    color: #fff;
+    font-family: "Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace;
+    font-size: .77em;
+    font-weight: 500;
+    letter-spacing: .03em;
+    transition: all .1s ease-in-out;
+    border: none;
+    text-transform: uppercase;
+    border-radius: 3px;
+    box-shadow: none;
+    user-select: none;
+    cursor: pointer;
+}
+
+.download-container button:hover {
+    background-color: #8DC5FF;
+}
+
+.download-container button:focus {
+    outline: 0;
+    box-shadow: 0 0 0 3px rgb(127 183 255 / 40%);
+}
+
+.download-container .download-url {
+    font-size: 75%;
+    margin-bottom: 26px;
+}
+
+.checksum-container {
+    text-align: left;
+    font-weight: 600;
+    margin-top: 30px;
+}
+
+.checksum-container p {
+    font-size: .76em;
+    margin: 0 !important;
+}
+
+.checksum-container .checksum {
+    font-size: .87em;
+    font-weight: normal;
+    background-color: #fff;
+    padding: 5px 6px;
+    border-radius: 4px;
+    margin: 5px 0 12px 0;
+    display: block;
+    user-select: all;
+}
+
+.md-clipboard {
+    top: .4em;
+    right: .4em;
+}
+
+.screenshot {
+    text-align: center;    
+}
+
+.screenshot img {
+    box-shadow: 0px 0px 4px rgba(60, 64, 73, 0.01), 0px 4px 8px rgba(60, 64, 73, 0.06);
+}
+
+/** tags **/
+.md-content mark {
+    display: inline-flex;
+    -webkit-box-align: center;
+    border-radius: 0.25rem;
+    background-color: rgb(240, 248, 254) !important;
+    border: 1px solid rgb(210, 232, 253);
+    font-size: .65rem;
+    line-height: 1em;
+    margin: 2px 1px 0px 1px;
+    padding: 4px 5px 4px 5px;
+}

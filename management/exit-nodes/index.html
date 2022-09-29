@@ -1,0 +1,1406 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Deploy, manage and scale your Enclave networks">
+      
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.3">
+    
+    
+      
+        <title>Exit Nodes - Enclave Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7a952b86.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-244950-15","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");ga("send","event","feedback","click",t,e),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){ga("send","pageview",e.pathname)})});var e=document.createElement("script");e.async=!0,e.src="https://www.google-analytics.com/analytics.js",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+<meta property="og:site_name" content="Enclave Documentation" />
+<meta property="og:title" content="Enclave Documentation" />
+<meta property="og:locale" content="en" />
+<meta property="og:description" content="Deploy, manage and scale your Enclave networks" />
+<meta property="og:url" content="https://docs.enclave.io/" />
+
+<meta property="twitter:title" content="Enclave Documentation" />
+
+<meta property="og:type" content="website" />
+<meta property="og:image" itemprop="image" content="https://enclave.io/uploads/feature-1200x630-enclave.png" />
+<meta property="og:image:secure_url" itemprop="image" content="https://enclave.io/uploads/feature-1200x630-enclave.png" />
+
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="enclave" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Enclave Documentation" class="md-header__button md-logo" aria-label="Enclave Documentation" data-md-component="logo">
+      
+  <img src="../../assets/favicon.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Enclave Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Exit Nodes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link md-tabs__link--active">
+        Documentation
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../tutorials/" class="md-tabs__link">
+      Tutorials
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../kb/" class="md-tabs__link">
+      Knowledge Base
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Enclave Documentation" class="md-nav__button md-logo" aria-label="Enclave Documentation" data-md-component="logo">
+      
+  <img src="../../assets/favicon.svg" alt="logo">
+
+    </a>
+    Enclave Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          Documentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Documentation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Documentation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_2" type="checkbox" id="__nav_1_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_2">
+          Getting Started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Getting Started" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/attach-tags/" class="md-nav__link">
+        Attach tags
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/define-policy/" class="md-nav__link">
+        Define policy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/next-steps/" class="md-nav__link">
+        Next steps
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_3">
+          Setup
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Setup" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          Setup
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/windows/" class="md-nav__link">
+        Windows
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/macos/" class="md-nav__link">
+        MacOS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/linux/" class="md-nav__link">
+        Linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/docker/" class="md-nav__link">
+        Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/kubernetes/" class="md-nav__link">
+        Kubernetes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/synology-nas/" class="md-nav__link">
+        Synology NAS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_4">
+          Support
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Support" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          Support
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support/troubleshooting/" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support/community-support/" class="md-nav__link">
+        Community
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support/contact/" class="md-nav__link">
+        Contact us
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" type="checkbox" id="__nav_1_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_5">
+          Manage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Manage" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_5">
+          <span class="md-nav__icon md-icon"></span>
+          Manage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tags/" class="md-nav__link">
+        Tags
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../policy/" class="md-nav__link">
+        Policy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dns/" class="md-nav__link">
+        DNS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Exit Nodes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Exit Nodes
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    Limitations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-install-your-exit-node" class="md-nav__link">
+    Step 1: Install your exit node
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-set-up-your-exit-node" class="md-nav__link">
+    Step 2: Set up your exit node
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-set-up-any-other-systems" class="md-nav__link">
+    Step 3: Set up any other systems
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-connect-it-all-together" class="md-nav__link">
+    Step 4: Connect it all together
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-verify-the-connection" class="md-nav__link">
+    Step 5: Verify the connection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-use-your-exit-node" class="md-nav__link">
+    Step 6: Use your exit node
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5_5" type="checkbox" id="__nav_1_5_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_5_5">
+          Trust Requirements
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Trust Requirements" data-md-level="3">
+        <label class="md-nav__title" for="__nav_1_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          Trust Requirements
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../trust-requirements/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../trust-requirements/user-authentication/" class="md-nav__link">
+        User Authentication
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../trust-requirements/public-ip-address/" class="md-nav__link">
+        Public IP Address
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-flow-metadata/" class="md-nav__link">
+        Network Flow Metadata
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_6" type="checkbox" id="__nav_1_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_6">
+          API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="API" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_6">
+          <span class="md-nav__icon md-icon"></span>
+          API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/reference/" class="md-nav__link">
+        Reference
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/" class="md-nav__link">
+        Tutorials
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kb/" class="md-nav__link">
+        Knowledge Base
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    Limitations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-install-your-exit-node" class="md-nav__link">
+    Step 1: Install your exit node
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-set-up-your-exit-node" class="md-nav__link">
+    Step 2: Set up your exit node
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-set-up-any-other-systems" class="md-nav__link">
+    Step 3: Set up any other systems
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-connect-it-all-together" class="md-nav__link">
+    Step 4: Connect it all together
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-verify-the-connection" class="md-nav__link">
+    Step 5: Verify the connection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-use-your-exit-node" class="md-nav__link">
+    Step 6: Use your exit node
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Exit Nodes</h1>
+
+<blockquote>
+<p>This feature is in beta and may be subject to change in future versions of Enclave. While in beta, this feature doesn't include API endpoints or Portal control and must be manually configured on each system. This page will be updated as the feature enters general availability.</p>
+<p>If you have feedback on this feature, please let us know in one of our <a href="/community-support/">community support</a> channels.</p>
+</blockquote>
+<h2 id="introduction">Introduction</h2>
+<p>Enclave is designed to be installed directly on every client, server, cloud instance, virtual machine and container in your organisation. That way, Enclave can apply Zero Trust Network Access controls between systems, fully enforce policy and provide end-to-end encryption.</p>
+<p>However, in some situations, you can’t or might not want to install Enclave on all systems:</p>
+<ul>
+<li>
+<p>On domain controllers where <a href="https://docs.microsoft.com/en-us/troubleshoot/windows-server/networking/unwanted-nic-registered-dns-mulithomed-dc">two or more network interfaces</a> can be problematic</p>
+</li>
+<li>
+<p>On networks where the physical infrastructure is not allowed to be changed</p>
+</li>
+<li>
+<p>On embedded systems, like firewalls, webcams or printers which prohibit external software</p>
+</li>
+<li>
+<p>When accessing legacy systems which are too old to run, or are incompatible, with the agent </p>
+</li>
+<li>
+<p>When accessing cloud native services like AWS RDS, which don't run third party software</p>
+</li>
+<li>
+<p>With large numbers of devices in a single subnet, like a single AWS VPC</p>
+</li>
+</ul>
+<p>Here, you can set up an “exit node” to access systems not running Enclave from another system in the same subnet which is. An exit node acts like a gateway, moving traffic from your Enclave peers into your physical subnet and back.</p>
+<p><img alt="Exit node topology" src="/images/management/exit-nodes/topology.png" title="Exit node topology" /></p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before you begin this guide, you’ll need an Enclave account set up with at least two devices enrolled. Read our <a href="/getting-started/installation/">getting started guide</a> if you need help with this.</p>
+<p>Your Exit Node system must be running Linux. Currently, we only support Linux systems as exit nodes, but we plan to support this feature on Windows and macOS in the future.</p>
+<h2 id="limitations">Limitations</h2>
+<p>A system functioning as an exit node can route data to a subnet of any size. You can provide routes to subnets as large as a <code>/0</code> or as small as a single IP address (<code>/32</code>) as you find necessary for appropriate segmentation.</p>
+<p>The same exit node system can provide routes to multiple subnets if that system has a network interface and routes to the relevant subnet(s).</p>
+<p>The present design of exit node behaviour allows one or more Enclave peers (connected to an exit node) to route traffic into the exit nodes's local subnet(s) and for any devices inside that local subnet to reply. However, Enclave will not allow unsolicited traffic from a device inside the local subnet to send unsolicited traffic into the Enclave overlay network. As an example, a home worker's laptop could exchange packets with a printer and domain controller in an office network via an exit node, but the printer and domain controller would be unable to initiate unsolicited connectivity to that home worker's laptop. This is because the overlay network between Enclave peers provides a level of trust that cannot be replicated on the unencrypted and unauthenticated physical network.</p>
+<p>To configure an exit node on a Linux system installation, follow these steps:</p>
+<h2 id="step-1-install-your-exit-node">Step 1: Install your exit node</h2>
+<p><a href="https://docs.enclave.io/setup/linux/">Download and install</a> Enclave onto the system which will be your exit node and provide an enrolment key to join it to your account. We support a variety of Linux distros.</p>
+<h2 id="step-2-set-up-your-exit-node">Step 2: Set up your exit node</h2>
+<p>You will need to edit an Enclave configuration file, so stop the Enclave process, you can use <code>sudo enclave stop</code> or <code>sudo systemctl stop enclave</code>. Now that Enclave is stopped, use the editor of your choice to open the default configuration file <code>Universe.profile</code>.</p>
+<div class="highlight"><pre><span></span><code>$ sudo nano /etc/enclave/profiles/Universe.profile
+</code></pre></div>
+<p>At the bottom of the JSON file you'll see an empty property called <code>"ExitNode": {}</code>.</p>
+<p><img alt="Configure the exit node property in Universe.profile" src="/images/management/exit-nodes/universe-profile.png" title="Configure the exit node property in Universe.profile" /></p>
+<p>As shown below, add a <code>ProvidesRoutes</code> array. Replace the subnets in the example below with the right ones for your network. You can add one, or more IPv4 subnets in CIDR notation. In this example we've added two subnets.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;ExitNode&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;ProvidesRoutes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;172.26.0.0/20&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;172.84.0.0/20&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span>
+</code></pre></div>
+<p>Save this file and exit your text editor. The exit node feature also requires IP forwarding to be enabled in the Linux kernel. Enable it as follows:</p>
+<div class="highlight"><pre><span></span><code>$ sudo sysctl -w net.ipv4.ip_forward<span class="o">=</span><span class="m">1</span>
+$ sudo sysctl -p
+</code></pre></div>
+<p>Next, you'll need to configure iptables to forward traffic originating from the overlay network (100.64.0.0/10 by default) out to your local subnet(s).</p>
+<p>You'll need to replace the <code>-d</code> argument below with your own subnet (i.e. change <code>172.26.0.0/20</code> in this example) and change the <code>--to</code> address to be the IPv4 address of your exit node in its local subnet, so also change <code>172.26.0.3</code> to match your network.</p>
+<div class="highlight"><pre><span></span><code>$ sudo iptables -t nat -A POSTROUTING -s 100.64.0.0/10 -d 172.26.0.0/20 -j SNAT --to 172.26.0.3
+</code></pre></div>
+<p>Add one source NAT postrouting rule as shown above for each subnet you're planning to advertise via this exit node.</p>
+<p>Now you've configured the exit node, you can restart Enclave. You can use <code>sudo enclave start</code> or <code>sudo systemctl start enclave</code>.</p>
+<p>Lastly, run <code>enclave status</code> and make a note of your exit node's <code>Local identity</code> as you will need this in the next step. Each identity is unique to each system. In our example, our exit node's identity was <code>G982V</code> but yours will be different. </p>
+<h2 id="step-3-set-up-any-other-systems">Step 3: Set up any other systems</h2>
+<p>We'll assume you already have Enclave installed and enrolled on other systems in your account, if not you'll need to. Login to one of your other systems which will act as a client to the exit node and route traffic to one of the advertised subnets. Any supported operating system (currently Windows, macOS and Linux) can be set up to route traffic via your new exit node.</p>
+<blockquote>
+<p>During the beta, without centralised management available, you'll need to manually configure each system that needs to access the subnet(s) provided by the exit node. You'll need to tell each system which of its peers is providing the access to those subnets, and what those subnets are too.</p>
+</blockquote>
+<p>Let's get started.</p>
+<p>You'll need to edit the <code>Universe.profile</code> configuration file on each system, so make sure you stop Enclave using either <code>sudo enclave stop</code> or <code>sudo systemctl stop enclave</code>. Now Enclave is stopped, use the editor of your choice to open the default Enclave configuration file.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Linux</label><label for="__tabbed_1_2">Windows</label><label for="__tabbed_1_3">MacOS</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>On Linux this file is located at:</p>
+<pre><code>/etc/enclave/profiles/Universe.profile
+</code></pre>
+</div>
+<div class="tabbed-block">
+<p>On Windows this file is located at:</p>
+<pre><code>C:\Program Files\Enclave Networks\Enclave\Agent\profiles\Universe.profile
+</code></pre>
+</div>
+<div class="tabbed-block">
+<p>On macOS this file is located in:</p>
+<pre><code>/etc/enclave/profiles/Universe.profile
+</code></pre>
+</div>
+</div>
+</div>
+<p>Just like in step 2, you'll notice an empty <code>"ExitNode": {}</code> property at the bottom of the JSON file.</p>
+<p>This time we'll be adding <code>AvailableRoutes</code>. </p>
+<div class="highlight"><pre><span></span><code><span class="s2">&quot;ExitNode&quot;</span>: <span class="o">{</span>
+    <span class="s2">&quot;AvailableRoutes&quot;</span>: <span class="o">{</span>
+        <span class="s2">&quot;G982V&quot;</span>: <span class="o">[</span>
+            <span class="s2">&quot;172.26.0.0/20&quot;</span>
+        <span class="o">]</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>You'll need to replace the identity we've used (<code>G982V</code>) with your own exit node's identity that you made a note of at the end of step 2. You'll also need to replace the subnet we've used here with your own (i.e. <code>172.16.0.0/24</code> in this example). </p>
+<p>Now this system knows which peer it should route <code>172.16.0.0/24</code> traffic towards, you could also configure it to use multiple exit nodes for different subnets, as shown below.  </p>
+<div class="highlight"><pre><span></span><code><span class="s2">&quot;ExitNode&quot;</span>: <span class="o">{</span>
+    <span class="s2">&quot;AvailableRoutes&quot;</span>: <span class="o">{</span>
+        <span class="s2">&quot;G982V&quot;</span>: <span class="o">[</span>
+            <span class="s2">&quot;172.26.0.0/20&quot;</span>,
+            <span class="s2">&quot;172.84.0.0/20&quot;</span>
+        <span class="o">]</span>,
+        <span class="s2">&quot;Q8QW8&quot;</span>: <span class="o">[</span>
+            <span class="s2">&quot;192.168.0.0/24&quot;</span>
+        <span class="o">]</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>Now you've configured this system to use your exit node, you can restart Enclave using <code>sudo enclave start</code> or <code>sudo systemctl start enclave</code>. Now that you've configured the <code>AvailableRoutes</code> property, Enclave will automatically adjust the local routing table for you.</p>
+<h2 id="step-4-connect-it-all-together">Step 4: Connect it all together</h2>
+<p>Make sure your client systems can talk to the exit node using Enclave. We suggest <a href="/getting-started/attach-tags/">tagging</a> your exit node as <mark>exit-node</mark> (or similar) and creating a <a href="/getting-started/define-policy/">policy</a> which allows your clients to access your <mark>exit-node</mark> system.</p>
+<h2 id="step-5-verify-the-connection">Step 5: Verify the connection</h2>
+<p>Check that you can ping your new exit node from your client machine, use the exit node's Enclave <code>Virtual address</code> (i.e. <code>100.64.69.156</code> in the example below). You can find the Enclave <code>Virtual address</code> of your exit node by running <code>enclave status</code> on either system once they are connected.</p>
+<p>You should also notice in the output of the <code>enclave status</code> command on the client system(s) that any route(s) you've advertised via your exit node are listed under the appropriate peer, as shown below.</p>
+<p><img alt="Exit node JSON property in Universe.profile" src="/images/management/exit-nodes/enclave-status-on-client.png" title="Exit node JSON property in Universe.profile" /></p>
+<p>If you can ping the exit node (i.e. ping <code>100.64.0.70</code> in this example) via Enclave and your local system is showing <code>172.26.0.0/20</code> (or your equivalent subnet) as the <code>Exit node for</code> value against the correct peer, you should now be able to start sending traffic directly into that subnet via your new exit node.</p>
+<h2 id="step-6-use-your-exit-node">Step 6: Use your exit node</h2>
+<p>Now we know the exit node itself is reachable, try sending some traffic past the exit node to the subnet behind it. If the any of the host-based firewalls on systems not running Enclave in your subnet(s) adjacent to the exit node allow it, you may be able to send pings as test of end-to-end connectivity.</p>
+<p>In the example below I've been able to send a ping from a Windows laptop in a coffee shop, via the Enclave exit node at <code>172.26.0.3</code> in the office out to a printer with an IP address of <code>172.26.0.250</code> in the local subnet.</p>
+<div class="highlight"><pre><span></span><code>C:\&gt; ping 172.26.0.250
+
+Pinging 172.26.0.250 with 32 bytes of data:
+Reply from 172.26.0.250: bytes=32 time=29ms TTL=64
+Reply from 172.26.0.250: bytes=32 time=30ms TTL=64
+Reply from 172.26.0.250: bytes=32 time=29ms TTL=64
+Reply from 172.26.0.250: bytes=32 time=38ms TTL=64
+
+Ping statistics for 172.26.0.250:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 29ms, Maximum = 38ms, Average = 31ms
+</code></pre></div>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>If you find your exit node isn't working as expected, here's a simple troubleshooting checklist:</p>
+<ol>
+<li>
+<p>Check your systems (clients and exit nodes) are enrolled, connected approved in the portal.</p>
+</li>
+<li>
+<p>Check that the client(s) can ping the exit node using the exit node's Enclave address.</p>
+</li>
+<li>
+<p>Check the output of <code>enclave status</code> on all systems has the correct <code>Exit node for</code> values.</p>
+</li>
+<li>
+<p>Check that the exit node itself can reach (i.e. ping) other servers on its local subnet.</p>
+</li>
+<li>
+<p>Check the routing table has been correctly configured by Enclave on the client(s). </p>
+<p>The routing table is configured automatically by Enclave so unlikely to be the source of a problem unless there are other conflicting routes already in place. The <code>Interface</code> address is the client's local Enclave IP address.</p>
+<div class="highlight"><pre><span></span><code><span class="go">C:\&gt; route print | findstr 172.26.0.0</span>
+<span class="go">IPv4 Route Table</span>
+<span class="go">===========================================================================</span>
+<span class="go">Active Routes:</span>
+<span class="go">Network Destination         Netmask     Gateway         Interface    Metric</span>
+<span class="go">172.26.0.0            255.255.240.0     On-link    100.119.20.243        26</span>
+</code></pre></div>
+</li>
+<li>
+<p>Check that iptables on the exit node is correctly configured</p>
+<p>Run <code>sudo iptables -t nat -L -n -v</code>. </p>
+<p>In particular pay attention to the <code>to:</code> field on the postrouting chain, that should be the local (non-enclave) IP address of your exit node.</p>
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>sudo iptables -t nat -L -n -v
+<span class="go">Chain PREROUTING (policy ACCEPT 35 packets, 10016 bytes)</span>
+<span class="go">pkts bytes target     prot opt in     out     source               destination</span>
+
+<span class="go">Chain INPUT (policy ACCEPT 0 packets, 0 bytes)</span>
+<span class="go">pkts bytes target     prot opt in     out     source               destination</span>
+
+<span class="go">Chain OUTPUT (policy ACCEPT 13 packets, 1071 bytes)</span>
+<span class="go">pkts bytes target     prot opt in     out     source               destination</span>
+
+<span class="go">Chain POSTROUTING (policy ACCEPT 13 packets, 1071 bytes)</span>
+<span class="go">pkts bytes target     prot opt in     out     source               destination</span>
+<span class="go">   0     0 SNAT       all  --  *      *       100.64.0.0/10        172.26.0.0/20     to:172.26.0.3</span>
+</code></pre></div>
+</li>
+<li>
+<p>Check that the iptables <code>pkts</code> and <code>bytes</code> counters are incrementing.</p>
+<p>If they're not then the iptables configuration may be incorrect or the routing table on the client may not be correct.</p>
+</li>
+<li>
+<p>Try running Enclave as a foreground process with high log verbosity.</p>
+<p>Run enclave directly with <code>sudo enclave run -v 5</code> to inspect traffic flows on the client and exit node.</p>
+</li>
+<li>
+<p>Try running <code>tcpdump</code> on your exit node.</p>
+<p>Capture from the interface connected to your local subnet (in our case, that's <code>eth0</code>) and capture traffic to and from the host you're trying to communicate with using the exit node, which in our case is a printer at <code>172.26.0.250</code>. </p>
+<p>Below, you can see our ping originated by the exit node client, but exiting from eth0 on the exit node (<code>172.26.0.3</code>) as an icmp echo request to the printer followed the returned an icmp echo reply.</p>
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>sudo tcpdump -ni eth0 host <span class="m">172</span>.26.0.250
+<span class="go">11:28:12.444590 IP 172.26.0.3 &gt; 172.26.0.250: ICMP echo request, id 1, seq 4208, length 40</span>
+<span class="go">11:28:12.444995 IP 172.26.0.250 &gt; 172.26.0.3: ICMP echo reply, id 1, seq 4208, length 40</span>
+</code></pre></div>
+</li>
+</ol>
+<hr />
+<p>Having problems? Contact us at <a href="mailto:support@enclave.io">support@enclave.io</a> or get help and advice in our <a href="/community-support/">community support</a> channels.</p>
+<p><small>Last updated Oct 23, 2021</small></p>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../dns/" class="md-footer__link md-footer__link--prev" aria-label="Previous: DNS" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              DNS
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../trust-requirements/" class="md-footer__link md-footer__link--next" aria-label="Next: Introduction" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Introduction
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/enclave-networks" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://hub.docker.com/r/enclavenetworks/enclave" target="_blank" rel="noopener" title="hub.docker.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/enclavenetworks" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/company/enclave-networks/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.tabs"], "search": "../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.37e9125f.min.js"></script>
+      
+        <script src="../../javascript/extra.js"></script>
+      
+    
+  </body>
+</html>
